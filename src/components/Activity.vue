@@ -19,29 +19,31 @@
                     </v-col>
                 </v-row>
                 <v-row dense>
-                    <v-col cols="12" sm="3">
+                    <v-col cols="12" sm="4">
                         <v-autocomplete
                             v-model="activityForm.fromLocation"
                             :items="fromLocationItems"
                             :loading="isFromLocationItemsLoading"
                             :search-input.sync="fromLocationSearchInput"
                             label="From Location"
-                            item-text="code"
                             prepend-icon="mdi-database-search"
                             return-object
+                            item-text="name"
+                            :filter="noFilter"
                             :rules="required"
                             required/>
                     </v-col>
-                    <v-col cols="12" sm="3">
+                    <v-col cols="12" sm="4">
                         <v-autocomplete
                             v-model="activityForm.toLocation"
                             :items="toLocationItems"
                             :loading="isToLocationItemsLoading"
                             :search-input.sync="toLocationSearchInput"
                             label="To Location"
-                            item-text="code"
                             prepend-icon="mdi-database-search"
                             return-object
+                            item-text="name"
+                            :filter="noFilter"
                             :rules="required"
                             required/>
                     </v-col>
@@ -194,6 +196,14 @@
             }
         },
         methods: {
+            clearArray (array) {
+                while (array.length > 0) {
+                    array.splice(0, 1);
+                }
+            },
+            noFilter () {
+                return true;
+            },
             async addActivity() {
                 if (this.$refs.form.validate()) {
                     this.isLoading = true;
@@ -203,6 +213,8 @@
                 }
             },
             async manageAutocomplete(searchInput, items, autocompleteField) {
+                this.clearArray(items);
+                
                 if (searchInput.length > 3) {
 
                     if (autocompleteField === 'fromLocation') {
@@ -211,23 +223,51 @@
                         this.isToLocationItemsLoading = true;
                     }
 
-                    let headers = new Headers();
-                    headers.append("X-API-Key", "e59f65c6765e79eed61ff4f3c1");
-                    var params = { headers: headers, mode: 'cors'};
-                    var request = new Request('https://api.checkwx.com/station/' + searchInput, params);
-                    
-                    var result = await fetch(request);
-                    result = await result.json();
+                    try {
+                        if (searchInput.length == 4) {
+                            let headers = new Headers();
+                            headers.append('X-API-Key', 'e59f65c6765e79eed61ff4f3c1');
+                            let params = { headers: headers};
+                            let request = new Request('https://api.checkwx.com/station/' + searchInput, params);
+                            
+                            let result = await fetch(request);
+                            result = await result.json();
 
-                    if (result.results == 1) {
-                        let location = {
-                            code: result.data[0].icao, 
-                            name: result.data[0].name, 
-                            coordinates: result.data[0].location.coordinates
-                        };
-                        items.push(location);
-                    } else {
-                        console.info("not an airport");
+                            if (result.results == 1) {
+                                let location = {
+                                    code: result.data[0].icao, 
+                                    name: result.data[0].icao + ' - ' + result.data[0].name, 
+                                    coordinates: {
+                                        latitude: result.data[0].location.coordinates[0],
+                                        longitude: result.data[0].location.coordinates[1]
+                                    }
+                                    
+                                };
+                                items.push(location);
+                            }
+                        }
+                        
+                        if (items.length == 0) {
+
+                            let url = 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?language=fr&inputtype=textquery&fields=name,geometry&key=AIzaSyDelULZjr3ZK_m2Lrj98J-9bM187Rb-MZU&input=' + searchInput;
+                            let result = await fetch(url);
+                            result = await result.json();
+
+                            result.candidates.forEach((candidate) => {
+                                let location = {
+                                    code: 'ZZZZ', 
+                                    name: candidate.name, 
+                                    coordinates: {
+                                        latitude: candidate.geometry.location.lat,
+                                        longitude: candidate.geometry.location.lng 
+                                    }
+                                };
+                                items.push(location);
+                            });
+                        }
+                       
+                    } catch(error) {
+                        console.error(error);
                     }
 
                     if (autocompleteField === 'fromLocation') {
@@ -235,8 +275,6 @@
                     } else {
                         this.isToLocationItemsLoading = false;
                     }
-                } else {
-                    items.splice(0, 1);
                 }
             },
             autocompleteSearchInputChanged: function(value, oldValue) {

@@ -44,18 +44,26 @@
         },
         methods: {
             async loadActivities() {
-                let snapshot = await firebase.activitiesCollection.get();
-                snapshot.forEach(doc => {
-                    let activity = doc.data();
-                    activity.id = doc.id;
-                    this.activities.push(activity);
-                });
+                try {
+                    let snapshot = await firebase.activitiesCollection.get();
+                    snapshot.forEach(doc => {
+                        let activity = doc.data();
+                        activity.id = doc.id;
+                        this.activities.push(activity);
+                    });
+                } catch(error) {
+                    console.error(error);
+                }
                 this.isLoading = false;
             },
             deleteActivity(activity) {
                 this.isLoading = true;
                 this.activities = [];
-                firebase.activitiesCollection.doc(activity.id).delete();
+                try {
+                    firebase.activitiesCollection.doc(activity.id).delete();
+                } catch(error) {
+                    console.error(error);
+                }
                 this.loadActivities();
             }
         }
