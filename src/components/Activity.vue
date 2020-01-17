@@ -124,6 +124,7 @@
                 toLocationSearchInput: '',
                 isFromLocationItemsLoading: false,
                 isToLocationItemsLoading: false,
+                lastSelectedAutocompleteText: '',
                 isLoading: false
             }
         },
@@ -184,13 +185,14 @@
             totalTime: function(value) {
                 this.activityForm.totalTime = value;
             },
-            fromLocationSearchInput: function(value, oldValue) {
-                if (this.autocompleteSearchInputChanged(value, oldValue)) {
-                   this.manageAutocomplete(value, this.fromLocationItems, 'fromLocation'); 
+            fromLocationSearchInput: function(value) {
+                if (value && value != this.lastSelectedAutocompleteText) {
+                    this.manageAutocomplete(value, this.fromLocationItems, 'fromLocation'); 
                 }
             },
-            toLocationSearchInput: function(value, oldValue) {
-                if (this.autocompleteSearchInputChanged(value, oldValue)) {
+            toLocationSearchInput: function(value) {
+
+                if (value && value != this.lastSelectedAutocompleteText) {
                     this.manageAutocomplete(value, this.toLocationItems, 'toLocation');
                 }
             }
@@ -243,6 +245,7 @@
                                     }
                                     
                                 };
+                                this.lastSelectedAutocompleteText = location.name;
                                 items.push(location);
                             }
                         }
@@ -262,6 +265,7 @@
                                         longitude: candidate.geometry.location.lng 
                                     }
                                 };
+                                this.lastSelectedAutocompleteText = location.name;
                                 items.push(location);
                             });
                         }
@@ -276,9 +280,6 @@
                         this.isToLocationItemsLoading = false;
                     }
                 }
-            },
-            autocompleteSearchInputChanged: function(value, oldValue) {
-                return ((value && !oldValue) || (value && oldValue && value.toUpperCase() !== oldValue.toUpperCase()));
             },
             resetFrorm() {
                 this.$refs.form.resetValidation();
