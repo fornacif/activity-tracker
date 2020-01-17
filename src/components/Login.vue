@@ -35,7 +35,7 @@
                 this.loading = true;
                 firebase.auth.signInWithEmailAndPassword(this.login, this.password).then(() => {
                     this.loading = false;
-                  	this.$router.push('/');
+					this.$router.push('/');
                 }).catch(error => {
                     console.log(error);
                     this.loading = false;

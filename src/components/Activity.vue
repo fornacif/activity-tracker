@@ -226,7 +226,6 @@
                     try {
                         if (searchInput.length == 4) {
                             let headers = new Headers();
-                            console.info(process.env.VUE_APP_CHECKWS_API_KEY);
                             headers.append('X-API-Key', process.env.VUE_APP_CHECKWS_API_KEY);
                             let params = { headers: headers};
                             let request = new Request('https://api.checkwx.com/station/' + searchInput, params);
