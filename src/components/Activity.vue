@@ -226,7 +226,8 @@
                     try {
                         if (searchInput.length == 4) {
                             let headers = new Headers();
-                            headers.append('X-API-Key', 'e59f65c6765e79eed61ff4f3c1');
+                            console.info(process.env.VUE_APP_CHECKWS_API_KEY);
+                            headers.append('X-API-Key', process.env.VUE_APP_CHECKWS_API_KEY);
                             let params = { headers: headers};
                             let request = new Request('https://api.checkwx.com/station/' + searchInput, params);
                             
@@ -249,7 +250,7 @@
                         
                         if (items.length == 0) {
 
-                            let url = 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?language=fr&inputtype=textquery&fields=name,geometry&key=AIzaSyDelULZjr3ZK_m2Lrj98J-9bM187Rb-MZU&input=' + searchInput;
+                            let url = 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?language=fr&inputtype=textquery&fields=name,geometry&key=' + process.env.VUE_APP_GOOGLE_API_KEY + '&input=' + searchInput;
                             let result = await fetch(url);
                             result = await result.json();
 
