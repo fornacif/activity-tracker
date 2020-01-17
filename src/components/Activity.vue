@@ -238,8 +238,8 @@
                                     code: result.data[0].icao, 
                                     name: result.data[0].icao + ' - ' + result.data[0].name, 
                                     coordinates: {
-                                        latitude: result.data[0].location.coordinates[0],
-                                        longitude: result.data[0].location.coordinates[1]
+                                        latitude: result.data[0].location.coordinates[1],
+                                        longitude: result.data[0].location.coordinates[0]
                                     }
                                     
                                 };
