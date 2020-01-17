@@ -191,7 +191,6 @@
                 }
             },
             toLocationSearchInput: function(value) {
-
                 if (value && value != this.lastSelectedAutocompleteText) {
                     this.manageAutocomplete(value, this.toLocationItems, 'toLocation');
                 }

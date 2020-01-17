@@ -18,6 +18,14 @@
             <v-list-item-title>Activity</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item to="/map">
+          <v-list-item-action>
+            <v-icon>mdi-map</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Map</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
         <v-list-item to="/activities">
           <v-list-item-action>
             <v-icon>mdi-table-large</v-icon>

@@ -40,6 +40,16 @@ const routes = [
     meta: {
       requiresAuth: true
     }
+  },
+  {
+    path: '/map',
+    name: 'Map',
+    component: function () {
+      return import('./components/Map.vue')
+    },
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 
