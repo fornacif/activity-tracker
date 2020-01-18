@@ -4,7 +4,7 @@
         <v-avatar slot="icon" color="blue-grey darken-3" size="40">
             <v-icon dark>mdi-table-large</v-icon>
         </v-avatar>
-        Departure and destination points
+        Flight records
     </v-banner>
     <v-data-table :items="activities" :headers="headers" :items-per-page="10" class="elevation-1" :loading="isLoading" loading-text="Loading...">
         <template v-slot:item.action="{ item }">
