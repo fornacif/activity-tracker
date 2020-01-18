@@ -6,7 +6,7 @@
         </v-avatar>
         Departure and destination points
     </v-banner>
-    <GmapMap :center="{lat:48.7519, lng:2.10619}" :zoom="8" map-type-id="terrain" style="width: 100%; height: 80vh">
+    <GmapMap :center="{lat:48.7519, lng:2.10619}" :zoom="8" map-type-id="terrain" style="width: 100%; height: 76vh">
         <GmapMarker :key="index" v-for="(marker, index) in markers" :position="marker"/>
     </GmapMap>
   </div>
