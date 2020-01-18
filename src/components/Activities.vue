@@ -35,11 +35,11 @@
                     { text: 'Start Time', value: 'startTime', sortable: true },
                     { text: 'End Time', value: 'endTime', sortable: true },
                     { text: 'Total Time', value: 'totalTime', sortable: true },
+                    { text: 'Gas', value: 'gas', sortable: true },
                     { text: 'Price', value: 'price', sortable: true },
                     { text: 'Passengers', value: 'passengers', sortable: true },
                     { text: 'Shared', value: 'shared', sortable: true },
                     { text: 'Passenger Price', value: 'passengerPrice', sortable: true },
-                    { text: 'Gas', value: 'gas', sortable: true },
                     { text: 'Action', value: 'action', sortable: false },
                 ],
                 isLoading: false
