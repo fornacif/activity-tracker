@@ -70,7 +70,7 @@
                         <v-text-field label="Price" v-model="price" readonly/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Passenger" v-model="activityForm.passenger"/>
+                        <v-text-field label="Passengers" v-model="activityForm.passengers"/>
                     </v-col>
                     <v-col cols="12" sm="2">
                         <v-switch label="Shared" v-model="activityForm.shared" inset/>
@@ -108,6 +108,7 @@
                     model: 'R22',
                     registration: 'F-GIHE',
                     category: 'CDB',
+                    shared: false,
                     passengerPrice: 0,
                     date: new Date().toISOString().substr(0, 10)
                 },
@@ -283,16 +284,16 @@
             resetFrorm() {
                 this.$refs.form.resetValidation();
                 this.activityForm.model = 'R22';
-                this.activityForm.registration = 'F-GHIE';
+                this.activityForm.registration = 'F-GIHE';
                 this.activityForm.category = 'CDB';
-                this.activityForm.fromLocation = '';
-                this.activityForm.toLocation = '';
+                delete this.activityForm.fromLocation;
+                delete this.activityForm.toLocation;
                 this.activityForm.date = new Date().toISOString().substr(0, 10);
-                this.activityForm.duration = '';
-                this.activityForm.startTime = '';
-                this.activityForm.passenger = '';
-                this.activityForm.passengerPrice = 0;
+                delete this.activityForm.duration;
+                delete this.activityForm.startTime;
+                delete this.activityForm.passengers;
                 this.activityForm.shared = false;
+                this.activityForm.passengerPrice = 0; 
             }
         }
     }

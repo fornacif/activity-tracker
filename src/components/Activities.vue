@@ -30,7 +30,8 @@
                     { text: 'End Time', value: 'endTime', sortable: true },
                     { text: 'Total Time', value: 'totalTime', sortable: true },
                     { text: 'Price', value: 'price', sortable: true },
-                    { text: 'Passenger', value: 'passenger', sortable: true },
+                    { text: 'Passengers', value: 'passengers', sortable: true },
+                    { text: 'Shared', value: 'shared', sortable: true },
                     { text: 'Passenger Price', value: 'passengerPrice', sortable: true },
                     { text: 'Gas', value: 'gas', sortable: true },
                     { text: 'Action', value: 'action', sortable: false },
@@ -45,7 +46,7 @@
         methods: {
             async loadActivities() {
                 try {
-                    let snapshot = await firebase.activitiesCollection.orderBy('date', 'desc').get();
+                    let snapshot = await firebase.activitiesCollection.orderBy('date', 'desc').orderBy('startTime', 'desc').get();
                     snapshot.forEach(doc => {
                         let activity = doc.data();
                         activity.id = doc.id;

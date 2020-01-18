@@ -231,6 +231,7 @@
 				this.aggregates.totalInstFlights = instActivities.length;
 				this.aggregates.totalCdbPrice = this.sumByProperty(cdbActivities, 'price');
 				this.aggregates.totalInstPrice = this.sumByProperty(instActivities, 'price');
+				
 				this.aggregates.totalPassengerPrice = this.sumByProperty(cdbActivities, 'passengerPrice');
 
 				this.aggregates.cdb = this.aggreateItemsPerYear(cdbActivities);
@@ -270,15 +271,20 @@
 						passengerPrice = activity.passengerPrice;
 						count = 1;						
 					}
+
 					let durationLabel = Math.round(duration) + "h (" + year + ")";
 					let priceLabel = Math.round(price) + "€ (" + year + ")";
 					let passengerPriceLabel = Math.round(passengerPrice) + "€ (" + year + ")";
 					let countLabel = count + " (" + year + ")";
 					items[year] = { 
-						durationLabel: durationLabel, durationValue: duration, 
-						priceLabel: priceLabel, priceValue: price,
-						passengerPriceLabel: passengerPriceLabel, passengerPriceValue: passengerPrice, 
-						countLabel: countLabel, countValue: count
+						durationLabel: durationLabel, 
+						durationValue: duration, 
+						priceLabel: priceLabel, 
+						priceValue: price,
+						passengerPriceLabel: passengerPriceLabel, 
+						passengerPriceValue: passengerPrice, 
+						countLabel: countLabel, 
+						countValue: count
 					};
 				});
 
