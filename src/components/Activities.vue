@@ -45,7 +45,7 @@
         methods: {
             async loadActivities() {
                 try {
-                    let snapshot = await firebase.activitiesCollection.get();
+                    let snapshot = await firebase.activitiesCollection.orderBy('date', 'desc').get();
                     snapshot.forEach(doc => {
                         let activity = doc.data();
                         activity.id = doc.id;
