@@ -69,6 +69,9 @@
                     <v-col cols="12" sm="2">
                         <v-text-field label="Total Time" v-model="totalTime" readonly type="time"/>
                     </v-col>
+                    <v-col cols="12" sm="2">
+                        <v-text-field label="Gas" v-model="gas" readonly/>
+                    </v-col>
                 </v-row>
                 <v-row dense>
                     <v-col cols="12" sm="2">
@@ -82,9 +85,6 @@
                     </v-col>
                     <v-col cols="12" sm="2">
                         <v-text-field label="Passenger Price" v-model="passengerPrice" readonly/>
-                    </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-text-field label="Gas" v-model="gas" readonly/>
                     </v-col>
                 </v-row>
                 <v-row dense>
