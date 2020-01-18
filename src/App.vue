@@ -20,7 +20,7 @@
         </v-list-item>
         <v-list-item to="/map">
           <v-list-item-action>
-            <v-icon>mdi-map</v-icon>
+            <v-icon>mdi-google-maps</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Map</v-list-item-title>

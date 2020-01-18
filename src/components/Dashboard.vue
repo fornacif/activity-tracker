@@ -1,193 +1,199 @@
 <template>
 	<div>
-		<v-row dense>
-			<v-col cols="12" sm="2">
-				<v-card outline>
-					<v-sheet color="blue-grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">Total CDB Duration</v-card-subtitle>
-					</v-sheet>
-					<v-card-text class="subtitle-1 font-weight-bold font-weight-bold">
-						<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-						<span v-show="!isLoading">{{ aggregates.totalCdbDuration | numeral('0,0.00') }}h</span>				
-					</v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="2">
-				<v-card>
-					<v-sheet color="blue-grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">Total INST Duration</v-card-subtitle>
-					</v-sheet>
-					<v-card-text class="subtitle-1 font-weight-bold">
-						<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-						<span v-show="!isLoading">{{ aggregates.totalInstDuration | numeral('0,0.00') }}h</span>
-					</v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="2">
-				<v-card>
-					<v-sheet color="blue-grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">Total CDB Flights</v-card-subtitle>
-					</v-sheet>
-					<v-card-text class="subtitle-1 font-weight-bold">
-						<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-						<span v-show="!isLoading">{{ aggregates.totalCdbFlights }}</span>
-					</v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="2">
-				<v-card>
-					<v-sheet color="blue-grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">Total INST Flights</v-card-subtitle>
-					</v-sheet>
-					<v-card-text class="subtitle-1 font-weight-bold">
-						<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-						<span v-show="!isLoading">{{ aggregates.totalInstFlights }}</span>
-					</v-card-text>
-				</v-card>
-			</v-col>
-		</v-row>
-		<v-row dense>
-			<v-col cols="12" sm="2">
-				<v-card>
-					<v-sheet color="grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">Total CDB Price</v-card-subtitle>
-					</v-sheet>
-					<v-card-text class="subtitle-1 font-weight-bold">
-						<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-						<span v-show="!isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }}€</span>
-					</v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="2">
-				<v-card>
-					<v-sheet color="grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">Total INST Price</v-card-subtitle>
-					</v-sheet>
-					<v-card-text class="subtitle-1 font-weight-bold">
-						<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-						<span v-show="!isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }}€</span>
-					</v-card-text>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="2">
-				<v-card>
-					<v-sheet color="grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">Total Passenger Price</v-card-subtitle>
-					</v-sheet>
-					<v-card-text class="subtitle-1 font-weight-bold">
-						<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-						<span v-show="!isLoading">{{ aggregates.totalPassengerPrice | numeral('0,0') }}€</span>
-					</v-card-text>
-				</v-card>
-			</v-col>
-		</v-row>
-		<v-row dense>
-			<v-col cols="12" sm="6">
-				<v-card>
-					<v-sheet color="blue-grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">CDB Duration per Year</v-card-subtitle>
-					</v-sheet>
-					<v-sparkline :labels="aggregates.cdb.durationLabelsPerYear"
-						:value="aggregates.cdb.durationValuesPerYear" 
-						:line-width="lineWidth" 
-						:auto-draw="!!aggregates.cdb.durationValuesPerYear" 
-						:auto-draw-duration="drawDuration" 
-						:padding="padding" 
-						:label-size="labelSize" 
-						:gradient="gradient"/>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="6">
-				<v-card>
-					<v-sheet color="blue-grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">INST Duration per Year</v-card-subtitle>
-					</v-sheet>
-					<v-sparkline :labels="aggregates.inst.durationLabelsPerYear" 
-						:value="aggregates.inst.durationValuesPerYear" 
-						:line-width="lineWidth" 
-						:auto-draw="!!aggregates.inst.durationValuesPerYear" 
-						:auto-draw-duration="drawDuration" 
-						:padding="padding" 
-						:label-size="labelSize" 
-						:gradient="gradient"/>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="6">
-				<v-card>
-					<v-sheet color="blue-grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">CDB Flights per Year</v-card-subtitle>
-					</v-sheet>
-					<v-sparkline :labels="aggregates.cdb.countLabelsPerYear" 
-						:value="aggregates.cdb.countValuesPerYear" 
-						:line-width="lineWidth" 
-						:auto-draw="!!aggregates.cdb.countValuesPerYear" 
-						:auto-draw-duration="drawDuration" 
-						:padding="padding" 
-						:label-size="labelSize" 
-						:gradient="gradient"/>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="6">
-				<v-card>
-					<v-sheet color="blue-grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">INST Flights per Year</v-card-subtitle>
-					</v-sheet>
-					<v-sparkline :labels="aggregates.inst.countLabelsPerYear" 
-						:value="aggregates.inst.countValuesPerYear" 
-						:line-width="lineWidth" 
-						:auto-draw="!!aggregates.inst.countValuesPerYear" 
-						:auto-draw-duration="drawDuration" 
-						:padding="padding" 
-						:label-size="labelSize" 
-						:gradient="gradient"/>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="6">
-				<v-card>
-					<v-sheet color="grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">CDB Price per Year</v-card-subtitle>
-					</v-sheet>
-					<v-sparkline :labels="aggregates.cdb.priceLabelsPerYear" 
-						:value="aggregates.cdb.priceValuesPerYear" 
-						:line-width="lineWidth" 
-						:auto-draw="!!aggregates.cdbPriceValuesPerYear" 
-						:auto-draw-duration="drawDuration" 
-						:padding="padding" 
-						:label-size="labelSize" 
-						:gradient="gradient"/>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="6">
-				<v-card>
-					<v-sheet color="grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">INST Price per Year</v-card-subtitle>
-					</v-sheet>
-					<v-sparkline :labels="aggregates.inst.priceLabelsPerYear" 
-						:value="aggregates.inst.priceValuesPerYear" 
-						:line-width="lineWidth" 
-						:auto-draw="!!aggregates.inst.priceValuesPerYear" 
-						:auto-draw-duration="drawDuration" 
-						:padding="padding" 
-						:label-size="labelSize" 
-						:gradient="gradient"/>
-				</v-card>
-			</v-col>
-			<v-col cols="12" sm="6">
-				<v-card>
-					<v-sheet color="grey darken-1">
-						<v-card-subtitle class="font-weight-medium white--text">Passenger Price per Year</v-card-subtitle>
-					</v-sheet>
-					<v-sparkline :labels="aggregates.cdb.passengerPriceLabelsPerYear" 
-						:value="aggregates.cdb.passengerPriceValuesPerYear" 
-						:line-width="lineWidth" 
-						:auto-draw="!!aggregates.cdb.passengerPriceValuesPerYear" 
-						:auto-draw-duration="drawDuration" 
-						:padding="padding" 
-						:label-size="labelSize" 
-						:gradient="gradient"/>
-				</v-card>
-			</v-col>
-		</v-row>
+		<v-card class="mb-4">
+			<v-banner>
+				<v-avatar slot="icon" color="blue-grey darken-3" size="40">
+					<v-icon dark>mdi-counter</v-icon>
+				</v-avatar>
+				Duration and occurence metrics
+			</v-banner>
+			<v-row dense>
+				<v-col cols="12" sm="2">
+					<v-card flat>
+						<v-card-subtitle class="subtitle-1">Total CDB Duration</v-card-subtitle>
+						<v-card-text class="title">
+							<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
+							<span v-show="!isLoading">{{ aggregates.totalCdbDuration | numeral('0,0.00') }}h</span>				
+						</v-card-text>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="2">
+					<v-card flat>
+						<v-card-subtitle class="subtitle-1">Total INST Duration</v-card-subtitle>
+						<v-card-text class="title">
+							<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
+							<span v-show="!isLoading">{{ aggregates.totalInstDuration | numeral('0,0.00') }}h</span>
+						</v-card-text>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="2">
+					<v-card flat>
+						<v-card-subtitle class="subtitle-1">Total CDB Flights</v-card-subtitle>
+						<v-card-text class="title">
+							<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
+							<span v-show="!isLoading">{{ aggregates.totalCdbFlights }}</span>
+						</v-card-text>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="2">
+					<v-card flat>
+						<v-card-subtitle class="subtitle-1">Total INST Flights</v-card-subtitle>
+						<v-card-text class="title">
+							<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
+							<span v-show="!isLoading">{{ aggregates.totalInstFlights }}</span>
+						</v-card-text>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="2">
+					<v-card flat>
+						<v-card-subtitle class="subtitle-1">Total CDB Passenger Flights</v-card-subtitle>
+						<v-card-text class="title">
+							<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
+							<span v-show="!isLoading">{{ aggregates.totalPassengerFlights }}</span>
+						</v-card-text>
+					</v-card>
+				</v-col>
+			</v-row>
+		</v-card>
+
+		<v-card class="mb-4">
+			<v-banner>
+				<v-avatar slot="icon" color="blue-grey darken-3" size="40">
+					<v-icon dark>mdi-currency-eur</v-icon>
+				</v-avatar>
+				Price metrics
+			</v-banner>
+			<v-row dense>
+				<v-col cols="12" sm="2">
+					<v-card flat>
+						<v-card-subtitle class="subtitle-1">Total CDB Price</v-card-subtitle>
+						<v-card-text class="title">
+							<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
+							<span v-show="!isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }}€</span>
+						</v-card-text>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="2">
+					<v-card flat>
+						<v-card-subtitle class="subtitle-1">Total CDB Passenger Price</v-card-subtitle>
+						<v-card-text class="title">
+							<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
+							<span v-show="!isLoading">{{ aggregates.totalPassengerPrice | numeral('0,0') }}€</span>
+						</v-card-text>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="2">
+					<v-card flat>
+						<v-card-subtitle class="subtitle-1">Total INST Price</v-card-subtitle>
+						<v-card-text class="title">
+							<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
+							<span v-show="!isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }}€</span>
+						</v-card-text>
+					</v-card>
+				</v-col>			
+			</v-row>
+		</v-card>
+		<v-card class="mb-4">
+			<v-banner>
+				<v-avatar slot="icon" color="blue-grey darken-3" size="40">
+					<v-icon dark>mdi-chart-line-variant</v-icon>
+				</v-avatar>
+				Grouped per year metrics
+			</v-banner>
+			<v-row dense>
+				<v-col cols="12" sm="6">
+					<v-card outlined>
+						<v-card-subtitle class="subtitle-1">CDB Duration per Year</v-card-subtitle>
+						<v-sparkline :labels="aggregates.cdb.durationLabelsPerYear"
+							:value="aggregates.cdb.durationValuesPerYear" 
+							:line-width="lineWidth" 
+							:auto-draw="!!aggregates.cdb.durationValuesPerYear" 
+							:auto-draw-duration="drawDuration" 
+							:padding="padding" 
+							:label-size="labelSize" 
+							:gradient="gradient"/>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="6">
+					<v-card outlined>
+						<v-card-subtitle class="subtitle-1">INST Duration per Year</v-card-subtitle>
+						<v-sparkline :labels="aggregates.inst.durationLabelsPerYear" 
+							:value="aggregates.inst.durationValuesPerYear" 
+							:line-width="lineWidth" 
+							:auto-draw="!!aggregates.inst.durationValuesPerYear" 
+							:auto-draw-duration="drawDuration" 
+							:padding="padding" 
+							:label-size="labelSize" 
+							:gradient="gradient"/>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="6">
+					<v-card outlined>
+						<v-card-subtitle class="subtitle-1">CDB Flights per Year</v-card-subtitle>
+						<v-sparkline :labels="aggregates.cdb.countLabelsPerYear" 
+							:value="aggregates.cdb.countValuesPerYear" 
+							:line-width="lineWidth" 
+							:auto-draw="!!aggregates.cdb.countValuesPerYear" 
+							:auto-draw-duration="drawDuration" 
+							:padding="padding" 
+							:label-size="labelSize" 
+							:gradient="gradient"/>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="6">
+					<v-card outlined>
+						<v-card-subtitle class="subtitle-1">INST Flights per Year</v-card-subtitle>
+						<v-sparkline :labels="aggregates.inst.countLabelsPerYear" 
+							:value="aggregates.inst.countValuesPerYear" 
+							:line-width="lineWidth" 
+							:auto-draw="!!aggregates.inst.countValuesPerYear" 
+							:auto-draw-duration="drawDuration" 
+							:padding="padding" 
+							:label-size="labelSize" 
+							:gradient="gradient"/>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="6">
+					<v-card outlined>
+						<v-card-subtitle class="subtitle-1">CDB Price per Year</v-card-subtitle>
+						<v-sparkline :labels="aggregates.cdb.priceLabelsPerYear" 
+							:value="aggregates.cdb.priceValuesPerYear" 
+							:line-width="lineWidth" 
+							:auto-draw="!!aggregates.cdbPriceValuesPerYear" 
+							:auto-draw-duration="drawDuration" 
+							:padding="padding" 
+							:label-size="labelSize" 
+							:gradient="gradient"/>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="6">
+					<v-card outlined>
+						<v-card-subtitle class="subtitle-1">INST Price per Year</v-card-subtitle>
+						<v-sparkline :labels="aggregates.inst.priceLabelsPerYear" 
+							:value="aggregates.inst.priceValuesPerYear" 
+							:line-width="lineWidth" 
+							:auto-draw="!!aggregates.inst.priceValuesPerYear" 
+							:auto-draw-duration="drawDuration" 
+							:padding="padding" 
+							:label-size="labelSize" 
+							:gradient="gradient"/>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="6">
+					<v-card outlined>
+						<v-card-subtitle class="subtitle-1">CDB Passenger Price per Year</v-card-subtitle>
+						<v-sparkline :labels="aggregates.cdb.passengerPriceLabelsPerYear" 
+							:value="aggregates.cdb.passengerPriceValuesPerYear" 
+							:line-width="lineWidth" 
+							:auto-draw="!!aggregates.cdb.passengerPriceValuesPerYear" 
+							:auto-draw-duration="drawDuration" 
+							:padding="padding" 
+							:label-size="labelSize" 
+							:gradient="gradient"/>
+					</v-card>
+				</v-col>
+			</v-row>
+		</v-card>
 	</div>
 </template>
 
@@ -205,7 +211,7 @@
 				isLoading: false,
 				drawDuration: 1000,
 				lineWidth: 2,
-				labelSize: 7,
+				labelSize: 6,
 				padding: 25,
 				gradient: ['#f72047', '#ffd200', '#1feaea']
             }
@@ -232,6 +238,7 @@
 				this.aggregates.totalCdbPrice = this.sumByProperty(cdbActivities, 'price');
 				this.aggregates.totalInstPrice = this.sumByProperty(instActivities, 'price');
 				
+				this.aggregates.totalPassengerFlights = this.sumByFilledProperty(cdbActivities, 'passengers');
 				this.aggregates.totalPassengerPrice = this.sumByProperty(cdbActivities, 'passengerPrice');
 
 				this.aggregates.cdb = this.aggreateItemsPerYear(cdbActivities);
@@ -247,6 +254,11 @@
             sumByProperty(items, property) {
 				return items.reduce((sum, item) => {
 					return sum + item[property];
+				}, 0);
+            },
+            sumByFilledProperty(items, property) {
+				return items.reduce((sum, item) => {
+					return sum + (item[property] ? 1 : 0);
 				}, 0);
             },
             aggregatesByProperty(items, property) {

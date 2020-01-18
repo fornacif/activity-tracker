@@ -1,8 +1,13 @@
 <template>
   <div>
     <v-card>
+        <v-banner>
+            <v-avatar slot="icon" color="blue-grey darken-3" size="40">
+                <v-icon dark>mdi-table-large-plus</v-icon>
+            </v-avatar>
+            Add new flight
+        </v-banner>
         <v-card-text>
-            <div>Add new activity</div>
             <v-form ref="form" v-model="valid" lazy-validation>
                 <v-row dense>
                     <v-col cols="12" sm="2">
