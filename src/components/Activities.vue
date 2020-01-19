@@ -7,6 +7,9 @@
         Flight records
     </v-banner>
     <v-data-table :items="activities" :headers="headers" :items-per-page="10" class="elevation-1" :loading="isLoading" loading-text="Loading...">
+        <template v-slot:item.category="{ item }">
+            <v-chip :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
+        </template>
         <template v-slot:item.action="{ item }">
           <v-icon small @click="deleteActivity(item)">mdi-delete</v-icon>
         </template>
@@ -52,7 +55,7 @@
         methods: {
             async loadActivities() {
                 try {
-                    let snapshot = await firebase.activitiesCollection.orderBy('date', 'desc').orderBy('startTime', 'desc').get();
+                    let snapshot = await firebase.activitiesCollection.where('uid', '==', firebase.auth.currentUser.uid).orderBy('date', 'desc').orderBy('startTime', 'desc').get();
                     snapshot.forEach(doc => {
                         let activity = doc.data();
                         activity.id = doc.id;
@@ -72,7 +75,11 @@
                     console.error(error);
                 }
                 this.loadActivities();
+            },
+            getCategoryColor(activity) {
+                return activity.category == "CDB" ? 'blue-grey darken-1' : 'lime darken-4';
             }
+
         }
     }
 </script>

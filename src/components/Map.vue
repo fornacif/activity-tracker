@@ -26,7 +26,7 @@
         },
         methods: {
             async loadActivities() {
-                let snapshot = await firebase.activitiesCollection.get();
+                let snapshot = await firebase.activitiesCollection.where('uid', '==', firebase.auth.currentUser.uid).get();
                 snapshot.forEach(doc => {
                     let fromPosition = {
                         lat: doc.data().fromLocation.coordinates.latitude,

@@ -251,7 +251,7 @@
         methods: {
 			async loadActivities() {
 				let activities = [];
-				let snapshot = await firebase.activitiesCollection.get();
+				let snapshot = await firebase.activitiesCollection.where('uid', '==', firebase.auth.currentUser.uid).get();
 				snapshot.forEach(doc => {
 					activities.push(doc.data());
 				});

@@ -110,6 +110,7 @@
             return {
                 valid: true,
                 activityForm: {
+                    uid: firebase.auth.currentUser.uid,
                     model: 'R22',
                     registration: 'F-GIHE',
                     category: 'CDB',
@@ -214,7 +215,11 @@
             async addActivity() {
                 if (this.$refs.form.validate()) {
                     this.isLoading = true;
-                    await firebase.activitiesCollection.add(this.activityForm);
+                    try {
+                        await firebase.activitiesCollection.add(this.activityForm);
+                     } catch(error) {
+                        console.error(error);
+                    }
                     this.resetFrorm();
                     this.isLoading = false;
                 }
