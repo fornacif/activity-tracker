@@ -73,43 +73,60 @@
 			</v-col>
 		</v-row>
 
-		<v-card class="mb-4">
-			<v-banner>
-				<v-avatar slot="icon" color="blue-grey darken-3" size="40">
-					<v-icon dark>mdi-currency-eur</v-icon>
-				</v-avatar>
-				Global Price metrics
-			</v-banner>
-			<v-row dense>
-				<v-col cols="12" sm="2">
-					<v-card flat>
-						<v-card-subtitle class="subtitle-1">CDB - Price</v-card-subtitle>
-						<v-card-text class="title">
-							<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-							<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }}€</span>
-						</v-card-text>
-					</v-card>
-				</v-col>
-				<v-col cols="12" sm="2">
-					<v-card flat>
-						<v-card-subtitle class="subtitle-1">CDB - Passenger Price</v-card-subtitle>
-						<v-card-text class="title">
-							<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-							<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengerPrice | numeral('0,0') }}€</span>
-						</v-card-text>
-					</v-card>
-				</v-col>
-				<v-col cols="12" sm="2">
-					<v-card flat>
-						<v-card-subtitle class="subtitle-1">INST - Price</v-card-subtitle>
-						<v-card-text class="title">
-							<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-							<span v-show="!$store.state.isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }}€</span>
-						</v-card-text>
-					</v-card>
-				</v-col>			
-			</v-row>
-		</v-card>
+		<v-row dense>
+			<v-col cols="12" sm="6">
+				<v-card class="mb-4">
+					<v-banner>
+						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
+							<v-icon dark>mdi-currency-eur</v-icon>
+						</v-avatar>
+						CDB - Price metrics
+					</v-banner>
+					<v-row dense>
+						<v-col sm="6">
+							<v-card flat>
+								<v-card-subtitle class="subtitle-1">Total Price</v-card-subtitle>
+								<v-card-text class="title">
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }}€</span>
+								</v-card-text>
+							</v-card>
+						</v-col>
+						<v-col sm="6">
+							<v-card flat>
+								<v-card-subtitle class="subtitle-1">Passenger Price</v-card-subtitle>
+								<v-card-text class="title">
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengerPrice | numeral('0,0') }}€</span>
+								</v-card-text>
+							</v-card>
+						</v-col>			
+					</v-row>
+				</v-card>
+			</v-col>
+			<v-col cols="12" sm="6">
+				<v-card class="mb-4">
+					<v-banner>
+						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
+							<v-icon dark>mdi-currency-eur</v-icon>
+						</v-avatar>
+						INST - Price metrics
+					</v-banner>
+					<v-row dense>
+						<v-col sm="6">
+							<v-card flat>
+								<v-card-subtitle class="subtitle-1">Total Price</v-card-subtitle>
+								<v-card-text class="title">
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<span v-show="!$store.state.isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }}€</span>
+								</v-card-text>
+							</v-card>
+						</v-col>			
+					</v-row>
+				</v-card>
+			</v-col>
+		</v-row>
+
 		<v-card class="mb-4">
 			<v-banner>
 				<v-avatar slot="icon" color="blue-grey darken-3" size="40">
@@ -171,7 +188,7 @@
 					</v-card>
 				</v-col>
 			</v-row>
-		</v-card>
+		</v-card>		
 
 		<v-card class="mb-4">
 			<v-banner>
