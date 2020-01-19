@@ -14,8 +14,8 @@
 							<v-card flat>
 								<v-card-subtitle class="subtitle-1">Total Duration</v-card-subtitle>
 								<v-card-text class="title">
-									<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-									<span v-show="!isLoading">{{ aggregates.totalCdbDuration | numeral('0,0.00') }}h</span>				
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbDuration | numeral('0,0.00') }}h</span>				
 								</v-card-text>
 							</v-card>
 						</v-col>
@@ -23,8 +23,8 @@
 							<v-card flat>
 								<v-card-subtitle class="subtitle-1">Total Flights</v-card-subtitle>
 								<v-card-text class="title">
-									<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-									<span v-show="!isLoading">{{ aggregates.totalCdbFlights }}</span>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbFlights }}</span>
 								</v-card-text>
 							</v-card>
 						</v-col>
@@ -32,8 +32,8 @@
 							<v-card flat>
 								<v-card-subtitle class="subtitle-1">Passenger Flights</v-card-subtitle>
 								<v-card-text class="title">
-									<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-									<span v-show="!isLoading">{{ aggregates.totalPassengerFlights }}</span>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengerFlights }}</span>
 								</v-card-text>
 							</v-card>
 						</v-col>
@@ -53,8 +53,8 @@
 							<v-card flat>
 								<v-card-subtitle class="subtitle-1">Total Duration</v-card-subtitle>
 								<v-card-text class="title">
-									<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-									<span v-show="!isLoading">{{ aggregates.totalInstDuration | numeral('0,0.00') }}h</span>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<span v-show="!$store.state.isLoading">{{ aggregates.totalInstDuration | numeral('0,0.00') }}h</span>
 								</v-card-text>
 							</v-card>
 						</v-col>
@@ -62,8 +62,8 @@
 							<v-card flat>
 								<v-card-subtitle class="subtitle-1">Total Flights</v-card-subtitle>
 								<v-card-text class="title">
-									<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-									<span v-show="!isLoading">{{ aggregates.totalInstFlights }}</span>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<span v-show="!$store.state.isLoading">{{ aggregates.totalInstFlights }}</span>
 								</v-card-text>
 							</v-card>
 						</v-col>
@@ -85,8 +85,8 @@
 					<v-card flat>
 						<v-card-subtitle class="subtitle-1">CDB - Price</v-card-subtitle>
 						<v-card-text class="title">
-							<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-							<span v-show="!isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }}€</span>
+							<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+							<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }}€</span>
 						</v-card-text>
 					</v-card>
 				</v-col>
@@ -94,8 +94,8 @@
 					<v-card flat>
 						<v-card-subtitle class="subtitle-1">CDB - Passenger Price</v-card-subtitle>
 						<v-card-text class="title">
-							<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-							<span v-show="!isLoading">{{ aggregates.totalPassengerPrice | numeral('0,0') }}€</span>
+							<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+							<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengerPrice | numeral('0,0') }}€</span>
 						</v-card-text>
 					</v-card>
 				</v-col>
@@ -103,8 +103,8 @@
 					<v-card flat>
 						<v-card-subtitle class="subtitle-1">INST - Price</v-card-subtitle>
 						<v-card-text class="title">
-							<v-progress-circular v-show="isLoading" indeterminate color="blue darken-3"/>
-							<span v-show="!isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }}€</span>
+							<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+							<span v-show="!$store.state.isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }}€</span>
 						</v-card-text>
 					</v-card>
 				</v-col>			
@@ -227,16 +227,9 @@
 
 <script>
 
-	const firebase = require('../firebaseConfig.js')
-
     export default {
         data() {
             return {
-				aggregates: {
-					cdb: {},
-					inst: {}
-				},
-				isLoading: false,
 				drawDuration: 1000,
 				lineWidth: 2,
 				labelSize: 6,
@@ -245,35 +238,33 @@
             }
         },
         mounted: function () {
-			this.isLoading = true;
-			this.loadActivities();
+			this.$store.dispatch('getActivities');
         },
-        methods: {
-			async loadActivities() {
-				let activities = [];
-				let snapshot = await firebase.activitiesCollection.where('uid', '==', firebase.auth.currentUser.uid).get();
-				snapshot.forEach(doc => {
-					activities.push(doc.data());
-				});
+        computed: {
+			aggregates: function() {
+				let aggregates = {};
+				let activities = this.$store.state.activities;
 
 				let cdbActivities = this.filterByCategory(activities, 'CDB');
 				let instActivities = this.filterByCategory(activities, 'INST');
 
-				this.aggregates.totalCdbDuration = this.sumByProperty(cdbActivities, 'duration');
-				this.aggregates.totalInstDuration = this.sumByProperty(instActivities, 'duration');
-				this.aggregates.totalCdbFlights = cdbActivities.length;
-				this.aggregates.totalInstFlights = instActivities.length;
-				this.aggregates.totalCdbPrice = this.sumByProperty(cdbActivities, 'price');
-				this.aggregates.totalInstPrice = this.sumByProperty(instActivities, 'price');
+				aggregates.totalCdbDuration = this.sumByProperty(cdbActivities, 'duration');
+				aggregates.totalInstDuration = this.sumByProperty(instActivities, 'duration');
+				aggregates.totalCdbFlights = cdbActivities.length;
+				aggregates.totalInstFlights = instActivities.length;
+				aggregates.totalCdbPrice = this.sumByProperty(cdbActivities, 'price');
+				aggregates.totalInstPrice = this.sumByProperty(instActivities, 'price');
 				
-				this.aggregates.totalPassengerFlights = this.sumByFilledProperty(cdbActivities, 'passengers');
-				this.aggregates.totalPassengerPrice = this.sumByProperty(cdbActivities, 'passengerPrice');
+				aggregates.totalPassengerFlights = this.sumByFilledProperty(cdbActivities, 'passengers');
+				aggregates.totalPassengerPrice = this.sumByProperty(cdbActivities, 'passengerPrice');
 
-				this.aggregates.cdb = this.aggreateItemsPerYear(cdbActivities);
-				this.aggregates.inst = this.aggreateItemsPerYear(instActivities);
+				aggregates.cdb = this.aggreateItemsPerYear(cdbActivities);
+				aggregates.inst = this.aggreateItemsPerYear(instActivities);
 
-				this.isLoading = false;
-			},
+				return aggregates;
+			}
+        },
+        methods: {
             filterByCategory(activities, category) {
 				return activities.filter((activity) => {
 					return activity.category === category;

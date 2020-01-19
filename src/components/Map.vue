@@ -13,31 +13,26 @@
 </template>
 
 <script>
-    const firebase = require('../firebaseConfig.js')
 
     export default {
-        data() {
-            return {
-                markers: []
-            }
-        },
         mounted: function () {
-            this.loadActivities();
+            this.$store.dispatch('getActivities');
         },
-        methods: {
-            async loadActivities() {
-                let snapshot = await firebase.activitiesCollection.where('uid', '==', firebase.auth.currentUser.uid).get();
-                snapshot.forEach(doc => {
+        computed: {
+            markers : function() {
+                let markers = [];
+                this.$store.state.activities.forEach(activity => {
                     let fromPosition = {
-                        lat: doc.data().fromLocation.coordinates.latitude,
-                        lng: doc.data().fromLocation.coordinates.longitude
+                        lat: activity.fromLocation.coordinates.latitude,
+                        lng: activity.fromLocation.coordinates.longitude
                     }
                     let toPosition = {
-                        lat: doc.data().toLocation.coordinates.latitude,
-                        lng: doc.data().toLocation.coordinates.longitude
+                        lat: activity.toLocation.coordinates.latitude,
+                        lng: activity.toLocation.coordinates.longitude
                     }
-                    this.markers.push(fromPosition, toPosition);
+                    markers.push(fromPosition, toPosition);
                 });
+                return markers;
             }
         }
     }

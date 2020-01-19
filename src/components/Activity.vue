@@ -89,7 +89,7 @@
                 </v-row>
                 <v-row dense>
                     <v-col sm="12">
-                        <v-btn color="blue darken-3" dark @click="addActivity" :loading="isLoading">SUBMIT</v-btn>
+                        <v-btn color="blue darken-3" dark @click="addActivity" :loading="$store.state.isLoading">SUBMIT</v-btn>
                     </v-col>
                 </v-row>
             </v-form>
@@ -214,14 +214,8 @@
             },
             async addActivity() {
                 if (this.$refs.form.validate()) {
-                    this.isLoading = true;
-                    try {
-                        await firebase.activitiesCollection.add(this.activityForm);
-                     } catch(error) {
-                        console.error(error);
-                    }
+                    this.$store.dispatch('addActivity', this.activityForm);
                     this.resetFrorm();
-                    this.isLoading = false;
                 }
             },
             async manageAutocomplete(searchInput, items, autocompleteField) {

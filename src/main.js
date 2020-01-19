@@ -23,9 +23,9 @@ Vue.use(VueGoogleMaps, {
 let app;
 if (!app) {
 	app = new Vue({
-        router,
         store,
         mixin,
+        router,
         vuetify,
         render: function (h) { return h(App) }
     }).$mount('#app')

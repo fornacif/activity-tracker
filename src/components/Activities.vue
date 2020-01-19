@@ -6,7 +6,7 @@
         </v-avatar>
         Flight records
     </v-banner>
-    <v-data-table :items="activities" :headers="headers" :items-per-page="10" class="elevation-1" :loading="isLoading" loading-text="Loading...">
+    <v-data-table :items="$store.state.activities" :headers="headers" :items-per-page="10" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading...">
         <template v-slot:item.category="{ item }">
             <v-chip :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
         </template>
@@ -21,12 +21,10 @@
 </template>
 
 <script>
-    const firebase = require('../firebaseConfig.js')
 
     export default {
         data() {
             return {
-                activities: [],
                 headers: [
                     { text: 'Date', value: 'date', sortable: true },
                     { text: 'Model', value: 'model', sortable: true },
@@ -44,42 +42,20 @@
                     { text: 'Shared', value: 'shared', sortable: true },
                     { text: 'Passenger Price', value: 'passengerPrice', sortable: true },
                     { text: 'Action', value: 'action', sortable: false },
-                ],
-                isLoading: false
+                ]
             }
         },
         mounted: function () {
-            this.isLoading = true;
-            this.loadActivities();
+            this.$store.dispatch('getActivities');
         },
         methods: {
-            async loadActivities() {
-                try {
-                    let snapshot = await firebase.activitiesCollection.where('uid', '==', firebase.auth.currentUser.uid).orderBy('date', 'desc').orderBy('startTime', 'desc').get();
-                    snapshot.forEach(doc => {
-                        let activity = doc.data();
-                        activity.id = doc.id;
-                        this.activities.push(activity);
-                    });
-                } catch(error) {
-                    console.error(error);
-                }
-                this.isLoading = false;
-            },
-            deleteActivity(activity) {
-                this.isLoading = true;
-                this.activities = [];
-                try {
-                    firebase.activitiesCollection.doc(activity.id).delete();
-                } catch(error) {
-                    console.error(error);
-                }
-                this.loadActivities();
+            async deleteActivity(activity) {
+                await this.$store.dispatch('deleteActivity', activity);
+                this.$store.dispatch('getActivities');
             },
             getCategoryColor(activity) {
                 return activity.category == "CDB" ? 'blue-grey darken-1' : 'lime darken-4';
             }
-
         }
     }
 </script>
