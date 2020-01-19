@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<v-row dense>
+		<v-row>
 			<v-col cols="12" sm="6">
-				<v-card class="mb-4">
+				<v-card>
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 							<v-icon dark>mdi-counter</v-icon>
@@ -41,7 +41,7 @@
 				</v-card>
 			</v-col>
 			<v-col cols="12" sm="6">
-				<v-card class="mb-4">
+				<v-card>
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 							<v-icon dark>mdi-counter</v-icon>
@@ -67,15 +67,14 @@
 								</v-card-text>
 							</v-card>
 						</v-col>
-						
 					</v-row>
 				</v-card>
 			</v-col>
 		</v-row>
 
-		<v-row dense>
+		<v-row>
 			<v-col cols="12" sm="6">
-				<v-card class="mb-4">
+				<v-card>
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 							<v-icon dark>mdi-currency-eur</v-icon>
@@ -105,7 +104,7 @@
 				</v-card>
 			</v-col>
 			<v-col cols="12" sm="6">
-				<v-card class="mb-4">
+				<v-card>
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 							<v-icon dark>mdi-currency-eur</v-icon>
@@ -134,7 +133,7 @@
 				</v-avatar>
 				CDB - Aggregated metrics
 			</v-banner>
-			<v-row dense>
+			<v-row>
 				<v-col cols="12" sm="6">
 					<v-card outlined>
 						<v-card-subtitle class="subtitle-1">Duration per year</v-card-subtitle>
@@ -197,7 +196,7 @@
 				</v-avatar>
 				INST - Aggregated metrics
 			</v-banner>
-			<v-row dense>
+			<v-row>
 				<v-col cols="12" sm="6">
 					<v-card outlined>
 						<v-card-subtitle class="subtitle-1">Duration per year</v-card-subtitle>
