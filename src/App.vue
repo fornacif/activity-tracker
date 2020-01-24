@@ -10,21 +10,21 @@
             <v-list-item-title>Dashboard</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-divider :inset="inset"></v-divider>
-        <v-list-item to="/activity">
-          <v-list-item-action>
-            <v-icon>mdi-table-large-plus</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Activity</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
         <v-list-item to="/map">
           <v-list-item-action>
             <v-icon>mdi-google-maps</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Map</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider/>
+        <v-list-item to="/activity">
+          <v-list-item-action>
+            <v-icon>mdi-table-large-plus</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Activity</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item to="/activities">
@@ -35,7 +35,7 @@
             <v-list-item-title>Activities</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-divider :inset="inset"></v-divider>
+        <v-divider/>
         <v-list-item to="/profile">
           <v-list-item-action>
             <v-icon>mdi-account</v-icon>
