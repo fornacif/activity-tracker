@@ -99,7 +99,6 @@
 </template>
 
 <script>
-    const firebase = require('../firebaseConfig.js')
     import { mask } from 'vue-the-mask'
 
     export default {
@@ -110,7 +109,6 @@
             return {
                 valid: true,
                 activityForm: {
-                    uid: firebase.auth.currentUser.uid,
                     model: 'R22',
                     registration: 'F-GIHE',
                     category: 'CDB',
@@ -124,7 +122,7 @@
                 ],
                 required: [
                     v => !!v || 'Input is required'
-                  ],
+                ],
                 fromLocationItems: [],
                 toLocationItems: [],
                 fromLocationSearchInput: '',
@@ -255,7 +253,6 @@
                         }
                         
                         if (items.length == 0) {
-
                             let url = 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?language=fr&inputtype=textquery&fields=name,geometry&key=' + process.env.VUE_APP_GOOGLE_API_KEY + '&input=' + searchInput;
                             let result = await fetch(url);
                             result = await result.json();

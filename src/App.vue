@@ -34,12 +34,24 @@
             <v-list-item-title>Activities</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item to="/profile">
+          <v-list-item-action>
+            <v-icon>mdi-account</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Profile</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
     <v-app-bar app color="blue-grey darken-3" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Activity Tracker - 1.2.0</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn icon to="/logout">
+        <v-icon>mdi-logout</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-content>

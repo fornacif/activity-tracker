@@ -22,6 +22,23 @@ const routes = [
     }
   },
   {
+    path: '/logout',
+    name: 'Logout',
+    component: function () {
+      return import('./components/Logout.vue')
+    }
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: function () {
+      return import('./components/Profile.vue')
+    },
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '/activities',
     name: 'Activities',
     component: function () {

@@ -14,9 +14,11 @@ firebase.initializeApp(config);
 const firestore = firebase.firestore();
 const auth = firebase.auth();
 const activitiesCollection = firestore.collection('activities');
+const accountsCollection = firestore.collection('accounts');
 
 export {
     firestore,
     auth,
-    activitiesCollection
+    activitiesCollection,
+    accountsCollection
 }
