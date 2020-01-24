@@ -10,6 +10,7 @@
             <v-list-item-title>Dashboard</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-divider :inset="inset"></v-divider>
         <v-list-item to="/activity">
           <v-list-item-action>
             <v-icon>mdi-table-large-plus</v-icon>
@@ -34,6 +35,7 @@
             <v-list-item-title>Activities</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-divider :inset="inset"></v-divider>
         <v-list-item to="/profile">
           <v-list-item-action>
             <v-icon>mdi-account</v-icon>

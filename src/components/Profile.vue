@@ -10,7 +10,7 @@
         <v-card-text>
             <v-form ref="form" v-model="valid" lazy-validation>
                 <v-row dense>
-                    <v-col cols="12" sm="2">
+                    <v-col cols="12" sm="4">
                         <v-text-field label="Pilot License Date" v-model="accountForm.licenseDate" :rules="required" required type="date"/>
                     </v-col>
                 </v-row>
