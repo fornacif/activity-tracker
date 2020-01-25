@@ -118,7 +118,9 @@
                 },
                 categories: [
                   { value: 'CDB', text: 'CDB' },
-                  { value: 'INST', text: 'INST' }
+                  { value: 'INST', text: 'INST' },
+                  { value: 'TEST', text: 'TEST' },
+                  { value: 'EXAM', text: 'EXAM' }
                 ],
                 required: [
                     v => !!v || 'Input is required'

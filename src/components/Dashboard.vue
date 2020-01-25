@@ -289,20 +289,19 @@
         },
         mounted: function () {
 			this.$store.dispatch('getActivities');
-			this.$store.dispatch('getAccount');
         },
         computed: {
 			aggregates: function() {
 				let aggregates = {};
 				let activities = this.$store.state.activities;
 
-				let cdbActivities = this.filterByCategory(activities, 'CDB');
-				let instActivities = this.filterByCategory(activities, 'INST');
+				let cdbActivities = this.filterByCategories(activities, ['CDB']);
+				let instActivities = this.filterByCategories(activities, ['INST', 'TEST', 'EXAM']);
 
 				aggregates.daysSinceLastInstFlight = this.getDaysSinceLastInstFlight(instActivities);
 				aggregates.daysSinceLastInstFlightColor = aggregates.daysSinceLastInstFlight < 90 ? 'green' : 'orange';
 
-				aggregates.daysBeforeRevalidationFlight = this.getDaysBeforeRevalidationFlight();
+				aggregates.daysBeforeRevalidationFlight = this.getDaysBeforeRevalidationFlight(instActivities)['R22'];
 				aggregates.daysBeforeRevalidationFlightColor = aggregates.daysBeforeRevalidationFlight > 30 ? 'green' : 'orange';
 
 				aggregates.totalCdbDuration = this.sumByProperty(cdbActivities, 'duration');
@@ -322,9 +321,9 @@
 			}
         },
         methods: {
-            filterByCategory(activities, category) {
+            filterByCategories(activities, categories) {
 				return activities.filter((activity) => {
-					return activity.category === category;
+					return categories.includes(activity.category);
                 });
             },
             sumByProperty(items, property) {
@@ -393,17 +392,51 @@
 				return result;
             }, 
             getDaysSinceLastInstFlight(instActivities) {
+				if (instActivities.length == 0) {
+					return 0;
+				}
+
 				let now = this.$moment();
 				let lastInstActivityDate = this.$moment(instActivities[0].date);
 				return now.diff(lastInstActivityDate, 'days');
             },
-            getDaysBeforeRevalidationFlight() {
-				let now = this.$moment();
-				let nextLicenseDate = this.$moment(this.$store.state.account.licenseDate).year(now.year());
-				if (nextLicenseDate.isBefore(now)) {
-					nextLicenseDate.year(now.year() + 1);
+            getDaysBeforeRevalidationFlight(instActivities) {
+				if (instActivities.length == 0) {
+					return 0;
 				}
-				return nextLicenseDate.diff(now, 'days');
+
+				let now = this.$moment();
+
+				let lastRevalidationFlightDateByModel = [];
+				let examFlightDateByModel = [];
+
+				instActivities.forEach(activity => {
+					if (activity.category === 'TEST' && !lastRevalidationFlightDateByModel[activity.model]) {
+						lastRevalidationFlightDateByModel[activity.model] = activity.date;
+					}
+					if (activity.category === 'EXAM' && !examFlightDateByModel[activity.model]) {
+						examFlightDateByModel[activity.model] = activity.date;
+					}
+				});
+
+				let daysBeforeRevalidationFlightByModel = [];
+
+				for (const [key, value] of Object.entries(examFlightDateByModel)) {
+					let nextRevalidationFlightDueDate = this.$moment(value).year(now.year());
+					
+					if (nextRevalidationFlightDueDate.isBefore(now)) {
+						nextRevalidationFlightDueDate.year(now.year() + 1);
+					}
+					
+					if (nextRevalidationFlightDueDate.diff(lastRevalidationFlightDateByModel[key], 'days') < 90) {
+						nextRevalidationFlightDueDate.year(nextRevalidationFlightDueDate.year() + 1);
+						daysBeforeRevalidationFlightByModel[key] = nextRevalidationFlightDueDate.diff(now, 'days')
+					}
+
+					daysBeforeRevalidationFlightByModel[key] = nextRevalidationFlightDueDate.diff(now, 'days')
+				}
+
+				return daysBeforeRevalidationFlightByModel;
             }
         }
     }
