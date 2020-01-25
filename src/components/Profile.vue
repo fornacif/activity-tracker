@@ -15,6 +15,16 @@
                     </v-col>
                 </v-row>
                 <v-row dense>
+                    <v-col cols="12" sm="4">
+                        <v-text-field label="Birth Date" v-model="accountForm.birthDate" :rules="required" required type="date"/>
+                    </v-col>
+                </v-row>
+                <v-row dense>
+                    <v-col cols="12" sm="4">
+                        <v-text-field label="Medical Date" v-model="accountForm.medicalDate" :rules="required" required type="date"/>
+                    </v-col>
+                </v-row>
+                <v-row dense>
                     <v-col sm="12">
                         <v-btn color="blue darken-3" dark @click="updateAccount" :loading="$store.state.isLoading">UPDATE</v-btn>
                     </v-col>

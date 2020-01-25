@@ -1,6 +1,40 @@
 <template>
 	<div>
 		<v-row>
+			<v-col cols="12" sm="12">
+				<v-card>
+					<v-banner>
+						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
+							<v-icon dark>mdi-shield-check</v-icon>
+						</v-avatar>
+						Flight checks
+					</v-banner>
+					<v-row dense>
+						<v-col sm="6">
+							<v-card flat>
+								<v-card-subtitle class="subtitle-1">Days since last INST flight</v-card-subtitle>
+								<v-card-text >
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<v-chip outlined label :color="aggregates.daysSinceLastInstFlightColor" v-show="!$store.state.isLoading" >	
+										<span class="title">{{ aggregates.daysSinceLastInstFlight }}</span>
+									</v-chip>
+								</v-card-text>
+							</v-card>
+						</v-col>
+						<v-col sm="6">
+							<v-card flat>
+								<v-card-subtitle class="subtitle-1">Days before revalidation flight</v-card-subtitle>
+								<v-card-text >
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<v-chip outlined label :color="aggregates.daysBeforeRevalidationFlightColor" v-show="!$store.state.isLoading" >	
+										<span class="title">{{ aggregates.daysBeforeRevalidationFlight }}</span>
+									</v-chip>
+								</v-card-text>
+							</v-card>
+						</v-col>
+					</v-row>
+				</v-card>
+			</v-col>
 			<v-col cols="12" sm="6">
 				<v-card>
 					<v-banner>
@@ -264,6 +298,12 @@
 				let cdbActivities = this.filterByCategory(activities, 'CDB');
 				let instActivities = this.filterByCategory(activities, 'INST');
 
+				aggregates.daysSinceLastInstFlight = this.getDaysSinceLastInstFlight(instActivities);
+				aggregates.daysSinceLastInstFlightColor = aggregates.daysSinceLastInstFlight < 90 ? 'green' : 'red';
+
+				aggregates.daysBeforeRevalidationFlight = this.getDaysBeforeRevalidationFlight();
+				aggregates.daysBeforeRevalidationFlightColor = aggregates.daysBeforeRevalidationFlight > 30 ? 'green' : 'red';
+
 				aggregates.totalCdbDuration = this.sumByProperty(cdbActivities, 'duration');
 				aggregates.totalInstDuration = this.sumByProperty(instActivities, 'duration');
 				aggregates.totalCdbFlights = cdbActivities.length;
@@ -350,6 +390,19 @@
 				result.passengerPriceValuesPerYear = this.aggregatesByProperty(items, 'passengerPriceValue');
 				
 				return result;
+            }, 
+            getDaysSinceLastInstFlight(instActivities) {
+				let now = this.$moment();
+				let lastInstActivityDate = this.$moment(instActivities[0].date);
+				return now.diff(lastInstActivityDate, 'days');
+            },
+            getDaysBeforeRevalidationFlight() {
+				let now = this.$moment();
+				let nextLicenseDate = this.$moment(this.$store.state.account.licenseDate).year(now.year());
+				if (nextLicenseDate.isBefore(now)) {
+					nextLicenseDate.year(now.year() + 1);
+				}
+				return nextLicenseDate.diff(now, 'days');
             }
         }
     }
