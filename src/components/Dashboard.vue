@@ -289,6 +289,7 @@
         },
         mounted: function () {
 			this.$store.dispatch('getActivities');
+			this.$store.dispatch('getAccount');
         },
         computed: {
 			aggregates: function() {
@@ -299,10 +300,10 @@
 				let instActivities = this.filterByCategory(activities, 'INST');
 
 				aggregates.daysSinceLastInstFlight = this.getDaysSinceLastInstFlight(instActivities);
-				aggregates.daysSinceLastInstFlightColor = aggregates.daysSinceLastInstFlight < 90 ? 'green' : 'red';
+				aggregates.daysSinceLastInstFlightColor = aggregates.daysSinceLastInstFlight < 90 ? 'green' : 'orange';
 
 				aggregates.daysBeforeRevalidationFlight = this.getDaysBeforeRevalidationFlight();
-				aggregates.daysBeforeRevalidationFlightColor = aggregates.daysBeforeRevalidationFlight > 30 ? 'green' : 'red';
+				aggregates.daysBeforeRevalidationFlightColor = aggregates.daysBeforeRevalidationFlight > 30 ? 'green' : 'orange';
 
 				aggregates.totalCdbDuration = this.sumByProperty(cdbActivities, 'duration');
 				aggregates.totalInstDuration = this.sumByProperty(instActivities, 'duration');
