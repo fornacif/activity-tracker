@@ -11,7 +11,17 @@
             <v-chip :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
         </template>
         <template v-slot:item.action="{ item }">
-          <v-icon small @click="deleteActivity(item)">mdi-delete</v-icon>
+            <v-speed-dial v-model="item.selected" direction="left">
+                <template v-slot:activator>
+                    <v-btn text x-small v-model="item.selected" fab>
+                      <v-icon v-if="item.selected">mdi-close</v-icon>
+                      <v-icon v-else>mdi-delete</v-icon>
+                    </v-btn>
+                </template>
+              <v-btn fab x-small>
+                <v-icon @click="deleteActivity(item)">mdi-trash-can</v-icon>
+                </v-btn>
+            </v-speed-dial>
         </template>
         <template v-slot:item.date="{ item }">
            {{ $moment(item.date).format('DD/MM/YYYY') }}
