@@ -10,7 +10,7 @@
 						Flight checks
 					</v-banner>
 					<v-row dense>
-						<v-col sm="6">
+						<v-col sm="4">
 							<v-card flat>
 								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
@@ -21,7 +21,7 @@
 								<v-card-subtitle class="subtitle-1">Days since last INST flight</v-card-subtitle>
 							</v-card>
 						</v-col>
-						<v-col sm="6">
+						<v-col sm="4">
 							<v-card flat>
 								
 								<v-card-title>
@@ -31,6 +31,18 @@
 									</v-chip>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-1">Days before revalidation flight</v-card-subtitle>
+							</v-card>
+						</v-col>
+						<v-col sm="4">
+							<v-card flat>
+								
+								<v-card-title>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<v-chip outlined :color="aggregates.daysSinceLastCdbFlightColor" v-show="!$store.state.isLoading" >	
+										<span class="title">{{ aggregates.daysSinceLastCdbFlight }}</span>
+									</v-chip>
+								</v-card-title>
+								<v-card-subtitle class="subtitle-1">Days since last CDB flight</v-card-subtitle>
 							</v-card>
 						</v-col>
 					</v-row>
@@ -301,6 +313,9 @@
 
 				aggregates.daysSinceLastInstFlight = this.getDaysSinceLastInstFlight(instActivities);
 				aggregates.daysSinceLastInstFlightColor = aggregates.daysSinceLastInstFlight < 90 ? 'green' : 'orange';
+
+				aggregates.daysSinceLastCdbFlight = this.getDaysSinceLastInstFlight(cdbActivities);
+				aggregates.daysSinceLastCdbFlightColor = aggregates.daysSinceLastCdbFlight < 30 ? 'green' : 'orange';
 
 				aggregates.daysBeforeRevalidationFlight = this.getDaysBeforeRevalidationFlight(instActivities)['R22'];
 				aggregates.daysBeforeRevalidationFlightColor = aggregates.daysBeforeRevalidationFlight > 30 ? 'green' : 'orange';
