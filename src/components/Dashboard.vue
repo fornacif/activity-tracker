@@ -12,24 +12,25 @@
 					<v-row dense>
 						<v-col sm="6">
 							<v-card flat>
-								<v-card-subtitle class="subtitle-1">Days since last INST flight</v-card-subtitle>
-								<v-card-text >
+								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-									<v-chip outlined label :color="aggregates.daysSinceLastInstFlightColor" v-show="!$store.state.isLoading" >	
+									<v-chip outlined :color="aggregates.daysSinceLastInstFlightColor" v-show="!$store.state.isLoading" >	
 										<span class="title">{{ aggregates.daysSinceLastInstFlight }}</span>
 									</v-chip>
-								</v-card-text>
+								</v-card-title>
+								<v-card-subtitle class="subtitle-1">Days since last INST flight</v-card-subtitle>
 							</v-card>
 						</v-col>
 						<v-col sm="6">
 							<v-card flat>
-								<v-card-subtitle class="subtitle-1">Days before revalidation flight</v-card-subtitle>
-								<v-card-text >
+								
+								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-									<v-chip outlined label :color="aggregates.daysBeforeRevalidationFlightColor" v-show="!$store.state.isLoading" >	
+									<v-chip outlined :color="aggregates.daysBeforeRevalidationFlightColor" v-show="!$store.state.isLoading" >	
 										<span class="title">{{ aggregates.daysBeforeRevalidationFlight }}</span>
 									</v-chip>
-								</v-card-text>
+								</v-card-title>
+								<v-card-subtitle class="subtitle-1">Days before revalidation flight</v-card-subtitle>
 							</v-card>
 						</v-col>
 					</v-row>
@@ -46,29 +47,29 @@
 					<v-row dense>
 						<v-col sm="4">
 							<v-card flat>
-								<v-card-subtitle class="subtitle-1">Total Duration</v-card-subtitle>
-								<v-card-text class="title">
+								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbDuration | numeral('0,0.00') }}h</span>				
-								</v-card-text>
+								</v-card-title>
+								<v-card-subtitle class="subtitle-1">Total Duration</v-card-subtitle>
 							</v-card>
 						</v-col>
 						<v-col sm="4">
 							<v-card flat>
-								<v-card-subtitle class="subtitle-1">Total Flights</v-card-subtitle>
-								<v-card-text class="title">
+								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbFlights }}</span>
-								</v-card-text>
+								</v-card-title>
+								<v-card-subtitle class="subtitle-1">Total Flights</v-card-subtitle>
 							</v-card>
 						</v-col>
 						<v-col sm="4">
 							<v-card flat>
-								<v-card-subtitle class="subtitle-1">Passenger Flights</v-card-subtitle>
-								<v-card-text class="title">
+								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengerFlights }}</span>
-								</v-card-text>
+								</v-card-title>
+								<v-card-subtitle class="subtitle-1">Passenger Flights</v-card-subtitle>
 							</v-card>
 						</v-col>
 					</v-row>
@@ -85,20 +86,20 @@
 					<v-row dense>
 						<v-col sm="4">
 							<v-card flat>
-								<v-card-subtitle class="subtitle-1">Total Duration</v-card-subtitle>
-								<v-card-text class="title">
+								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalInstDuration | numeral('0,0.00') }}h</span>
-								</v-card-text>
+								</v-card-title>
+								<v-card-subtitle class="subtitle-1">Total Duration</v-card-subtitle>
 							</v-card>
 						</v-col>
 						<v-col sm="4">
 							<v-card flat>
-								<v-card-subtitle class="subtitle-1">Total Flights</v-card-subtitle>
-								<v-card-text class="title">
+								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalInstFlights }}</span>
-								</v-card-text>
+								</v-card-title>
+								<v-card-subtitle class="subtitle-1">Total Flights</v-card-subtitle>
 							</v-card>
 						</v-col>
 					</v-row>
@@ -118,20 +119,20 @@
 					<v-row dense>
 						<v-col sm="6">
 							<v-card flat>
-								<v-card-subtitle class="subtitle-1">Total Price</v-card-subtitle>
-								<v-card-text class="title">
+								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }}€</span>
-								</v-card-text>
+								</v-card-title>
+								<v-card-subtitle class="subtitle-1">Total Price</v-card-subtitle>
 							</v-card>
 						</v-col>
 						<v-col sm="6">
-							<v-card flat>
-								<v-card-subtitle class="subtitle-1">Passenger Price</v-card-subtitle>
-								<v-card-text class="title">
+							<v-card flat>						
+								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengerPrice | numeral('0,0') }}€</span>
-								</v-card-text>
+								</v-card-title>
+								<v-card-subtitle class="subtitle-1">Passenger Price</v-card-subtitle>
 							</v-card>
 						</v-col>			
 					</v-row>
@@ -148,11 +149,11 @@
 					<v-row dense>
 						<v-col sm="6">
 							<v-card flat>
-								<v-card-subtitle class="subtitle-1">Total Price</v-card-subtitle>
-								<v-card-text class="title">
+								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }}€</span>
-								</v-card-text>
+								</v-card-title>
+								<v-card-subtitle class="subtitle-1">Total Price</v-card-subtitle>
 							</v-card>
 						</v-col>			
 					</v-row>
