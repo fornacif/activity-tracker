@@ -329,7 +329,19 @@
 
 				});
 
-				return Array.from(items.values());
+				let result = Array.from(items.values());
+
+				let totalItem = {
+						year: "TOTAL",
+						count: this.sumByProperty(result, "count"),
+						duration: this.sumByProperty(result, "duration"),
+						price: this.sumByProperty(result, "price"),
+						passengerPrice: this.sumByProperty(result, "passengerPrice")
+					};
+
+				result.push(totalItem);
+
+				return result;
             }, 
             getDaysSinceLastInstFlight(instActivities) {
 				if (instActivities.length == 0) {
