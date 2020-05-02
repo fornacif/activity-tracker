@@ -1,35 +1,37 @@
 <template>
   <div>
-    <v-banner>
-        <v-avatar slot="icon" color="blue-grey darken-3" size="40">
-            <v-icon dark>mdi-table-large</v-icon>
-        </v-avatar>
-        Flight records
-    </v-banner>
-
-            <v-text-field v-model="search" append-icon="mdi-magnify" label="Type to search..." single-line hide-details></v-text-field>
-
-    <v-data-table :items="$store.state.activities" :headers="headers" :items-per-page="10" :search="search" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading...">
-        <template v-slot:item.category="{ item }">
-            <v-chip :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
-        </template>
-        <template v-slot:item.action="{ item }">
-            <v-speed-dial v-model="item.selected" direction="left">
-                <template v-slot:activator>
-                    <v-btn text x-small v-model="item.selected" fab>
-                      <v-icon v-if="item.selected">mdi-close</v-icon>
-                      <v-icon v-else>mdi-delete</v-icon>
+    <v-card>
+        <v-banner>
+            <v-avatar slot="icon" color="blue-grey darken-3" size="40">
+                <v-icon dark>mdi-table-large</v-icon>
+            </v-avatar>
+            Flight records
+        </v-banner>
+        <v-card-text>
+            <v-text-field v-model="search" prepend-icon="mdi-magnify" label="Type to search..." clearable single-line hide-details dense></v-text-field>
+        </v-card-text>
+        <v-data-table :items="$store.state.activities" :headers="headers" :items-per-page="10" :search="search" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading...">
+            <template v-slot:item.category="{ item }">
+                <v-chip :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
+            </template>
+            <template v-slot:item.action="{ item }">
+                <v-speed-dial v-model="item.selected" direction="left">
+                    <template v-slot:activator>
+                        <v-btn text x-small v-model="item.selected" fab>
+                          <v-icon v-if="item.selected">mdi-close</v-icon>
+                          <v-icon v-else>mdi-delete</v-icon>
+                        </v-btn>
+                    </template>
+                  <v-btn fab x-small>
+                    <v-icon @click="deleteActivity(item)">mdi-trash-can</v-icon>
                     </v-btn>
-                </template>
-              <v-btn fab x-small>
-                <v-icon @click="deleteActivity(item)">mdi-trash-can</v-icon>
-                </v-btn>
-            </v-speed-dial>
-        </template>
-        <template v-slot:item.date="{ item }">
-           {{ $moment(item.date).format('DD/MM/YYYY') }}
-        </template>
-    </v-data-table>
+                </v-speed-dial>
+            </template>
+            <template v-slot:item.date="{ item }">
+               {{ $moment(item.date).format('DD/MM/YYYY') }}
+            </template>
+        </v-data-table>
+    </v-card>
   </div>
 </template>
 
