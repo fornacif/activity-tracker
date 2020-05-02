@@ -6,7 +6,10 @@
         </v-avatar>
         Flight records
     </v-banner>
-    <v-data-table :items="$store.state.activities" :headers="headers" :items-per-page="10" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading...">
+
+            <v-text-field v-model="search" append-icon="mdi-magnify" label="Type to search..." single-line hide-details></v-text-field>
+
+    <v-data-table :items="$store.state.activities" :headers="headers" :items-per-page="10" :search="search" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading...">
         <template v-slot:item.category="{ item }">
             <v-chip :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
         </template>
@@ -35,23 +38,24 @@
     export default {
         data() {
             return {
+                search: '',
                 headers: [
-                    { text: 'Date', value: 'date', sortable: true },
-                    { text: 'Model', value: 'model', sortable: true },
-                    { text: 'Registration', value: 'registration', sortable: true },
-                    { text: 'Category', value: 'category', sortable: true },
-                    { text: 'From Location', value: 'fromLocation.code', sortable: true },
-                    { text: 'To Location', value: 'toLocation.code', sortable: true },
-                    { text: 'Duration', value: 'duration', sortable: true },
-                    { text: 'Start Time', value: 'startTime', sortable: true },
-                    { text: 'End Time', value: 'endTime', sortable: true },
-                    { text: 'Total Time', value: 'totalTime', sortable: true },
-                    { text: 'Gas', value: 'gas', sortable: true },
-                    { text: 'Price', value: 'price', sortable: true },
-                    { text: 'Passengers', value: 'passengers', sortable: true },
-                    { text: 'Shared', value: 'shared', sortable: true },
-                    { text: 'Passenger Price', value: 'passengerPrice', sortable: true },
-                    { text: 'Action', value: 'action', sortable: false },
+                    { text: 'DATE', value: 'date', sortable: true },
+                    { text: 'MODEL', value: 'model', sortable: true },
+                    { text: 'REGISTRATION', value: 'registration', sortable: true },
+                    { text: 'CATEGORY', value: 'category', sortable: true },
+                    { text: 'FROM', value: 'fromLocation.code', sortable: true },
+                    { text: 'TO', value: 'toLocation.code', sortable: true },
+                    { text: 'DURATION', value: 'duration', sortable: true },
+                    { text: 'START', value: 'startTime', sortable: true },
+                    { text: 'END', value: 'endTime', sortable: true },
+                    { text: 'TOTAL', value: 'totalTime', sortable: true },
+                    { text: 'GAS', value: 'gas', sortable: true },
+                    { text: 'PRICE', value: 'price', sortable: true },
+                    { text: 'PASSENGERS', value: 'passengers', sortable: true },
+                    { text: 'SHARED', value: 'shared', sortable: true },
+                    { text: 'PAX PRICE', value: 'passengerPrice', sortable: true },
+                    { text: 'ACTION', value: 'action', sortable: false },
                 ]
             }
         },
