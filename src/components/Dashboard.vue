@@ -194,6 +194,9 @@
 						<v-col cols="12" sm="2">
 							<v-select :items="aggregates.models" v-model="modelFilter" label="Filter by Model" multiple dense outlined></v-select>
 						</v-col>
+						<v-col cols="12" sm="1">
+							<v-btn icon @click="resetFilters"><v-icon>mdi-close</v-icon></v-btn>
+						</v-col>
 					</v-row>
 
 					<v-data-table :items="aggregates.all" :headers="headers" :items-per-page="10" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading...">
@@ -342,7 +345,12 @@
 				result.push(totalItem);
 
 				return result;
-            }, 
+            },
+			resetFilters() {
+				this.categoryFilter = [];
+				this.registrationFilter = [];
+				this.modelFilter = [];
+            },
             getDaysSinceLastInstFlight(instActivities) {
 				if (instActivities.length == 0) {
 					return 0;
