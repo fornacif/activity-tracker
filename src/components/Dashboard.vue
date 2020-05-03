@@ -391,7 +391,7 @@
 						nextTestFlightDueDate.add(1, "years");
 					}
 					
-					daysBeforeTestFlightByModel[year] = nextTestFlightDueDate.diff(now, 'days')
+					daysBeforeTestFlightByModel[year] = nextTestFlightDueDate.diff(now, 'days');
 				}
 
 				return daysBeforeTestFlightByModel;
