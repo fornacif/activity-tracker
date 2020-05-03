@@ -47,7 +47,7 @@
                             label="To Location"
                             prepend-icon="mdi-database-search"
                             return-object
-
+                            item-text="name"
                             :filter="noFilter"
                             :rules="required"
                             required/>
