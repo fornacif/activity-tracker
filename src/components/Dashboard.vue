@@ -253,10 +253,10 @@
 				let cdbActivities = this.filterByCategories(activities, ['CDB']);
 				let instActivities = this.filterByCategories(activities, ['INST', 'TEST', 'EXAM']);
 
-				aggregates.daysSinceLastInstFlight = this.getDaysSinceLastInstFlight(instActivities);
+				aggregates.daysSinceLastInstFlight = this.getDaysSinceLastFlight(instActivities);
 				aggregates.daysSinceLastInstFlightColor = aggregates.daysSinceLastInstFlight < 90 ? 'green' : 'orange';
 
-				aggregates.daysSinceLastCdbFlight = this.getDaysSinceLastInstFlight(cdbActivities);
+				aggregates.daysSinceLastCdbFlight = this.getDaysSinceLastFlight(cdbActivities);
 				aggregates.daysSinceLastCdbFlightColor = aggregates.daysSinceLastCdbFlight < 30 ? 'green' : 'orange';
 
 				aggregates.daysBeforeTestFlight = this.getDaysBeforeTestFlight(instActivities)['R22'];
@@ -351,14 +351,14 @@
 				this.registrationFilter = [];
 				this.modelFilter = [];
             },
-            getDaysSinceLastInstFlight(instActivities) {
-				if (instActivities.length == 0) {
+            getDaysSinceLastFlight(activities) {
+				if (activities.length == 0) {
 					return 0;
 				}
 
 				let now = this.$moment();
-				let lastInstActivityDate = this.$moment(instActivities[0].date);
-				return now.diff(lastInstActivityDate, 'days');
+				let lastActivityDate = this.$moment(activities[0].date);
+				return now.diff(lastActivityDate, 'days');
             },
             getDaysBeforeTestFlight(instActivities) {
 				if (instActivities.length == 0) {
