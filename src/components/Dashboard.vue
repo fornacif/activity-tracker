@@ -15,7 +15,7 @@
 								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
 									<v-chip outlined :color="aggregates.daysSinceLastInstFlightColor" v-show="!$store.state.isLoading" >	
-										<span class="title">{{ aggregates.daysSinceLastInstFlight }}d</span>
+										<span class="title">{{ aggregates.daysSinceLastInstFlight }} d</span>
 									</v-chip>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">Since last INST flight</v-card-subtitle>
@@ -26,8 +26,8 @@
 								
 								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-									<v-chip outlined :color="aggregates.daysBeforeRevalidationFlightColor" v-show="!$store.state.isLoading" >	
-										<span class="title">{{ aggregates.daysBeforeRevalidationFlight }}d</span>
+									<v-chip outlined :color="aggregates.daysBeforeTestFlightColor" v-show="!$store.state.isLoading" >	
+										<span class="title">{{ aggregates.daysBeforeTestFlight }} d</span>
 									</v-chip>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">Before test flight</v-card-subtitle>
@@ -39,7 +39,7 @@
 								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
 									<v-chip outlined :color="aggregates.daysSinceLastCdbFlightColor" v-show="!$store.state.isLoading" >	
-										<span class="title">{{ aggregates.daysSinceLastCdbFlight }}d</span>
+										<span class="title">{{ aggregates.daysSinceLastCdbFlight }} d</span>
 									</v-chip>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">Since last CDB flight</v-card-subtitle>
@@ -259,8 +259,8 @@
 				aggregates.daysSinceLastCdbFlight = this.getDaysSinceLastInstFlight(cdbActivities);
 				aggregates.daysSinceLastCdbFlightColor = aggregates.daysSinceLastCdbFlight < 30 ? 'green' : 'orange';
 
-				aggregates.daysBeforeRevalidationFlight = this.getDaysBeforeRevalidationFlight(instActivities)['R22'];
-				aggregates.daysBeforeRevalidationFlightColor = aggregates.daysBeforeRevalidationFlight > 30 ? 'green' : 'orange';
+				aggregates.daysBeforeTestFlight = this.getDaysBeforeTestFlight(instActivities)['R22'];
+				aggregates.daysBeforeTestFlightColor = aggregates.daysBeforeTestFlight > 30 ? 'green' : 'orange';
 
 				aggregates.totalCdbDuration = this.sumByProperty(cdbActivities, 'duration');
 				aggregates.totalInstDuration = this.sumByProperty(instActivities, 'duration');
@@ -360,43 +360,41 @@
 				let lastInstActivityDate = this.$moment(instActivities[0].date);
 				return now.diff(lastInstActivityDate, 'days');
             },
-            getDaysBeforeRevalidationFlight(instActivities) {
+            getDaysBeforeTestFlight(instActivities) {
 				if (instActivities.length == 0) {
 					return 0;
 				}
 
 				let now = this.$moment();
 
-				let lastRevalidationFlightDateByModel = [];
-				let examFlightDateByModel = [];
+				let lastExamFlightDateByModel = [];
+				let lastTestFlightDateByModel = [];
 
 				instActivities.forEach(activity => {
-					if (activity.category === 'TEST' && !lastRevalidationFlightDateByModel[activity.model]) {
-						lastRevalidationFlightDateByModel[activity.model] = activity.date;
+					if (activity.category === 'EXAM' && !lastExamFlightDateByModel[activity.model]) {
+						lastExamFlightDateByModel[activity.model] = activity.date;
 					}
-					if (activity.category === 'EXAM' && !examFlightDateByModel[activity.model]) {
-						examFlightDateByModel[activity.model] = activity.date;
+					if (activity.category === 'TEST' && !lastTestFlightDateByModel[activity.model]) {
+						lastTestFlightDateByModel[activity.model] = activity.date;
 					}
 				});
 
-				let daysBeforeRevalidationFlightByModel = [];
+				let daysBeforeTestFlightByModel = [];
 
-				for (const [key, value] of Object.entries(examFlightDateByModel)) {
-					let nextRevalidationFlightDueDate = this.$moment(value).year(now.year());
+				for (const [year, value] of Object.entries(lastExamFlightDateByModel)) {
+					let lastExamFlightDate = this.$moment(value);
+					let lastTestFlightDate = this.$moment(lastTestFlightDateByModel[year]);
+					let nextTestFlightDueDate = this.$moment(lastExamFlightDate).year(now.year()).endOf('month');	
+					let nextTestFlightStartDate = this.$moment(lastExamFlightDate).year(now.year()).subtract(3, "months");
 					
-					if (nextRevalidationFlightDueDate.isBefore(now)) {
-						nextRevalidationFlightDueDate.year(now.year() + 1);
+					if (lastExamFlightDate.isAfter(nextTestFlightStartDate) || (lastTestFlightDate && lastTestFlightDate.isAfter(nextTestFlightStartDate))) {
+						nextTestFlightDueDate.add(1, "years");
 					}
 					
-					if (nextRevalidationFlightDueDate.diff(lastRevalidationFlightDateByModel[key], 'days') < 90) {
-						nextRevalidationFlightDueDate.year(nextRevalidationFlightDueDate.year() + 1);
-						daysBeforeRevalidationFlightByModel[key] = nextRevalidationFlightDueDate.diff(now, 'days')
-					}
-
-					daysBeforeRevalidationFlightByModel[key] = nextRevalidationFlightDueDate.diff(now, 'days')
+					daysBeforeTestFlightByModel[year] = nextTestFlightDueDate.diff(now, 'days')
 				}
 
-				return daysBeforeRevalidationFlightByModel;
+				return daysBeforeTestFlightByModel;
             }
         }
     }
