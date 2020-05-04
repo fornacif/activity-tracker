@@ -81,7 +81,7 @@
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengerFlights }}</span>
 								</v-card-title>
-								<v-card-subtitle class="subtitle-2">Passenger Flights</v-card-subtitle>
+								<v-card-subtitle class="subtitle-2">PAX Flights</v-card-subtitle>
 							</v-card>
 						</v-col>
 					</v-row>
