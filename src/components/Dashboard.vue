@@ -2,50 +2,50 @@
 	<div>
 		<v-row>
 			<v-col cols="12" sm="12">
-				<v-card>
+				<v-card >
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 							<v-icon dark>mdi-shield-check</v-icon>
 						</v-avatar>
 						Flight checks
 					</v-banner>
-					<v-row dense>
-						<v-col sm="4">
-							<v-card flat>
-								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-									<v-chip outlined :color="aggregates.daysSinceLastInstFlightColor" v-show="!$store.state.isLoading" >	
-										<span class="title">{{ aggregates.daysSinceLastInstFlight }} d</span>
-									</v-chip>
-								</v-card-title>
-								<v-card-subtitle class="subtitle-2">Since last INST flight</v-card-subtitle>
-							</v-card>
-						</v-col>
-						<v-col sm="4">
-							<v-card flat>
-								
-								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-									<v-chip outlined :color="aggregates.daysBeforeTestFlightColor" v-show="!$store.state.isLoading" >	
-										<span class="title">{{ aggregates.daysBeforeTestFlight }} d</span>
-									</v-chip>
-								</v-card-title>
-								<v-card-subtitle class="subtitle-2">Before test flight</v-card-subtitle>
-							</v-card>
-						</v-col>
-						<v-col sm="4">
-							<v-card flat>
-								
-								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-									<v-chip outlined :color="aggregates.daysSinceLastCdbFlightColor" v-show="!$store.state.isLoading" >	
-										<span class="title">{{ aggregates.daysSinceLastCdbFlight }} d</span>
-									</v-chip>
-								</v-card-title>
-								<v-card-subtitle class="subtitle-2">Since last CDB flight</v-card-subtitle>
-							</v-card>
-						</v-col>
-					</v-row>
+                    <v-card-text>
+                      <v-simple-table>
+                        <template v-slot:default>
+                          <thead>
+                            <tr>
+                              <th class="text-left">MODEL</th>
+                              <th class="text-left">SINCE LAST INST FLIGHT</th>
+                              <th class="text-left">BEFORE TEST FLIGHT</th>
+                              <th class="text-left">SINCE LAST CDB FLIGHT</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr v-for="item in aggregates.daysByModel" :key="item.model">
+                              <td><v-chip color="blue-grey darken-1" dark>{{ item.model }}</v-chip></td>
+                              <td>
+                                <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+                                <v-chip outlined :color="item.daysSinceLastInstFlightColor" v-show="!$store.state.isLoading">
+                                 <span class="title">{{ item.daysSinceLastInstFlight }} d</span>
+                                </v-chip>
+                              </td>
+                              <td>
+                                <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+                                <v-chip outlined :color="item.daysBeforeTestFlightColor" v-show="!$store.state.isLoading">
+                                 <span class="title">{{ item.daysBeforeTestFlight }} d</span>
+                                </v-chip>
+                              </td>
+                              <td>
+                                <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+                                <v-chip outlined :color="item.daysSinceLastCdbFlightColor" v-show="!$store.state.isLoading">
+                                 <span class="title">{{ item.daysSinceLastCdbFlight }} d</span>
+                                </v-chip>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </template>
+                      </v-simple-table>
+                  </v-card-text>                  
 				</v-card>
 			</v-col>
 			<v-col cols="12" sm="6">
@@ -200,6 +200,9 @@
 					</v-row>
 
 					<v-data-table :items="aggregates.all" :headers="headers" :items-per-page="10" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading...">
+                        <template v-slot:item.year="{ item }">
+                          <strong>{{ item.year }}</strong>
+                        </template>
 						<template v-slot:item.duration="{ item }">
 							{{ item.duration | numeral('0,0.00') }} h
 						</template>
@@ -252,15 +255,24 @@
 
 				let cdbActivities = this.filterByCategories(activities, ['CDB']);
 				let instActivities = this.filterByCategories(activities, ['INST', 'TEST', 'EXAM']);
-
-				aggregates.daysSinceLastInstFlight = this.getDaysSinceLastFlight(instActivities);
-				aggregates.daysSinceLastInstFlightColor = aggregates.daysSinceLastInstFlight < 90 ? 'green' : 'orange';
-
-				aggregates.daysSinceLastCdbFlight = this.getDaysSinceLastFlight(cdbActivities);
-				aggregates.daysSinceLastCdbFlightColor = aggregates.daysSinceLastCdbFlight < 30 ? 'green' : 'orange';
-
-				aggregates.daysBeforeTestFlight = this.getDaysBeforeTestFlight(instActivities)['R22'];
-				aggregates.daysBeforeTestFlightColor = aggregates.daysBeforeTestFlight > 30 ? 'green' : 'orange';
+				
+				aggregates.daysByModel = [];
+				
+				for (const [model, daysBeforeTestFlight] of Object.entries(this.getDaysBeforeTestFlight(instActivities))) {
+					let daysByModel = {};
+					daysByModel.model = model;
+					
+					daysByModel.daysBeforeTestFlight = daysBeforeTestFlight;
+					daysByModel.daysBeforeTestFlightColor = daysByModel.daysBeforeTestFlight > 30 ? 'green' : 'orange';
+					
+					daysByModel.daysSinceLastInstFlight = this.getDaysSinceLastFlight(this.filterByModel(instActivities, model));
+					daysByModel.daysSinceLastInstFlightColor = daysByModel.daysSinceLastInstFlight < 90 ? 'green' : 'orange';
+					
+					daysByModel.daysSinceLastCdbFlight = this.getDaysSinceLastFlight(this.filterByModel(cdbActivities, model));
+					daysByModel.daysSinceLastCdbFlightColor = daysByModel.daysSinceLastCdbFlight < 30 ? 'green' : 'orange';
+					
+					aggregates.daysByModel.push(daysByModel);
+				}
 
 				aggregates.totalCdbDuration = this.sumByProperty(cdbActivities, 'duration');
 				aggregates.totalInstDuration = this.sumByProperty(instActivities, 'duration');
@@ -285,6 +297,11 @@
             filterByCategories(activities, categories) {
 				return activities.filter((activity) => {
 					return categories.includes(activity.category);
+                });
+            },
+            filterByModel(activities, model) {
+				return activities.filter((activity) => {
+					return activity.model == model;
                 });
             },
             sumByProperty(items, property) {
