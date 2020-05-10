@@ -27,23 +27,25 @@
                     </v-card-title>
         
                     <v-card-text>
+                      <v-form ref="aircraftsForm" v-model="valid" lazy-validation>
                       <v-row dense>
                         <v-col cols="12" sm="4">
-                          <v-text-field v-model="aircraftForm.registration" label="Registration" required></v-text-field>
+                          <v-text-field v-model="aircraftForm.registration" label="Registration" :rules="required" required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="4">
-                          <v-text-field v-model="aircraftForm.model" label="Model" required></v-text-field>
+                          <v-text-field v-model="aircraftForm.model" label="Model" :rules="required" required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="4">
-                          <v-text-field v-model="aircraftForm.fuel" label="Fuel" v-mask="'####'" required></v-text-field>
+                          <v-text-field v-model="aircraftForm.fuel" label="Fuel" v-mask="'####'" :rules="required" required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="4">
-                          <v-text-field v-model="aircraftForm.cdbPrice" label="CDB Price" v-mask="'####'" required></v-text-field>
+                          <v-text-field v-model="aircraftForm.cdbPrice" label="CDB Price" v-mask="'####'" :rules="required" required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="4">
-                          <v-text-field v-model="aircraftForm.instPrice" label="INST Price" v-mask="'####'" required></v-text-field>
+                          <v-text-field v-model="aircraftForm.instPrice" label="INST Price" v-mask="'####'" :rules="required" required></v-text-field>
                         </v-col>
                       </v-row>
+                      </v-form>
                     </v-card-text>
         
                     <v-card-actions>
@@ -79,7 +81,7 @@
               </v-row>
               <v-row dense>
                   <v-col sm="12">
-                      <v-btn color="blue darken-3" dark @click="updateProfile" :loading="$store.state.isLoading">UPDATE</v-btn>
+                      <v-btn @click="updateProfile" :loading="$store.state.isLoading">UPDATE</v-btn>
                   </v-col>
               </v-row>
             </v-form>
@@ -142,7 +144,7 @@
 				this.$store.dispatch('setProfile', this.profileForm);
             },
             saveAircraft() {
-				if (this.$refs.form.validate()) {
+				if (this.$refs.aircraftsForm.validate()) {
 					if (this.editedIndex > -1) {
 						Object.assign(this.profileForm.aircrafts[this.editedIndex], this.aircraftForm);
                     } else {
@@ -153,7 +155,9 @@
 				}
             },
             closeDialog() {
+				this.$refs.form.resetValidation();
 				this.aircraftForm = {};
+				
 				this.dialog = false;
 				this.editedIndex = -1;
             },

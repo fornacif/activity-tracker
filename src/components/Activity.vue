@@ -305,7 +305,7 @@
                 delete this.activityForm.startTime;
                 delete this.activityForm.passengers;
                 this.activityForm.shared = false;
-                this.activityForm.passengerPrice = 0; 
+                this.activityForm.passengerPrice = 0;
             }
         }
     }
