@@ -139,6 +139,7 @@
             deleteAircraft(item) {
 				const index = this.profileForm.aircrafts.indexOf(item);
 				this.profileForm.aircrafts.splice(index, 1);
+				this.$store.dispatch('setProfile', this.profileForm);
             },
             saveAircraft() {
 				if (this.$refs.form.validate()) {
