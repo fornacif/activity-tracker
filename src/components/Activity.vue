@@ -11,10 +11,7 @@
             <v-form ref="form" v-model="valid" lazy-validation>
                 <v-row dense>
                     <v-col cols="12" sm="2">
-                        <v-radio-group v-model="activityForm.model" row>
-                          <v-radio label="R22" value="R22"/>
-                          <v-radio label="R44" value="R44"/>
-                        </v-radio-group>
+                        <v-select label="Aircraft Model" v-model="activityForm.model" :items="$store.state.account.models"></v-select>
                     </v-col>
                     <v-col cols="12" sm="2">
                         <v-text-field label="Aircraft Registration" v-model="activityForm.registration" v-mask="'A-AAAA'" :rules="required" required/>
@@ -134,6 +131,9 @@
                 lastSelectedAutocompleteText: '',
                 isLoading: false
             }
+        },
+        mounted: function () {
+			this.$store.dispatch('getAccount');
         },
         computed: {
             price: function() {

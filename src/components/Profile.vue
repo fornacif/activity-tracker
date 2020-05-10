@@ -7,23 +7,41 @@
             </v-avatar>
             Manage your profile
         </v-banner>
+        
         <v-card-text>
             <v-form ref="form" v-model="valid" lazy-validation>
-                <v-row dense>
-                    <v-col cols="12" sm="4">
-                        <v-text-field label="Birth Date" v-model="accountForm.birthDate" :rules="required" required type="date"/>
-                    </v-col>
-                </v-row>
-                <v-row dense>
-                    <v-col cols="12" sm="4">
-                        <v-text-field label="Medical Date" v-model="accountForm.medicalDate" :rules="required" required type="date"/>
-                    </v-col>
-                </v-row>
-                <v-row dense>
-                    <v-col sm="12">
-                        <v-btn color="blue darken-3" dark @click="updateAccount" :loading="$store.state.isLoading">UPDATE</v-btn>
-                    </v-col>
-                </v-row>
+            
+              <v-row dense>
+                <p class="font-weight-bold">Aircraft Models</p>
+              </v-row>
+              
+                  <v-row dense>
+                      <v-col cols="12" sm="4">
+                          <v-combobox v-model="accountForm.models" :items="models" label="Select or create aircraft models" multiple chips></v-combobox>
+                      </v-col>
+                  </v-row>
+        
+            <v-row dense>
+                <p class="font-weight-bold">Personal Information</p>
+              </v-row>
+
+                  <v-row dense>
+                      <v-col cols="12" sm="4">
+                          <v-text-field label="Birth Date" v-model="accountForm.birthDate" :rules="required" required type="date"/>
+                      </v-col>
+                  </v-row>
+                  
+                  <v-row dense>
+                      <v-col cols="12" sm="4">
+                          <v-text-field label="Medical Date" v-model="accountForm.medicalDate" :rules="required" required type="date"/>
+                      </v-col>
+                  </v-row>
+
+              <v-row dense>
+                  <v-col sm="12">
+                      <v-btn color="blue darken-3" dark @click="updateAccount" :loading="$store.state.isLoading">UPDATE</v-btn>
+                  </v-col>
+              </v-row>
             </v-form>
         </v-card-text>
     </v-card>
@@ -41,6 +59,7 @@
             return {
                 valid: true,
                 accountForm: {},
+                models: ['R22','R44'],
                 required: [
                     v => !!v || 'Input is required'
                 ],

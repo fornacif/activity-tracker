@@ -21,23 +21,34 @@
                             </tr>
                           </thead>
                           <tbody>
+                            <tr v-show="$store.state.isLoading">
+                              <td>
+                                <v-progress-circular indeterminate color="blue darken-3"/>
+                              </td>
+                              <td>
+                                <v-progress-circular indeterminate color="blue darken-3"/>
+                              </td>
+                              <td>
+                                <v-progress-circular indeterminate color="blue darken-3"/>
+                              </td>
+                              <td>
+                                <v-progress-circular indeterminate color="blue darken-3"/>
+                              </td>
+                            </tr>
                             <tr v-for="item in aggregates.daysByModel" :key="item.model">
                               <td><v-chip color="blue-grey darken-1" dark>{{ item.model }}</v-chip></td>
                               <td>
-                                <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-                                <v-chip outlined :color="item.daysSinceLastInstFlightColor" v-show="!$store.state.isLoading">
+                                <v-chip outlined :color="item.daysSinceLastInstFlightColor">
                                  <span class="title">{{ item.daysSinceLastInstFlight }} d</span>
                                 </v-chip>
                               </td>
                               <td>
-                                <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-                                <v-chip outlined :color="item.daysBeforeTestFlightColor" v-show="!$store.state.isLoading">
+                                <v-chip outlined :color="item.daysBeforeTestFlightColor">
                                  <span class="title">{{ item.daysBeforeTestFlight }} d</span>
                                 </v-chip>
                               </td>
                               <td>
-                                <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
-                                <v-chip outlined :color="item.daysSinceLastCdbFlightColor" v-show="!$store.state.isLoading">
+                                <v-chip outlined :color="item.daysSinceLastCdbFlightColor">
                                  <span class="title">{{ item.daysSinceLastCdbFlight }} d</span>
                                 </v-chip>
                               </td>
