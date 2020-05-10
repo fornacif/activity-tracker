@@ -10,7 +10,7 @@
         <v-card-text>
             <v-text-field v-model="search" prepend-icon="mdi-magnify" label="Type to search..." clearable single-line hide-details dense></v-text-field>
         </v-card-text>
-        <v-data-table :items="$store.state.activities" :headers="headers" :items-per-page="10" :search="search" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading...">
+        <v-data-table :items="$store.state.activities" :headers="headers" :items-per-page="10" :search="search" :loading="$store.state.isLoading" loading-text="Loading...">
             <template v-slot:item.category="{ item }">
                 <v-chip :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
             </template>
@@ -24,7 +24,7 @@
                     </template>
                   <v-btn fab x-small>
                     <v-icon @click="deleteActivity(item)">mdi-trash-can</v-icon>
-                    </v-btn>
+                  </v-btn>
                 </v-speed-dial>
             </template>
             <template v-slot:item.date="{ item }">
@@ -52,7 +52,7 @@
                     { text: 'START', value: 'startTime', sortable: true },
                     { text: 'END', value: 'endTime', sortable: true },
                     { text: 'TOTAL', value: 'totalTime', sortable: true },
-                    { text: 'GAS', value: 'gas', sortable: true },
+                    { text: 'FUEL', value: 'fuel', sortable: true },
                     { text: 'PRICE', value: 'price', sortable: true },
                     { text: 'PASSENGERS', value: 'passengers', sortable: true },
                     { text: 'SHARED', value: 'shared', sortable: true },

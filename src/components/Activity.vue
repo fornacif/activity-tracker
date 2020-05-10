@@ -11,10 +11,10 @@
             <v-form ref="form" v-model="valid" lazy-validation>
                 <v-row dense>
                     <v-col cols="12" sm="2">
-                        <v-select label="Aircraft Model" v-model="activityForm.model" :items="$store.state.account.models"></v-select>
+                        <v-select label="Registration" v-model="activityForm.registration" :items="$store.state.profile.aircrafts" item-text="registration" :rules="required" required/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Aircraft Registration" v-model="activityForm.registration" v-mask="'A-AAAA'" :rules="required" required/>
+                        <v-text-field label="Model" v-model="model" readonly></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="2">
                         <v-select label="Category" v-model="activityForm.category" :items="categories" :rules="required" required/>
@@ -67,7 +67,7 @@
                         <v-text-field label="Total Time" v-model="totalTime" readonly type="time"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Gas" v-model="gas" readonly/>
+                        <v-text-field label="Fuel" v-model="fuel" readonly/>
                     </v-col>
                 </v-row>
                 <v-row dense>
@@ -106,8 +106,6 @@
             return {
                 valid: true,
                 activityForm: {
-                    model: 'R22',
-                    registration: 'F-GIHE',
                     category: 'CDB',
                     shared: false,
                     passengerPrice: 0,
@@ -122,6 +120,7 @@
                 required: [
                     v => !!v || 'Input is required'
                 ],
+                aircraft: {},
                 fromLocationItems: [],
                 toLocationItems: [],
                 fromLocationSearchInput: '',
@@ -133,15 +132,24 @@
             }
         },
         mounted: function () {
-			this.$store.dispatch('getAccount');
+			this.$store.dispatch('getProfile');
         },
         computed: {
+			model: function() {
+				if (this.activityForm.registration) {
+					return this.$store.getters.getAircraft(this.activityForm.registration).model;
+				} else {
+					return '';					
+				}
+				
+			},
             price: function() {
-                if (isNaN(this.activityForm.duration)) {
-                    return 0
-                } else {
-                    let unitPrice = this.$store.getters.getPrice(this.activityForm.model, this.activityForm.category);
+                if (this.activityForm.registration && !isNaN(this.activityForm.duration)) {
+					let aircraft = this.$store.getters.getAircraft(this.activityForm.registration);
+                    let unitPrice = this.$store.getters.getPrice(aircraft, this.activityForm.category);
                     return Math.round(this.activityForm.duration * unitPrice * 100) / 100;
+                } else {
+                    return 0
                 }     
             },
             passengerPrice: function() {
@@ -151,12 +159,12 @@
                     return 0;
                 }
             },
-            gas: function() {
-                if (isNaN(this.activityForm.duration)) {
-                    return 0;
+            fuel: function() {
+                if (this.activityForm.registration && !isNaN(this.activityForm.duration)) {
+					let aircraft = this.$store.getters.getAircraft(this.activityForm.registration);
+                    return Math.round(this.activityForm.duration * aircraft.fuel);  
                 } else {
-                    let consumption = this.$store.getters.getConsumption(this.activityForm.model);
-                    return Math.round(this.activityForm.duration * consumption);  
+                    return 0;
                 } 
             },
             endTime: function() {
@@ -177,14 +185,17 @@
             }
         },
         watch: {
+			model: function(value) {
+                this.activityForm.model = value;
+            },
             price: function(value) {
                 this.activityForm.price = value;
             },
             passengerPrice: function(value) {
                 this.activityForm.passengerPrice = value;
             },
-            gas: function(value) {
-                this.activityForm.gas = value;
+            fuel: function(value) {
+                this.activityForm.fuel = value;
             },
             endTime: function(value) {
                 this.activityForm.endTime = value;
@@ -286,8 +297,6 @@
             },
             resetFrorm() {
                 this.$refs.form.resetValidation();
-                this.activityForm.model = 'R22';
-                this.activityForm.registration = 'F-GIHE';
                 this.activityForm.category = 'CDB';
                 delete this.activityForm.fromLocation;
                 delete this.activityForm.toLocation;

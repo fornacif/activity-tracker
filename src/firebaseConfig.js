@@ -14,11 +14,11 @@ firebase.initializeApp(config);
 const firestore = firebase.firestore();
 const auth = firebase.auth();
 const activitiesCollection = firestore.collection('activities');
-const accountsCollection = firestore.collection('accounts');
+const profilesCollection = firestore.collection('profiles');
 
 export {
     firestore,
     auth,
     activitiesCollection,
-    accountsCollection
+    profilesCollection
 }

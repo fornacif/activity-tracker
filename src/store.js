@@ -8,46 +8,35 @@ const firebase = require('./firebaseConfig.js')
 const ADD_ACTIVITY = 'ADD_ACTIVITY';
 const CLEAR_ACTIVITIES = 'CLEAR_ACTIVITIES';
 const NEED_ACTIVITIES_RELOAD = 'NEED_ACTIVITIES_RELOAD';
-const SET_ACCOUNT = 'SET_ACCOUNT';
-const NEED_ACCOUNT_RELOAD = 'NEED_ACCOUNT_RELOAD';
+const SET_PROFILE = 'SET_PROFILE';
+const NEED_PROFILE_RELOAD = 'NEED_PROFILE_RELOAD';
 const IS_LOADING = 'IS_LOADING';
 
 export default new Vuex.Store({
 	state: {
 		activities: [],
-		account: {},
-		needActivitiesReload: true,
-		needAccountReload: true,
-		isLoading: false,
-		prices: { 
-			r22: {cdb: 350, inst: 430 },
-			r44: {cdb: 600, inst: 730 }
+		profile: {
+			aircrafts: []
 		},
-		consumptions: { r22: 33, r44: 66 }
+		needActivitiesReload: true,
+		needProfileReload: true,
+		isLoading: false,
+		aircrafts: {}
 	},
 	getters: {
-		getPrice: (state) => (model, category) => {
-			if (model == 'R22') {
-				if (category == 'CDB') {
-					return state.prices.r22.cdb;
-				} else {
-					return state.prices.r22.inst;
-				}
-			} else if (model == 'R44') {
-				if (category == 'CDB') {
-					return state.prices.r44.cdb;
-				} else {
-					return state.prices.r44.inst;
-				}
+		getAircraft: (state) => (registration) => {
+			let aircrafts = state.profile.aircrafts.filter(aircraft => {
+				return aircraft.registration === registration;
+			});
+			return aircrafts[0];
+		},
+		getPrice: () => (aircraft, category) => {
+			if (category == 'CDB') {
+				return aircraft.cdbPrice;
+			} else {
+				return aircraft.instPrice;
 			}
 		},
-		getConsumption: (state) => (model) => {
-			if (model == 'R22') {
-				return state.consumptions.r22;
-			} else {
-				return state.consumptions.r44;
-			}
-		}
 	},
 	mutations: {
 		[ADD_ACTIVITY]: (state, activity) => {
@@ -59,11 +48,11 @@ export default new Vuex.Store({
 		[NEED_ACTIVITIES_RELOAD]: (state, value) => {
 			state.needActivitiesReload = value;
 		},
-		[SET_ACCOUNT]: (state, account) => {
-			state.account = account;
+		[SET_PROFILE]: (state, profile) => {
+			state.profile = profile;
 		},
-		[NEED_ACCOUNT_RELOAD]: (state, value) => {
-			state.needAccountReload = value;
+		[NEED_PROFILE_RELOAD]: (state, value) => {
+			state.needProfileReload = value;
 		},
 		[IS_LOADING]: (state, value) => {
 			state.isLoading = value;
@@ -112,16 +101,16 @@ export default new Vuex.Store({
 				commit(IS_LOADING, false);
             }
 		},
-		async getAccount({commit, state}) {
-			if (state.needAccountReload) {
+		async getProfile({commit, state}) {
+			if (state.needProfileReload) {
 				try {
 					commit(IS_LOADING, true);
 					let uid = firebase.auth.currentUser.uid;
-					let accountDocs = await firebase.accountsCollection.where('uid', '==', uid).get();
-					accountDocs.forEach(doc => {
-						commit(SET_ACCOUNT, doc.data());
+					let profileDocs = await firebase.profilesCollection.where('uid', '==', uid).get();
+					profileDocs.forEach(doc => {
+						commit(SET_PROFILE, doc.data());
 					})
-					commit(NEED_ACCOUNT_RELOAD, false);
+					commit(NEED_PROFILE_RELOAD, false);
 				} catch(error) {
 					console.error(error);
 				} finally {
@@ -129,14 +118,15 @@ export default new Vuex.Store({
 				}
 			}
 		},
-		async setAccount({commit}, account) {
+		async setProfile({commit}, profile) {
 			try {
 				commit(IS_LOADING, true);
 				let uid = firebase.auth.currentUser.uid;
-				account.uid = uid;
-				let accountDoc = firebase.accountsCollection.doc(uid);
-				await accountDoc.set(account, { merge: true});
-				commit(SET_ACCOUNT, account);
+				profile.uid = uid;
+				let profileDoc = firebase.profilesCollection.doc(uid);
+				await profileDoc.set(profile, { merge: true});
+				commit(SET_PROFILE, profile);
+				commit(NEED_PROFILE_RELOAD, true);
 			} catch(error) {
 				console.error(error);
 			} finally {
