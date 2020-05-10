@@ -5,7 +5,7 @@
             <v-avatar slot="icon" color="blue-grey darken-3" size="40">
                 <v-icon dark>mdi-table-large</v-icon>
             </v-avatar>
-            Flight records
+            Flight Records
         </v-banner>
         <v-card-text>
             <v-text-field v-model="search" prepend-icon="mdi-magnify" label="Type to search..." clearable single-line hide-details dense></v-text-field>

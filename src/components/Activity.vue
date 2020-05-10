@@ -5,7 +5,7 @@
             <v-avatar slot="icon" color="blue-grey darken-3" size="40">
                 <v-icon dark>mdi-table-large-plus</v-icon>
             </v-avatar>
-            Add new flight
+            Add new Flight
         </v-banner>
         <v-card-text>
             <v-form ref="form" v-model="valid" lazy-validation>

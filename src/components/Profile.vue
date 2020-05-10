@@ -5,7 +5,7 @@
             <v-avatar slot="icon" color="blue-grey darken-3" size="40">
                 <v-icon dark>mdi-account</v-icon>
             </v-avatar>
-            Manage your profile
+            Manage your Profile
         </v-banner>
         
         <v-card-text>

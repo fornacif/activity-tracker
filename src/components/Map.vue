@@ -4,7 +4,7 @@
         <v-avatar slot="icon" color="blue-grey darken-3" size="40">
             <v-icon dark>mdi-google-maps</v-icon>
         </v-avatar>
-        Departure and destination points
+        Departure and Destination Points
     </v-banner>
     <GmapMap :center="{lat:48.7519, lng:2.10619}" :zoom="8" map-type-id="terrain" style="width: 100%; height: 76vh">
         <GmapMarker :key="index" v-for="(marker, index) in markers" :position="marker"/>

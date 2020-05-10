@@ -7,7 +7,7 @@
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 							<v-icon dark>mdi-shield-check</v-icon>
 						</v-avatar>
-						Flight checks
+						Flight Checks
 					</v-banner>
                     <v-card-text>
                       <v-simple-table>
