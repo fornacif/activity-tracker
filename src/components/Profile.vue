@@ -147,6 +147,7 @@
                     } else {
 						this.profileForm.aircrafts.push(this.aircraftForm);
                     }
+					this.$store.dispatch('setProfile', this.profileForm);
 					this.closeDialog();
 				}
             },
