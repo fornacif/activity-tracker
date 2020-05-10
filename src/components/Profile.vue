@@ -177,12 +177,13 @@
 				this.dialog = false;
 				this.editedIndex = -1;
             },
-            async updateProfile() {
+            updateProfile() {
                 if (this.$refs.form.validate()) {
                     this.$store.dispatch('setProfile', this.profileForm);
                 }
             },
-			exportActivities() {
+            async exportActivities() {
+				await this.$store.dispatch('getActivities');
 				let data = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.$store.state.activities, null, 2));
 				let exportLink = document.getElementById('exportLink');
 				exportLink.setAttribute("href", data);
