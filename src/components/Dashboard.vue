@@ -23,20 +23,15 @@
                           <tbody>
                             <tr v-show="$store.state.isLoading">
                               <td>
-                                <v-progress-circular indeterminate color="blue darken-3"/>
-                              </td>
-                              <td>
-                                <v-progress-circular indeterminate color="blue darken-3"/>
-                              </td>
-                              <td>
-                                <v-progress-circular indeterminate color="blue darken-3"/>
-                              </td>
-                              <td>
-                                <v-progress-circular indeterminate color="blue darken-3"/>
+                                <v-progress-circular indeterminate color="blue darken-3" width="1"/>
                               </td>
                             </tr>
                             <tr v-for="item in aggregates.daysByModel" :key="item.model">
-                              <td><v-chip color="blue-grey darken-1" dark>{{ item.model }}</v-chip></td>
+                              <td>
+                                <v-chip color="blue-grey darken-1" dark>
+                                  <span class="subitle-1">{{ item.model }}</span>
+                                </v-chip>
+                              </td>
                               <td>
                                 <v-chip outlined :color="item.daysSinceLastInstFlightColor">
                                  <span class="title">{{ item.daysSinceLastInstFlight }} d</span>
@@ -71,7 +66,7 @@
 						<v-col sm="4">
 							<v-card flat>
 								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbDuration | numeral('0,0.00') }} h</span>				
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">Total Duration</v-card-subtitle>
@@ -80,7 +75,7 @@
 						<v-col sm="4">
 							<v-card flat>
 								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbFlights }}</span>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">Total Flights</v-card-subtitle>
@@ -89,7 +84,7 @@
 						<v-col sm="4">
 							<v-card flat>
 								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengerFlights }}</span>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">PAX Flights</v-card-subtitle>
@@ -110,7 +105,7 @@
 						<v-col sm="4">
 							<v-card flat>
 								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalInstDuration | numeral('0,0.00') }} h</span>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">Total Duration</v-card-subtitle>
@@ -119,7 +114,7 @@
 						<v-col sm="4">
 							<v-card flat>
 								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalInstFlights }}</span>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">Total Flights</v-card-subtitle>
@@ -143,7 +138,7 @@
 						<v-col sm="6">
 							<v-card flat>
 								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }} €</span>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">Total Price</v-card-subtitle>
@@ -152,7 +147,7 @@
 						<v-col sm="6">
 							<v-card flat>						
 								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengerPrice | numeral('0,0') }} €</span>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">Passenger Price</v-card-subtitle>
@@ -173,7 +168,7 @@
 						<v-col sm="6">
 							<v-card flat>
 								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3"/>
+									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
 									<span v-show="!$store.state.isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }} €</span>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">Total Price</v-card-subtitle>
