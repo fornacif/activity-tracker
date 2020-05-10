@@ -12,7 +12,9 @@
             <v-form ref="form" v-model="valid" lazy-validation>
             
               <v-row dense>
-                <p class="font-weight-bold">Aircrafts</p>
+                <v-col sm="12">
+                  <p class="font-weight-bold">Aircrafts</p>
+                </v-col>
               </v-row>
               
               <v-data-table :items="profileForm.aircrafts" :headers="headers" :items-per-page="10" :loading="$store.state.isLoading" loading-text="Loading...">
@@ -67,24 +69,38 @@
             </v-data-table>
                
             <v-row dense>
+              <v-col sm="12">
                 <p class="font-weight-bold">Personal Information</p>
-              </v-row>
-              <v-row dense>
-                  <v-col cols="12" sm="4">
-                      <v-text-field label="Birth Date" v-model="profileForm.birthDate" :rules="required" required type="date"/>
-                  </v-col>
-              </v-row>  
-              <v-row dense>
-                  <v-col cols="12" sm="4">
-                      <v-text-field label="Medical Date" v-model="profileForm.medicalDate" :rules="required" required type="date"/>
-                  </v-col>
-              </v-row>
-              <v-row dense>
-                  <v-col sm="12">
-                      <v-btn @click="updateProfile" :loading="$store.state.isLoading">UPDATE</v-btn>
-                  </v-col>
-              </v-row>
-            </v-form>
+              </v-col>
+            </v-row>
+            <v-row dense>
+                <v-col cols="12" sm="4">
+                    <v-text-field label="Birth Date" v-model="profileForm.birthDate" :rules="required" required type="date"/>
+                </v-col>
+            </v-row>  
+            <v-row dense>
+                <v-col cols="12" sm="4">
+                    <v-text-field label="Medical Date" v-model="profileForm.medicalDate" :rules="required" required type="date"/>
+                </v-col>
+            </v-row>
+            <v-row dense>
+                <v-col sm="12">
+                    <v-btn @click="updateProfile" :loading="$store.state.isLoading">UPDATE</v-btn>
+                </v-col>
+            </v-row>
+          </v-form>
+
+          <v-row dense class="mt-5">
+            <v-col sm="12">
+              <p class="font-weight-bold">Manage Data</p>
+            </v-col>
+          </v-row>
+          <v-row dense>
+            <v-col sm="12">
+              <v-btn @click="exportActivities">EXPORT</v-btn>
+              <a id="exportLink" style="display:none"></a>
+            </v-col>
+          </v-row>
         </v-card-text>
     </v-card>
   </div>
@@ -165,6 +181,13 @@
                 if (this.$refs.form.validate()) {
                     this.$store.dispatch('setProfile', this.profileForm);
                 }
+            },
+			exportActivities() {
+				let data = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.$store.state.activities, null, 2));
+				let exportLink = document.getElementById('exportLink');
+				exportLink.setAttribute("href", data);
+				exportLink.setAttribute("download", "activities.json");
+				exportLink.click();
             }
         }
     }
