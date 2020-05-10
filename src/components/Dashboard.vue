@@ -264,6 +264,8 @@
 				
 				aggregates.daysByModel = [];
 				
+				console.info();
+				
 				for (const [model, daysBeforeTestFlight] of Object.entries(this.getDaysBeforeTestFlight(instActivities))) {
 					let daysByModel = {};
 					daysByModel.model = model;

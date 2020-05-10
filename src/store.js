@@ -78,6 +78,7 @@ export default new Vuex.Store({
 					commit(IS_LOADING, false);
 				}
 			}
+			console.info(JSON.stringify(state.activities));
 		},
 		async addActivity({commit}, activity) {
             try {
