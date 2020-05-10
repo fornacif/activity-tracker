@@ -97,7 +97,7 @@
           </v-row>
           <v-row dense>
             <v-col sm="12">
-              <v-btn @click="exportActivities">EXPORT</v-btn>
+              <v-btn @click="exportActivities">EXPORT ACTIVITIES</v-btn>
               <a id="exportLink" style="display:none"></a>
             </v-col>
           </v-row>
