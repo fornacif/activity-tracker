@@ -17,7 +17,7 @@
                 </v-col>
               </v-row>
               
-              <v-data-table :items="profileForm.aircrafts" :headers="headers" :items-per-page="10" :loading="$store.state.isLoading" loading-text="Loading...">
+              <v-data-table :items="profileForm.aircrafts" :headers="headers" :items-per-page="10" :loading="$store.state.isLoading" loading-text="Loading..." mobile-breakpoint="400">
               <template v-slot:top>
                 <v-dialog v-model="dialog" max-width="500px">
                   <template v-slot:activator="{ on }">

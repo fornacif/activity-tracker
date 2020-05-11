@@ -29,22 +29,22 @@
                             <tr v-for="item in aggregates.daysByModel" :key="item.model">
                               <td>
                                 <v-chip label outlined color="blue-grey darken-1">
-                                  <span class="subitle-1">{{ item.model }}</span>
+                                  <span class="subtitle-1">{{ item.model }}</span>
                                 </v-chip>
                               </td>
                               <td>
                                 <v-chip outlined :color="item.daysSinceLastInstFlightColor">
-                                 <span class="subitle-1 font-weight-bold">{{ item.daysSinceLastInstFlight }} d</span>
+                                 <span class="title font-weight-bold">{{ item.daysSinceLastInstFlight }} d</span>
                                 </v-chip>
                               </td>
                               <td>
                                 <v-chip outlined :color="item.daysBeforeTestFlightColor">
-                                 <span class="subitle-1 font-weight-bold">{{ item.daysBeforeTestFlight }} d</span>
+                                 <span class="title font-weight-bold">{{ item.daysBeforeTestFlight }} d</span>
                                 </v-chip>
                               </td>
                               <td>
                                 <v-chip outlined :color="item.daysSinceLastCdbFlightColor">
-                                 <span class="subitle-1 font-weight-bold">{{ item.daysSinceLastCdbFlight }} d</span>
+                                 <span class="title font-weight-bold">{{ item.daysSinceLastCdbFlight }} d</span>
                                 </v-chip>
                               </td>
                             </tr>
@@ -205,7 +205,7 @@
 						</v-col>
 					</v-row>
 
-					<v-data-table :items="aggregates.all" :headers="headers" :items-per-page="10" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading...">
+					<v-data-table :items="aggregates.all" :headers="headers" :items-per-page="10" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading..." mobile-breakpoint="400">
                         <template v-slot:item.year="{ item }">
                           <strong>{{ item.year }}</strong>
                         </template>

@@ -10,7 +10,7 @@
         <v-card-text>
             <v-text-field v-model="search" prepend-icon="mdi-magnify" label="Type to search..." clearable single-line hide-details dense></v-text-field>
         </v-card-text>
-        <v-data-table :items="$store.state.activities" :headers="headers" :items-per-page="10" :search="search" :loading="$store.state.isLoading" loading-text="Loading...">
+        <v-data-table :items="$store.state.activities" :headers="headers" :items-per-page="10" :search="search" :loading="$store.state.isLoading" loading-text="Loading..." mobile-breakpoint="400">
             <template v-slot:item.category="{ item }">
                 <v-chip :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
             </template>
