@@ -15,13 +15,13 @@ const IS_LOADING = 'IS_LOADING';
 export default new Vuex.Store({
 	state: {
 		activities: [],
+		aircrafts: [],
 		profile: {
 			aircrafts: []
 		},
 		needActivitiesReload: true,
 		needProfileReload: true,
-		isLoading: false,
-		aircrafts: {}
+		isLoading: false
 	},
 	getters: {
 		getAircraft: (state) => (registration) => {
