@@ -24,7 +24,7 @@
                         <v-select label="Category" v-model="activity.category" :items="categories" :rules="required"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label=Captain v-model="activity.instructor" :rules="captainRequired" :disabled="!activity.category || activity.category == 'CDB'"/>
+                        <v-text-field label=Captain v-model="captain" :rules="captainRequired" :disabled="!activity.category || activity.category == 'CDB'"/>
                     </v-col>
                 </v-row>
                 <v-row dense>
@@ -144,6 +144,18 @@
 			this.initLastLocations(this.toLocationItems, 'toLocation');
         },
         computed: {
+            captain: {
+                get: function () {
+                    if (this.activity.category == 'CDB') {
+                        return this.$store.state.profile.lastName;
+                    } else {
+                        return this.activity.captain;
+                    }
+                },
+                set: function(value) {
+                    this.activity.captain = value;
+                }
+            },
             price: function() {
                 if (this.activity.registration && !isNaN(this.activity.duration)) {
 					let aircraft = this.$store.getters.getAircraft(this.activity.registration);
@@ -191,6 +203,9 @@
 				if (value) {
                   this.activity.model = this.$store.getters.getAircraft(value).model;					
 				}
+            },
+            captain: function(value) {
+                this.activity.captain = value;
             },
             price: function(value) {
                 this.activity.price = value;

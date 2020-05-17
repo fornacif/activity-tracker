@@ -46,6 +46,7 @@
                     { text: 'MODEL', value: 'model', sortable: true },
                     { text: 'REGISTRATION', value: 'registration', sortable: true },
                     { text: 'CATEGORY', value: 'category', sortable: true },
+                    { text: 'CAPTAIN', value: 'captain', sortable: true },
                     { text: 'FROM', value: 'fromLocation.code', sortable: true },
                     { text: 'TO', value: 'toLocation.code', sortable: true },
                     { text: 'DURATION', value: 'duration', sortable: true },
