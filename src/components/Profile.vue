@@ -17,34 +17,34 @@
                 </v-col>
               </v-row>
               
-              <v-data-table :items="profileForm.aircrafts" :headers="headers" :items-per-page="10" :loading="$store.state.isLoading" loading-text="Loading..." mobile-breakpoint="400">
+              <v-data-table :items="profile.aircrafts" :headers="aircraftsHeaders" :items-per-page="10" :loading="$store.state.isLoading" loading-text="Loading..." :mobile-breakpoint="$store.state.mobileBreakpoint">
               <template v-slot:top>
-                <v-dialog v-model="dialog" max-width="500px">
+                <v-dialog v-model="aircraftDialog" max-width="500px">
                   <template v-slot:activator="{ on }">
                     <v-btn class="mb-2" v-on="on">New Aircraft</v-btn>
                   </template>
                   <v-card>
                     <v-card-title>
-                      <span class="headline">{{ dialogTitle }}</span>
+                      <span class="headline">{{ aircraftDialogTitle }}</span>
                     </v-card-title>
         
                     <v-card-text>
-                      <v-form ref="aircraftsForm" v-model="valid" lazy-validation>
+                      <v-form ref="aircraftForm" v-model="valid" lazy-validation>
                       <v-row dense>
                         <v-col cols="12" sm="4">
-                          <v-text-field v-model="aircraftForm.registration" label="Registration" :rules="required" required></v-text-field>
+                          <v-text-field v-model="aircraft.registration" label="Registration" :rules="required" required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="4">
-                          <v-text-field v-model="aircraftForm.model" label="Model" :rules="required" required></v-text-field>
+                          <v-text-field v-model="aircraft.model" label="Model" :rules="required" required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="4">
-                          <v-text-field v-model="aircraftForm.fuel" label="Fuel" v-mask="'####'" :rules="required" required></v-text-field>
+                          <v-text-field v-model="aircraft.fuel" label="Fuel (liter/h)" v-mask="'####'" :rules="required" required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="4">
-                          <v-text-field v-model="aircraftForm.cdbPrice" label="CDB Price" v-mask="'####'" :rules="required" required></v-text-field>
+                          <v-text-field v-model="aircraft.cdbPrice" label="CDB Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="4">
-                          <v-text-field v-model="aircraftForm.instPrice" label="INST Price" v-mask="'####'" :rules="required" required></v-text-field>
+                          <v-text-field v-model="aircraft.instPrice" label="INST Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
                         </v-col>
                       </v-row>
                       </v-form>
@@ -52,7 +52,7 @@
         
                     <v-card-actions>
                       <v-spacer></v-spacer>
-                      <v-btn color="blue darken-1" text @click="closeDialog">Cancel</v-btn>
+                      <v-btn color="blue darken-1" text @click="closeAircraftDialog">Cancel</v-btn>
                       <v-btn color="blue darken-1" text @click="saveAircraft">Save</v-btn>
                     </v-card-actions>
                   </v-card>
@@ -75,12 +75,12 @@
             </v-row>
             <v-row dense>
                 <v-col cols="12" sm="4">
-                    <v-text-field label="Birth Date" v-model="profileForm.birthDate" :rules="required" required type="date"/>
+                    <v-text-field label="Birth Date" v-model="profile.birthDate" :rules="required" required type="date"/>
                 </v-col>
             </v-row>  
             <v-row dense>
                 <v-col cols="12" sm="4">
-                    <v-text-field label="Medical Date" v-model="profileForm.medicalDate" :rules="required" required type="date"/>
+                    <v-text-field label="Medical Obtention Date" v-model="profile.medicalDate" :rules="required" required type="date"/>
                 </v-col>
             </v-row>
             <v-row dense>
@@ -116,10 +116,10 @@
         data() {
             return {
                 valid: true,
-                profileForm: {},
-                aircraftForm: {},
+                profile: {},
+                aircraft: {},
                 editedIndex: -1,
-                headers: [
+                aircraftsHeaders: [
 					{ text: 'REGISTRATION', value: 'registration', sortable: true },
                     { text: 'MODEL', value: 'model', sortable: true },
                     { text: 'FUEL', value: 'fuel', sortable: true },
@@ -127,7 +127,7 @@
                     { text: 'INST PRICE', value: 'instPrice', sortable: true },
                     { text: 'ACTIONS', value: 'actions', sortable: false },
                 ],
-                dialog: false,
+                aircraftDialog: false,
                 required: [
                     v => !!v || 'Input is required'
                 ],
@@ -136,50 +136,50 @@
         },
         mounted: async function () {
             await this.$store.dispatch('getProfile');
-            this.profileForm = this.$store.state.profile;
+            this.profile = this.$store.state.profile;
         },
         computed: {
-          dialogTitle () {
-            return this.editedIndex === -1 ? 'New Aircraft' : 'Edit Aircraft'
-          },
+			aircraftDialogTitle () {
+				return this.editedIndex === -1 ? 'New Aircraft' : 'Edit Aircraft'
+			},
         },
         watch: {
-          dialog (val) {
-            val || this.closeDialog();
-          },
+			aircraftDialog(val) {
+				val || this.closeAircraftDialog();
+			},
         },
         methods: {
 			editAircraft(item) {
-				this.editedIndex = this.profileForm.aircrafts.indexOf(item);
-				this.aircraftForm = Object.assign({}, item);
-				this.dialog = true;
+				this.editedIndex = this.profile.aircrafts.indexOf(item);
+				this.aircraft = Object.assign({}, item);
+				this.aircraftDialog = true;
             },
             deleteAircraft(item) {
-				const index = this.profileForm.aircrafts.indexOf(item);
-				this.profileForm.aircrafts.splice(index, 1);
-				this.$store.dispatch('setProfile', this.profileForm);
+				const index = this.profile.aircrafts.indexOf(item);
+				this.profile.aircrafts.splice(index, 1);
+				this.$store.dispatch('setProfile', this.profile);
             },
             saveAircraft() {
-				if (this.$refs.aircraftsForm.validate()) {
+				if (this.$refs.aircraftForm.validate()) {
 					if (this.editedIndex > -1) {
-						Object.assign(this.profileForm.aircrafts[this.editedIndex], this.aircraftForm);
+						Object.assign(this.profile.aircrafts[this.editedIndex], this.aircraft);
                     } else {
-						this.profileForm.aircrafts.push(this.aircraftForm);
+						this.profile.aircrafts.push(this.aircraft);
                     }
-					this.$store.dispatch('setProfile', this.profileForm);
-					this.closeDialog();
+					this.$store.dispatch('setProfile', this.profile);
+					this.closeAircraftDialog();
 				}
             },
-            closeDialog() {
-				this.$refs.form.resetValidation();
-				this.aircraftForm = {};
+            closeAircraftDialog() {
+				this.$refs.aircraftForm.resetValidation();
+				this.aircraft = {};
 				
-				this.dialog = false;
+				this.aircraftDialog = false;
 				this.editedIndex = -1;
             },
             updateProfile() {
                 if (this.$refs.form.validate()) {
-                    this.$store.dispatch('setProfile', this.profileForm);
+                    this.$store.dispatch('setProfile', this.profile);
                 }
             },
             async exportActivities() {

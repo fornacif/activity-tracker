@@ -205,7 +205,7 @@
 						</v-col>
 					</v-row>
 
-					<v-data-table :items="aggregates.all" :headers="headers" :items-per-page="10" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading..." mobile-breakpoint="400">
+					<v-data-table :items="aggregates.all" :headers="headers" :items-per-page="10" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading..." :mobile-breakpoint="$store.state.mobileBreakpoint">
                         <template v-slot:item.year="{ item }">
                           <strong>{{ item.year }}</strong>
                         </template>

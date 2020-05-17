@@ -11,19 +11,26 @@
             <v-form ref="form" v-model="valid" lazy-validation>
                 <v-row dense>
                     <v-col cols="12" sm="2">
-                        <v-select label="Registration" v-model="activityForm.registration" :items="$store.state.profile.aircrafts" item-text="registration" :rules="required" required/>
+                        <v-select label="Aircraft" v-model="activity.registration" :items="$store.state.profile.aircrafts" item-value="registration" :rules="required" required>
+                          <template slot="selection" slot-scope="data">
+                            {{ data.item.registration }} | {{ data.item.model }}
+                          </template>
+                          <template slot="item" slot-scope="data">
+                            {{ data.item.registration }} | {{ data.item.model }}
+                          </template>
+                        </v-select>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Model" v-model="model" readonly></v-text-field>
+                        <v-select label="Category" v-model="activity.category" :items="categories" :rules="required" required/>
                     </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-select label="Category" v-model="activityForm.category" :items="categories" :rules="required" required/>
+                    <v-col cols="12" sm="3">
+                        <v-text-field label="Instructor" v-model="activity.instructor"/>
                     </v-col>
                 </v-row>
                 <v-row dense>
                     <v-col cols="12" sm="4">
                         <v-autocomplete
-                            v-model="activityForm.fromLocation"
+                            v-model="activity.fromLocation"
                             :items="fromLocationItems"
                             :loading="isFromLocationItemsLoading"
                             :search-input.sync="fromLocationSearchInput"
@@ -37,7 +44,7 @@
                     </v-col>
                     <v-col cols="12" sm="4">
                         <v-autocomplete
-                            v-model="activityForm.toLocation"
+                            v-model="activity.toLocation"
                             :items="toLocationItems"
                             :loading="isToLocationItemsLoading"
                             :search-input.sync="toLocationSearchInput"
@@ -52,13 +59,13 @@
                 </v-row>
                 <v-row dense>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Date" v-model="activityForm.date" :rules="required" required type="date"/>
+                        <v-text-field label="Date" v-model="activity.date" :rules="required" required type="date"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Duration" v-model.number="activityForm.duration" v-mask="'#.##'" :rules="required" required/>
+                        <v-text-field label="Duration" v-model.number="activity.duration" v-mask="'#.##'" :rules="required" required/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Start Time" v-model="activityForm.startTime" :rules="required" required type="time"/>
+                        <v-text-field label="Start Time" v-model="activity.startTime" :rules="required" required type="time"/>
                     </v-col>
                     <v-col cols="12" sm="2">
                         <v-text-field label="End Time" v-model="endTime" readonly type="time"/>
@@ -75,10 +82,10 @@
                         <v-text-field label="Price" v-model="price" readonly/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Passengers" v-model="activityForm.passengers"/>
+                        <v-text-field label="Passengers" v-model="activity.passengers"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-switch label="Shared" v-model="activityForm.shared" inset/>
+                        <v-switch label="Shared" v-model="activity.shared" inset/>
                     </v-col>
                     <v-col cols="12" sm="2">
                         <v-text-field label="Passenger Price" v-model="passengerPrice" readonly/>
@@ -105,10 +112,8 @@
         data() {
             return {
                 valid: true,
-                activityForm: {
-                    category: 'CDB',
+                activity: {
                     shared: false,
-                    passengerPrice: 0,
                     date: new Date().toISOString().substr(0, 10)
                 },
                 categories: [
@@ -131,86 +136,84 @@
                 isLoading: false
             }
         },
-        mounted: function () {
-			this.$store.dispatch('getProfile');
+        mounted: async function () {
+			await this.$store.dispatch('getProfile');
+			await this.$store.dispatch('getActivities');
+			
+			this.initLastLocations(this.fromLocationItems, 'fromLocation');
+			this.initLastLocations(this.toLocationItems, 'toLocation');
         },
         computed: {
-			model: function() {
-				if (this.activityForm.registration) {
-					return this.$store.getters.getAircraft(this.activityForm.registration).model;
-				} else {
-					return '';					
-				}
-				
-			},
             price: function() {
-                if (this.activityForm.registration && !isNaN(this.activityForm.duration)) {
-					let aircraft = this.$store.getters.getAircraft(this.activityForm.registration);
-                    let unitPrice = this.$store.getters.getPrice(aircraft, this.activityForm.category);
-                    return Math.round(this.activityForm.duration * unitPrice * 100) / 100;
+                if (this.activity.registration && !isNaN(this.activity.duration)) {
+					let aircraft = this.$store.getters.getAircraft(this.activity.registration);
+                    let unitPrice = this.$store.getters.getPrice(aircraft, this.activity.category);
+                    return Math.round(this.activity.duration * unitPrice * 100) / 100;
                 } else {
-                    return 0
+                    return 0;
                 }     
             },
             passengerPrice: function() {
-                if (this.activityForm.shared) {
+                if (this.activity.shared) {
                     return this.price / 2;
                 } else {
                     return 0;
                 }
             },
             fuel: function() {
-                if (this.activityForm.registration && !isNaN(this.activityForm.duration)) {
-					let aircraft = this.$store.getters.getAircraft(this.activityForm.registration);
-                    return Math.round(this.activityForm.duration * aircraft.fuel);  
+                if (this.activity.registration && !isNaN(this.activity.duration)) {
+					let aircraft = this.$store.getters.getAircraft(this.activity.registration);
+                    return Math.round(this.activity.duration * aircraft.fuel);  
                 } else {
                     return 0;
                 } 
             },
             endTime: function() {
-                if (isNaN(this.activityForm.duration) || !this.activityForm.startTime) {
+                if (isNaN(this.activity.duration) || !this.activity.startTime) {
                     return '';
                 } else {
-                    let minutes = Math.round(this.activityForm.duration * 60);
-                    return this.$moment(this.activityForm.startTime, 'HH:mm').add(minutes, 'minutes').format('HH:mm');  
+                    let minutes = Math.round(this.activity.duration * 60);
+                    return this.$moment(this.activity.startTime, 'HH:mm').add(minutes, 'minutes').format('HH:mm');  
                 }
                 
             },
             totalTime: function() {
-                if (isNaN(this.activityForm.duration)) {
+                if (isNaN(this.activity.duration)) {
                     return '';
                 } else {
-                    return this.durationToTime(this.activityForm.duration);
+                    return this.durationToTime(this.activity.duration);
                 }
             }
         },
         watch: {
-			model: function(value) {
-                this.activityForm.model = value;
+			"activity.registration": function(value) {
+				if (value) {
+                  this.activity.model = this.$store.getters.getAircraft(value).model;					
+				}
             },
             price: function(value) {
-                this.activityForm.price = value;
+                this.activity.price = value;
             },
             passengerPrice: function(value) {
-                this.activityForm.passengerPrice = value;
+                this.activity.passengerPrice = value;
             },
             fuel: function(value) {
-                this.activityForm.fuel = value;
+                this.activity.fuel = value;
             },
             endTime: function(value) {
-                this.activityForm.endTime = value;
+                this.activity.endTime = value;
             },
             totalTime: function(value) {
-                this.activityForm.totalTime = value;
+                this.activity.totalTime = value;
             },
             fromLocationSearchInput: function(value) {
                 if (value && value != this.lastSelectedAutocompleteText) {
-                    this.manageAutocomplete(value, this.fromLocationItems, 'fromLocation'); 
+                    this.manageAutocomplete(value, this.fromLocationItems, 'FROM_LOCATION'); 
                 }
             },
             toLocationSearchInput: function(value) {
                 if (value && value != this.lastSelectedAutocompleteText) {
-                    this.manageAutocomplete(value, this.toLocationItems, 'toLocation');
+                    this.manageAutocomplete(value, this.toLocationItems, 'TO_LOCATION');
                 }
             }
         },
@@ -223,18 +226,32 @@
             noFilter () {
                 return true;
             },
+            initLastLocations(items, property) {
+                let locations = new Map();
+
+                this.$store.state.activities.forEach(activity => {
+                    locations.set(activity[property].name, activity[property]);
+                });
+
+                items.push.apply(items, Array.from(locations.values()).slice(0, 3));
+            },
             async addActivity() {
                 if (this.$refs.form.validate()) {
-                    this.$store.dispatch('addActivity', this.activityForm);
-                    this.resetFrorm();
+                    this.$store.dispatch('addActivity', this.activity);
+                    this.resetForm();
                 }
             },
             async manageAutocomplete(searchInput, items, autocompleteField) {
-                this.clearArray(items);
+                if (autocompleteField === 'FROM_LOCATION' && this.activity.fromLocation && this.fromLocationSearchInput === this.activity.fromLocation.name) {
+                    return;
+                } else if (autocompleteField === 'TO_LOCATION' && this.activity.toLocation && this.toLocationSearchInput === this.activity.toLocation.name) {
+                    return;
+                } else {
+					this.clearArray(items);
+				}
                 
                 if (searchInput.length > 3) {
-
-                    if (autocompleteField === 'fromLocation') {
+                    if (autocompleteField === 'FROM_LOCATION') {
                         this.isFromLocationItemsLoading = true;
                     } else {
                         this.isToLocationItemsLoading = true;
@@ -288,24 +305,25 @@
                         console.error(error);
                     }
 
-                    if (autocompleteField === 'fromLocation') {
+                    if (autocompleteField === 'FROM_LOCATION') {
                         this.isFromLocationItemsLoading = false;
                     } else {
                         this.isToLocationItemsLoading = false;
                     }
                 }
             },
-            resetFrorm() {
+            resetForm() {
                 this.$refs.form.resetValidation();
-                this.activityForm.category = 'CDB';
-                delete this.activityForm.fromLocation;
-                delete this.activityForm.toLocation;
-                this.activityForm.date = new Date().toISOString().substr(0, 10);
-                delete this.activityForm.duration;
-                delete this.activityForm.startTime;
-                delete this.activityForm.passengers;
-                this.activityForm.shared = false;
-                this.activityForm.passengerPrice = 0;
+                this.activity.shared = false;
+                this.activity.registration = '';
+                this.activity.category = '';
+                this.activity.instructor = '';
+                this.activity.duration = '';
+                this.activity.passengers = '';
+                this.activity.fromLocation = '';
+                this.activity.toLocation = '';
+                this.activity.startTime = '';
+                this.activity.date = new Date().toISOString().substr(0, 10);
             }
         }
     }

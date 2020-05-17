@@ -15,13 +15,11 @@ const IS_LOADING = 'IS_LOADING';
 export default new Vuex.Store({
 	state: {
 		activities: [],
-		aircrafts: [],
-		profile: {
-			aircrafts: []
-		},
+		profile: {},
 		needActivitiesReload: true,
 		needProfileReload: true,
-		isLoading: false
+		isLoading: false,
+		mobileBreakpoint: 400
 	},
 	getters: {
 		getAircraft: (state) => (registration) => {
@@ -49,7 +47,16 @@ export default new Vuex.Store({
 			state.needActivitiesReload = value;
 		},
 		[SET_PROFILE]: (state, profile) => {
+			if (profile.aircrafts === undefined) {
+				profile.aircrafts = [];
+			}
+			
+			if (profile.preferedLocations === undefined) {
+				profile.preferedLocations = [];
+			}
+			
 			state.profile = profile;
+			
 		},
 		[NEED_PROFILE_RELOAD]: (state, value) => {
 			state.needProfileReload = value;
