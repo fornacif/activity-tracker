@@ -23,8 +23,8 @@
                     <v-col cols="12" sm="2">
                         <v-select label="Category" v-model="activity.category" :items="categories" :rules="required" required/>
                     </v-col>
-                    <v-col cols="12" sm="3">
-                        <v-text-field label="Instructor" v-model="activity.instructor"/>
+                    <v-col cols="12" sm="2">
+                        <v-text-field label="CDB" v-model="activity.instructor" disabled/>
                     </v-col>
                 </v-row>
                 <v-row dense>
@@ -82,13 +82,13 @@
                         <v-text-field label="Price" v-model="price" readonly/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Passengers" v-model="activity.passengers"/>
+                        <v-text-field label="Passengers (comma separated)" v-model="activity.passengers"/>
                     </v-col>
                     <v-col cols="12" sm="2">
                         <v-switch label="Shared" v-model="activity.shared" inset/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Passenger Price" v-model="passengerPrice" readonly/>
+                        <v-text-field label="Passenger Price" v-model="passengerPrice"/>
                     </v-col>
                 </v-row>
                 <v-row dense>
@@ -155,7 +155,8 @@
             },
             passengerPrice: function() {
                 if (this.activity.shared) {
-                    return this.price / 2;
+                    let passengerCount = this.activity.passengers.split(",").length;
+                    return this.price / 2 / passengerCount;
                 } else {
                     return 0;
                 }
