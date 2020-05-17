@@ -149,7 +149,7 @@
                     if (this.activity.category == 'CDB') {
                         return this.$store.state.profile.lastName;
                     } else {
-                        return this.activity.captain;
+                        return '';
                     }
                 },
                 set: function(value) {
