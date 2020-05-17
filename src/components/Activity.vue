@@ -88,7 +88,7 @@
                         <v-text-field label="Passengers (comma separated)" v-model="activity.passengers" :disabled="!activity.shared"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Passenger Price" v-model="passengerPrice" :disabled="!activity.passengers"/>
+                        <v-text-field label="Passenger Price" v-model="passengerPrice" :disabled="!activity.passengers" v-mask="'###'" />
                     </v-col>
                 </v-row>
                 <v-row dense>
