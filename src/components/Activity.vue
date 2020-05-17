@@ -24,7 +24,7 @@
                         <v-select label="Category" v-model="activity.category" :items="categories" :rules="required"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label=Captain v-model="activity.instructor" :rules="[v => (!activity.category || activity.category == 'CDB' || !!v) || 'required']" :disabled="!activity.category || activity.category == 'CDB'"/>
+                        <v-text-field label=Captain v-model="activity.instructor" :rules="captainRequired" :disabled="!activity.category || activity.category == 'CDB'"/>
                     </v-col>
                 </v-row>
                 <v-row dense>
@@ -85,7 +85,7 @@
                         <v-switch label="Shared" v-model="activity.shared" inset/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Passengers (comma separated)" v-model="activity.passengers" :disabled="!activity.shared"/>
+                        <v-text-field label="Passengers (comma separated)" v-model="activity.passengers" :rules="passengersRequired" :disabled="!activity.shared"/>
                     </v-col>
                     <v-col cols="12" sm="2">
                         <v-text-field label="Passenger Price" v-model="passengerPrice" :disabled="!activity.passengers" v-mask="'###'" />
@@ -122,9 +122,9 @@
                   { value: 'TEST', text: 'TEST' },
                   { value: 'EXAM', text: 'EXAM' }
                 ],
-                required: [
-                    v => !!v || 'Input is required'
-                ],
+                required: [v => !!v || 'Input is required'],
+                captainRequired: [v => (!this.activity.category || this.activity.category == 'CDB' || !!v) || 'Input is required'],
+                passengersRequired: [v => (!this.activity.shared || !!v) || 'Input is required'],
                 aircraft: {},
                 fromLocationItems: [],
                 toLocationItems: [],
