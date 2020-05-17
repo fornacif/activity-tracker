@@ -156,7 +156,7 @@
             passengerPrice: function() {
                 if (this.activity.shared) {
                     let passengerCount = this.activity.passengers.split(",").length;
-                    return this.price / 2 / passengerCount;
+                    return Math.round(((this.price / (passengerCount + 1)) * 100) / 100) ;
                 } else {
                     return 0;
                 }
