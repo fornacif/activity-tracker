@@ -11,7 +11,7 @@
             <v-form ref="form" v-model="valid" lazy-validation>
                 <v-row dense>
                     <v-col cols="12" sm="2">
-                        <v-select label="Aircraft" v-model="activity.registration" :items="$store.state.profile.aircrafts" item-value="registration" :rules="required" required>
+                        <v-select label="Aircraft" v-model="activity.registration" :items="$store.state.profile.aircrafts" item-value="registration" :rules="required">
                           <template slot="selection" slot-scope="data">
                             {{ data.item.registration }} | {{ data.item.model }}
                           </template>
@@ -21,10 +21,10 @@
                         </v-select>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-select label="Category" v-model="activity.category" :items="categories" :rules="required" required/>
+                        <v-select label="Category" v-model="activity.category" :items="categories" :rules="required"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="CDB" v-model="activity.instructor" disabled/>
+                        <v-text-field label=Captain v-model="activity.instructor" :rules="[v => (!activity.category || activity.category == 'CDB' || !!v) || 'required']" :disabled="!activity.category || activity.category == 'CDB'"/>
                     </v-col>
                 </v-row>
                 <v-row dense>
@@ -40,7 +40,7 @@
                             item-text="name"
                             :filter="noFilter"
                             :rules="required"
-                            required/>
+                           />
                     </v-col>
                     <v-col cols="12" sm="4">
                         <v-autocomplete
@@ -54,18 +54,18 @@
                             item-text="name"
                             :filter="noFilter"
                             :rules="required"
-                            required/>
+                           />
                     </v-col>
                 </v-row>
                 <v-row dense>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Date" v-model="activity.date" :rules="required" required type="date"/>
+                        <v-text-field label="Date" v-model="activity.date" :rules="required" type="date"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Duration" v-model.number="activity.duration" v-mask="'#.##'" :rules="required" required/>
+                        <v-text-field label="Duration" v-model.number="activity.duration" v-mask="'#.##'" :rules="required"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Start Time" v-model="activity.startTime" :rules="required" required type="time"/>
+                        <v-text-field label="Start Time" v-model="activity.startTime" :rules="required" type="time"/>
                     </v-col>
                     <v-col cols="12" sm="2">
                         <v-text-field label="End Time" v-model="endTime" readonly type="time"/>
@@ -123,7 +123,7 @@
                   { value: 'EXAM', text: 'EXAM' }
                 ],
                 required: [
-                    v => !!v || 'Input is required'
+                    v => !!v || 'Input is'
                 ],
                 aircraft: {},
                 fromLocationItems: [],

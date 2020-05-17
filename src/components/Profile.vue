@@ -74,12 +74,18 @@
               </v-col>
             </v-row>
             <v-row dense>
-                <v-col cols="12" sm="4">
+                <v-col cols="12" sm="2">
+                    <v-text-field label="Firstname" v-model="profile.firstName" :rules="required" required/>
+                </v-col>
+                <v-col cols="12" sm="2">
+                    <v-text-field label="Lastname" v-model="profile.lastName" :rules="required" required/>
+                </v-col>
+                <v-col cols="12" sm="2">
                     <v-text-field label="Birth Date" v-model="profile.birthDate" :rules="required" required type="date"/>
                 </v-col>
             </v-row>  
             <v-row dense>
-                <v-col cols="12" sm="4">
+                <v-col cols="12" sm="2">
                     <v-text-field label="Medical Obtention Date" v-model="profile.medicalDate" :rules="required" required type="date"/>
                 </v-col>
             </v-row>
