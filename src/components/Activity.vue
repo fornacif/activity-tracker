@@ -82,13 +82,13 @@
                         <v-text-field label="Price" v-model="price" readonly/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Passengers (comma separated)" v-model="activity.passengers"/>
-                    </v-col>
-                    <v-col cols="12" sm="2">
                         <v-switch label="Shared" v-model="activity.shared" inset/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Passenger Price" v-model="passengerPrice"/>
+                        <v-text-field label="Passengers (comma separated)" v-model="activity.passengers" :disabled="!activity.shared"/>
+                    </v-col>
+                    <v-col cols="12" sm="2">
+                        <v-text-field label="Passenger Price" v-model="passengerPrice" :disabled="!activity.passengers"/>
                     </v-col>
                 </v-row>
                 <v-row dense>
@@ -123,7 +123,7 @@
                   { value: 'EXAM', text: 'EXAM' }
                 ],
                 required: [
-                    v => !!v || 'Input is'
+                    v => !!v || 'Input is required'
                 ],
                 aircraft: {},
                 fromLocationItems: [],
@@ -154,7 +154,7 @@
                 }     
             },
             passengerPrice: function() {
-                if (this.activity.shared) {
+                if (this.activity.shared && this.activity.passengers) {
                     let passengerCount = this.activity.passengers.split(",").length;
                     return Math.round(((this.price / (passengerCount + 1)) * 100) / 100) ;
                 } else {
