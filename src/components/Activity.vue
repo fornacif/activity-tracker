@@ -62,7 +62,7 @@
                         <v-text-field label="Date" v-model="activity.date" :rules="required" type="date"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Duration" v-model.number="activity.duration" v-mask="'#.##'" :rules="required"/>
+                        <v-text-field label="Duration (decimal)" v-model.number="activity.duration" v-mask="'#.##'" :rules="required"/>
                     </v-col>
                     <v-col cols="12" sm="2">
                         <v-text-field label="Start Time" v-model="activity.startTime" :rules="required" type="time"/>
@@ -88,7 +88,7 @@
                         <v-text-field label="Passengers (comma separated)" v-model="activity.passengers" :rules="passengersRequired" :disabled="!activity.shared"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Passenger Price" v-model="passengerPrice" :disabled="!activity.passengers" v-mask="'###'" />
+                        <v-text-field label="Passenger Price (round)" v-model="passengerPrice" :disabled="!activity.passengers"  v-mask="'####'"/>
                     </v-col>
                 </v-row>
                 <v-row dense>
@@ -156,7 +156,7 @@
             passengerPrice: function() {
                 if (this.activity.shared && this.activity.passengers) {
                     let passengerCount = this.activity.passengers.split(",").length;
-                    return Math.round(((this.price / (passengerCount + 1)) * 100) / 100) ;
+                    return Math.round(this.price / (passengerCount + 1));
                 } else {
                     return 0;
                 }
