@@ -85,7 +85,7 @@
 							<v-card flat>
 								<v-card-title>
 									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
-									<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengerFlights }}</span>
+									<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengersFlights }}</span>
 								</v-card-title>
 								<v-card-subtitle class="subtitle-2">PAX Flights</v-card-subtitle>
 							</v-card>
@@ -126,7 +126,7 @@
 		</v-row>
 
 		<v-row dense>
-			<v-col cols="12" sm="6">
+			<v-col cols="12" sm="4">
 				<v-card outlined>
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
@@ -134,29 +134,16 @@
 						</v-avatar>
 						CDB - Price metrics
 					</v-banner>
-					<v-row dense>
-						<v-col sm="6">
-							<v-card flat>
-								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
-									<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }} €</span>
-								</v-card-title>
-								<v-card-subtitle class="subtitle-2">Total Price</v-card-subtitle>
-							</v-card>
-						</v-col>
-						<v-col sm="6">
-							<v-card flat>						
-								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
-									<span v-show="!$store.state.isLoading">{{ aggregates.totalPassengerPrice | numeral('0,0') }} €</span>
-								</v-card-title>
-								<v-card-subtitle class="subtitle-2">Passenger Price</v-card-subtitle>
-							</v-card>
-						</v-col>			
-					</v-row>
+					<v-card flat>
+						<v-card-title>
+							<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
+							<span v-show="!$store.state.isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }} €</span>
+						</v-card-title>
+						<v-card-subtitle class="subtitle-2">Total Price</v-card-subtitle>
+					</v-card>
 				</v-card>
 			</v-col>
-			<v-col cols="12" sm="6">
+			<v-col cols="12" sm="4">
 				<v-card outlined>
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
@@ -164,19 +151,32 @@
 						</v-avatar>
 						INST - Price metrics
 					</v-banner>
-					<v-row dense>
-						<v-col sm="6">
-							<v-card flat>
-								<v-card-title>
-									<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
-									<span v-show="!$store.state.isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }} €</span>
-								</v-card-title>
-								<v-card-subtitle class="subtitle-2">Total Price</v-card-subtitle>
-							</v-card>
-						</v-col>			
-					</v-row>
+					<v-card flat>
+						<v-card-title>
+							<v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
+							<span v-show="!$store.state.isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }} €</span>
+						</v-card-title>
+						<v-card-subtitle class="subtitle-2">Total Price</v-card-subtitle>
+					</v-card>
 				</v-card>
 			</v-col>
+            <v-col cols="12" sm="4">
+                <v-card outlined>
+                    <v-banner>
+                        <v-avatar slot="icon" color="blue-grey darken-3" size="40">
+                            <v-icon dark>mdi-currency-eur</v-icon>
+                        </v-avatar>
+                        Passengers metrics
+                    </v-banner>
+                    <v-card flat>                       
+                        <v-card-title>
+                            <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
+                            <span v-show="!$store.state.isLoading">{{ aggregates.totalPassengersPrice | numeral('0,0') }} €</span>
+                        </v-card-title>
+                        <v-card-subtitle class="subtitle-2">Passengers Price</v-card-subtitle>
+                    </v-card>
+                </v-card>
+            </v-col>
 		</v-row>
     
         <v-row dense>
@@ -201,7 +201,7 @@
 							<v-select :items="aggregates.models" v-model="modelFilter" label="Filter by Model" multiple dense outlined></v-select>
 						</v-col>
 						<v-col cols="12" sm="1">
-							<v-btn icon @click="resetFilters"><v-icon>mdi-close</v-icon></v-btn>
+							<v-btn depressed rounded @click="resetFilters">RESET</v-btn>
 						</v-col>
 					</v-row>
 
@@ -247,7 +247,7 @@
                     { text: 'DURATION', value: 'duration'},
                     { text: 'COUNT', value: 'count'},
                     { text: 'PRICE', value: 'price'},
-                    { text: 'PASSENGER PRICE', value: 'passengerPrice'},
+                    { text: 'PASSENGERS PRICE', value: 'passengersPrice'},
                 ]
             }
         },
@@ -289,8 +289,8 @@
 				aggregates.totalCdbPrice = this.sumByProperty(cdbActivities, 'price');
 				aggregates.totalInstPrice = this.sumByProperty(instActivities, 'price');
 				
-				aggregates.totalPassengerFlights = this.sumByFilledProperty(cdbActivities, 'passengers');
-				aggregates.totalPassengerPrice = this.sumByProperty(cdbActivities, 'passengerPrice');
+				aggregates.totalPassengersFlights = this.sumByFilledProperty(cdbActivities, 'passengers');
+				aggregates.totalPassengersPrice = this.sumByPassengerPrice(activities);
 
 				aggregates.categories = this.aggregateByProperty(activities, "category");
 				aggregates.registrations = this.aggregateByProperty(activities, "registration");
@@ -311,6 +311,11 @@
 				return activities.filter((activity) => {
 					return activity.model == model;
                 });
+            },
+            sumByPassengerPrice(items) {
+                return items.reduce((sum, item) => {
+                    return sum + (item.passengerPrice * (item.passengers ? item.passengers.split(",").length : 1));                
+                }, 0);
             },
             sumByProperty(items, property) {
 				return items.reduce((sum, item) => {
@@ -338,7 +343,7 @@
 						count: 1,
 						duration: activity.duration,
 						price: activity.price,
-						passengerPrice: activity.passengerPrice
+						passengersPrice: activity.passengerPrice * (activity.passengers ? activity.passengers.split(",").length : 1)
 					};
 
 					if ((this.categoryFilter.length == 0 || this.categoryFilter.includes(activity.category)) && 
@@ -348,7 +353,7 @@
 						if (items.has(year)) {
 							items.get(year).duration += item.duration;
 							items.get(year).price += item.price;
-							items.get(year).passengerPrice += item.passengerPrice;
+							items.get(year).passengersPrice += item.passengersPrice * (item.passengers ? item.passengers.split(",").length : 1);
 							items.get(year).count++;
 						} else {
 							items.set(year, item);
@@ -364,7 +369,7 @@
 						count: this.sumByProperty(result, "count"),
 						duration: this.sumByProperty(result, "duration"),
 						price: this.sumByProperty(result, "price"),
-						passengerPrice: this.sumByProperty(result, "passengerPrice")
+						passengersPrice: this.sumByProperty(result, "passengersPrice")
 					};
 
 				result.push(totalItem);

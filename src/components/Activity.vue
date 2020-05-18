@@ -114,6 +114,7 @@
                 valid: true,
                 activity: {
                     shared: false,
+                    passengerPrice: 0,
                     date: new Date().toISOString().substr(0, 10)
                 },
                 categories: [
