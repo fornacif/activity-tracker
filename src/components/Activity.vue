@@ -1,105 +1,105 @@
 <template>
-  <div>
-    <v-card outlined>
-        <v-banner>
+   <div>
+      <v-card outlined>
+         <v-banner>
             <v-avatar slot="icon" color="blue-grey darken-3" size="40">
-                <v-icon dark>mdi-table-large-plus</v-icon>
+               <v-icon dark>mdi-table-large-plus</v-icon>
             </v-avatar>
             Add new Flight
-        </v-banner>
-        <v-card-text>
+         </v-banner>
+         <v-card-text>
             <v-form ref="form" v-model="valid" lazy-validation>
-                <v-row dense>
-                    <v-col cols="12" sm="2">
-                        <v-select label="Aircraft" v-model="activity.registration" :items="$store.state.profile.aircrafts" item-value="registration" :rules="required">
-                          <template slot="selection" slot-scope="data">
-                            {{ data.item.registration }} | {{ data.item.model }}
-                          </template>
-                          <template slot="item" slot-scope="data">
-                            {{ data.item.registration }} | {{ data.item.model }}
-                          </template>
-                        </v-select>
-                    </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-select label="Category" v-model="activity.category" :items="categories" :rules="required"/>
-                    </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-text-field label=Captain v-model="captain" :rules="captainRequired" :disabled="!activity.category || activity.category == 'CDB'"/>
-                    </v-col>
-                </v-row>
-                <v-row dense>
-                    <v-col cols="12" sm="4">
-                        <v-autocomplete
-                            v-model="activity.fromLocation"
-                            :items="fromLocationItems"
-                            :loading="isFromLocationItemsLoading"
-                            :search-input.sync="fromLocationSearchInput"
-                            label="From Location"
-                            prepend-icon="mdi-database-search"
-                            return-object
-                            item-text="name"
-                            :filter="noFilter"
-                            :rules="required"
-                           />
-                    </v-col>
-                    <v-col cols="12" sm="4">
-                        <v-autocomplete
-                            v-model="activity.toLocation"
-                            :items="toLocationItems"
-                            :loading="isToLocationItemsLoading"
-                            :search-input.sync="toLocationSearchInput"
-                            label="To Location"
-                            prepend-icon="mdi-database-search"
-                            return-object
-                            item-text="name"
-                            :filter="noFilter"
-                            :rules="required"
-                           />
-                    </v-col>
-                </v-row>
-                <v-row dense>
-                    <v-col cols="12" sm="2">
-                        <v-text-field label="Date" v-model="activity.date" :rules="required" type="date"/>
-                    </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-text-field label="Duration (decimal)" v-model.number="activity.duration" v-mask="'#.##'" :rules="required"/>
-                    </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-text-field label="Start Time" v-model="activity.startTime" :rules="required" type="time"/>
-                    </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-text-field label="End Time" v-model="endTime" readonly type="time"/>
-                    </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-text-field label="Total Time" v-model="totalTime" readonly type="time"/>
-                    </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-text-field label="Fuel" v-model="fuel" readonly/>
-                    </v-col>
-                </v-row>
-                <v-row dense>
-                    <v-col cols="12" sm="2">
-                        <v-text-field label="Price" v-model="price" readonly/>
-                    </v-col>
-                    <v-col cols="12" sm="4">
-                        <v-text-field label="Passengers (comma separated)" v-model="activity.passengers" :rules="passengersRequired"/>
-                    </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-switch label="Share Price" v-model="activity.shared" inset/>
-                    </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-text-field label="Passenger Price (round)" v-model="passengerPrice" :disabled="!activity.passengers"  v-mask="'####'"/>
-                    </v-col>
-                </v-row>
-                <v-row dense>
-                    <v-col sm="12">
-                        <v-btn color="blue darken-3" dark @click="addActivity" :loading="$store.state.isLoading">SUBMIT</v-btn>
-                    </v-col>
-                </v-row>
+               <v-row dense>
+                  <v-col cols="12" sm="2">
+                     <v-select label="Aircraft" v-model="activity.registration" :items="$store.state.profile.aircrafts" item-value="registration" :rules="required">
+                        <template slot="selection" slot-scope="data">
+                           {{ data.item.registration }} | {{ data.item.model }}
+                        </template>
+                        <template slot="item" slot-scope="data">
+                           {{ data.item.registration }} | {{ data.item.model }}
+                        </template>
+                     </v-select>
+                  </v-col>
+                  <v-col cols="12" sm="2">
+                     <v-select label="Category" v-model="activity.category" :items="categories" :rules="required"/>
+                  </v-col>
+                  <v-col cols="12" sm="2">
+                     <v-text-field label=Captain v-model="captain" :rules="captainRequired" :disabled="!activity.category || activity.category == 'CDB'"/>
+                  </v-col>
+               </v-row>
+               <v-row dense>
+                  <v-col cols="12" sm="4">
+                     <v-autocomplete
+                        v-model="activity.fromLocation"
+                        :items="fromLocationItems"
+                        :loading="isFromLocationItemsLoading"
+                        :search-input.sync="fromLocationSearchInput"
+                        label="From Location"
+                        prepend-icon="mdi-database-search"
+                        return-object
+                        item-text="name"
+                        :filter="noFilter"
+                        :rules="required"
+                        />
+                  </v-col>
+                  <v-col cols="12" sm="4">
+                     <v-autocomplete
+                        v-model="activity.toLocation"
+                        :items="toLocationItems"
+                        :loading="isToLocationItemsLoading"
+                        :search-input.sync="toLocationSearchInput"
+                        label="To Location"
+                        prepend-icon="mdi-database-search"
+                        return-object
+                        item-text="name"
+                        :filter="noFilter"
+                        :rules="required"
+                        />
+                  </v-col>
+               </v-row>
+               <v-row dense>
+                  <v-col cols="12" sm="2">
+                     <v-text-field label="Date" v-model="activity.date" :rules="required" type="date"/>
+                  </v-col>
+                  <v-col cols="12" sm="2">
+                     <v-text-field label="Duration (decimal)" v-model.number="activity.duration" v-mask="'#.##'" :rules="required"/>
+                  </v-col>
+                  <v-col cols="12" sm="2">
+                     <v-text-field label="Start Time" v-model="activity.startTime" :rules="required" type="time"/>
+                  </v-col>
+                  <v-col cols="12" sm="2">
+                     <v-text-field label="End Time" v-model="endTime" readonly type="time"/>
+                  </v-col>
+                  <v-col cols="12" sm="2">
+                     <v-text-field label="Total Time" v-model="totalTime" readonly type="time"/>
+                  </v-col>
+                  <v-col cols="12" sm="2">
+                     <v-text-field label="Fuel" v-model="fuel" readonly/>
+                  </v-col>
+               </v-row>
+               <v-row dense>
+                  <v-col cols="12" sm="2">
+                     <v-text-field label="Price" v-model="price" readonly/>
+                  </v-col>
+                  <v-col cols="12" sm="4">
+                     <v-text-field label="Passengers (comma separated)" v-model="activity.passengers" :rules="passengersRequired"/>
+                  </v-col>
+                  <v-col cols="12" sm="2">
+                     <v-switch label="Share Price" v-model="activity.shared" inset/>
+                  </v-col>
+                  <v-col cols="12" sm="2">
+                     <v-text-field label="Passenger Price (round)" v-model="passengerPrice" :disabled="!activity.passengers"  v-mask="'####'"/>
+                  </v-col>
+               </v-row>
+               <v-row dense>
+                  <v-col sm="12">
+                     <v-btn depressed color="blue darken-3" dark @click="addActivity" :loading="$store.state.isLoading">SUBMIT</v-btn>
+                  </v-col>
+               </v-row>
             </v-form>
-        </v-card-text>
-    </v-card>
-  </div>
+         </v-card-text>
+      </v-card>
+   </div>
 </template>
 
 <script>

@@ -12,7 +12,7 @@
                <template v-slot:top>
                   <v-dialog v-model="aircraftDialog" max-width="500px">
                      <template v-slot:activator="{ on }">
-                        <v-btn class="mb-2" v-on="on">New Aircraft</v-btn>
+                        <v-btn depressed class="mb-2" v-on="on">New Aircraft</v-btn>
                      </template>
                      <v-card>
                         <v-card-title>
@@ -85,7 +85,7 @@
                </v-row>
                <v-row dense>
                   <v-col sm="12">
-                     <v-btn @click="updateProfile" :loading="$store.state.isLoading">UPDATE</v-btn>
+                     <v-btn depressed @click="updateProfile" :loading="$store.state.isLoading">UPDATE</v-btn>
                   </v-col>
                </v-row>
             </v-form>
@@ -101,7 +101,7 @@
          <v-card-text>
             <v-row dense>
                <v-col sm="12">
-                  <v-btn @click="exportActivities">EXPORT ACTIVITIES</v-btn>
+                  <v-btn depressed @click="exportActivities">EXPORT ACTIVITIES</v-btn>
                   <a id="exportLink" style="display:none"></a>
                </v-col>
             </v-row>
