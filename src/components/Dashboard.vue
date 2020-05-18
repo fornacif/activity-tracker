@@ -236,7 +236,7 @@
 				registrationFilter: [],
 				modelFilter: [],
 				headers: [
-                    { text: 'YEAR', value: 'year'},
+                    { text: 'YEAR', value: 'year', width: 50},
                     { text: 'DURATION', value: 'duration'},
                     { text: 'COUNT', value: 'count'},
                     { text: 'PRICE', value: 'price'},
