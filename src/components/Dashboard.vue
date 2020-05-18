@@ -1,7 +1,7 @@
 <template>
    <div>
       <v-row dense>
-         <v-col cols="12" sm="12" class="pt-0">
+         <v-col cols="12" class="pt-0">
             <v-card outlined>
                <v-banner>
                   <v-avatar slot="icon" color="blue-grey darken-3" size="40">
@@ -10,47 +10,43 @@
                   Flight Checks
                </v-banner>
                <v-card-text>
-                  <v-simple-table>
-                     <template v-slot:default>
-                        <thead>
-                           <tr>
-                              <th class="text-left">MODEL</th>
-                              <th class="text-left">SINCE LAST INST FLIGHT</th>
-                              <th class="text-left">BEFORE TEST FLIGHT</th>
-                              <th class="text-left">SINCE LAST CDB FLIGHT</th>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr v-show="$store.state.isLoading">
-                              <td>
-                                 <v-progress-circular indeterminate color="blue darken-3" width="1"/>
-                              </td>
-                           </tr>
-                           <tr v-for="item in aggregates.daysByModel" :key="item.model">
-                              <td>
-                                 <v-chip label outlined color="blue-grey darken-1">
-                                    <span class="subtitle-1">{{ item.model }}</span>
-                                 </v-chip>
-                              </td>
-                              <td>
-                                 <v-chip outlined :color="item.daysSinceLastInstFlightColor">
-                                    <span class="title font-weight-bold">{{ item.daysSinceLastInstFlight }} d</span>
-                                 </v-chip>
-                              </td>
-                              <td>
-                                 <v-chip outlined :color="item.daysBeforeTestFlightColor">
-                                    <span class="title font-weight-bold">{{ item.daysBeforeTestFlight }} d</span>
-                                 </v-chip>
-                              </td>
-                              <td>
-                                 <v-chip outlined :color="item.daysSinceLastCdbFlightColor">
-                                    <span class="title font-weight-bold">{{ item.daysSinceLastCdbFlight }} d</span>
-                                 </v-chip>
-                              </td>
-                           </tr>
-                        </tbody>
-                     </template>
-                  </v-simple-table>
+                  <v-row dense>
+                     <v-col sm="1">
+                        <span>MODEL</span>
+                     </v-col>
+                     <v-col sm="3">
+                        <span>SINCE LAST INST FLIGHT</span>
+                     </v-col>
+                     <v-col sm="3">
+                        <span>BEFORE TEST FLIGHT</span>
+                     </v-col>
+                     <v-col sm="3">
+                        <span>SINCE LAST CDB FLIGHT</span>
+                     </v-col>
+                  </v-row>
+                  <v-divider></v-divider>
+                  <v-row dense v-for="item in aggregates.daysByModel" :key="item.model">
+                     <v-col sm="1">
+                        <v-chip dark label color="blue-grey darken-1">
+                           <span class="subtitle-2">{{ item.model }}</span>
+                        </v-chip>
+                     </v-col>
+                     <v-col sm="3">
+                        <v-chip label outlined :color="item.daysSinceLastInstFlightColor">
+                           <span class="subtitle-1 font-weight-bold">{{ item.daysSinceLastInstFlight }} d</span>
+                        </v-chip>
+                     </v-col>
+                     <v-col sm="3">
+                        <v-chip label outlined :color="item.daysBeforeTestFlightColor">
+                           <span class="subtitle-1 font-weight-bold">{{ item.daysBeforeTestFlight }} d</span>
+                        </v-chip>
+                     </v-col>
+                     <v-col sm="3">
+                        <v-chip label outlined :color="item.daysSinceLastCdbFlightColor">
+                           <span class="subtitle-1 font-weight-bold">{{ item.daysSinceLastCdbFlight }} d</span>
+                        </v-chip>
+                     </v-col>
+                  </v-row>
                </v-card-text>
             </v-card>
          </v-col>

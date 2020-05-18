@@ -12,7 +12,7 @@
         </v-card-text>
         <v-data-table :items="$store.state.activities" :headers="headers" :items-per-page="10" :search="search" :loading="$store.state.isLoading" loading-text="Loading..." :mobile-breakpoint="$store.state.mobileBreakpoint">
             <template v-slot:item.category="{ item }">
-                <v-chip :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
+                <v-chip label :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
             </template>
             <template v-slot:item.action="{ item }">
                 <v-speed-dial v-model="item.selected" direction="left">
