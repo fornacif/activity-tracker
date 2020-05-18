@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card>
+    <v-card outlined>
         <v-banner>
             <v-avatar slot="icon" color="blue-grey darken-3" size="40">
                 <v-icon dark>mdi-table-large-plus</v-icon>

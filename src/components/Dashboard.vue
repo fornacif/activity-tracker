@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<v-row>
-			<v-col cols="12" sm="12">
-				<v-card >
+		<v-row dense>
+			<v-col cols="12" sm="12" class="pt-0">
+				<v-card outlined>
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 							<v-icon dark>mdi-shield-check</v-icon>
@@ -55,7 +55,7 @@
 				</v-card>
 			</v-col>
 			<v-col cols="12" sm="6">
-				<v-card>
+				<v-card outlined>
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 							<v-icon dark>mdi-counter</v-icon>
@@ -94,7 +94,7 @@
 				</v-card>
 			</v-col>
 			<v-col cols="12" sm="6">
-				<v-card>
+				<v-card outlined>
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 							<v-icon dark>mdi-counter</v-icon>
@@ -125,9 +125,9 @@
 			</v-col>
 		</v-row>
 
-		<v-row>
+		<v-row dense>
 			<v-col cols="12" sm="6">
-				<v-card>
+				<v-card outlined>
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 							<v-icon dark>mdi-currency-eur</v-icon>
@@ -157,7 +157,7 @@
 				</v-card>
 			</v-col>
 			<v-col cols="12" sm="6">
-				<v-card>
+				<v-card outlined>
 					<v-banner>
 						<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 							<v-icon dark>mdi-currency-eur</v-icon>
@@ -179,9 +179,9 @@
 			</v-col>
 		</v-row>
     
-        <v-row>
+        <v-row dense>
           <v-col cols="12" sm="12">
-            <v-card>
+            <v-card outlined>
 				<v-banner>
 					<v-avatar slot="icon" color="blue-grey darken-3" size="40">
 						<v-icon dark>mdi-chart-line-variant</v-icon>
