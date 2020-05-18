@@ -48,7 +48,7 @@
       </v-navigation-drawer>
       <v-app-bar app color="blue-grey darken-3" dark>
          <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-         <v-toolbar-title>Activity Tracker - 2.2.1</v-toolbar-title>
+         <v-toolbar-title>Activity Tracker - 2.2.2</v-toolbar-title>
          <v-spacer></v-spacer>
          <v-btn icon to="/logout">
             <v-icon>mdi-logout</v-icon>
@@ -56,7 +56,8 @@
       </v-app-bar>
       <v-content>
          <v-alert color="green" dense dark v-show="updateExists">
-            New version available <v-btn small color="green darken-3" dark @click="refreshUI()">Refresh</v-btn>
+            New version available 
+            <v-btn small color="green darken-3" dark @click="refreshUI()">Refresh</v-btn>
          </v-alert>
          <v-container fluid>
             <router-view/>
