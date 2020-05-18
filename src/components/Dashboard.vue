@@ -197,7 +197,7 @@
                         <v-select :items="aggregates.captains" v-model="captainFilter" label="Filter by Captain" multiple dense outlined></v-select>
                      </v-col>
                      <v-col cols="12" sm="1">
-                        <v-btn depressed rounded @click="resetFilters">RESET</v-btn>
+                        <v-btn depressed @click="resetFilters">RESET</v-btn>
                      </v-col>
                   </v-row>
                   <v-data-table :items="aggregates.all" :headers="headers" :items-per-page="10" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading..." :mobile-breakpoint="$store.state.mobileBreakpoint">
