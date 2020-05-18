@@ -48,7 +48,7 @@
       </v-navigation-drawer>
       <v-app-bar app color="blue-grey darken-3" dark>
          <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-         <v-toolbar-title>Activity Tracker - 2.2.2</v-toolbar-title>
+         <v-toolbar-title>Activity Tracker - 0.9.0</v-toolbar-title>
          <v-spacer></v-spacer>
          <v-btn icon to="/logout">
             <v-icon>mdi-logout</v-icon>

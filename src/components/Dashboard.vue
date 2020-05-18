@@ -25,6 +25,20 @@
                      </v-col>
                   </v-row>
                   <v-divider></v-divider>
+                  <v-row dense v-show="$store.state.isLoading">
+                     <v-col sm="1">
+                        <v-progress-circular indeterminate color="blue darken-3" width="1"/>
+                     </v-col>
+                     <v-col sm="3">
+                        <v-progress-circular indeterminate color="blue darken-3" width="1"/>
+                     </v-col>
+                     <v-col sm="3">
+                        <v-progress-circular indeterminate color="blue darken-3" width="1"/>
+                     </v-col>
+                     <v-col sm="3">
+                        <v-progress-circular indeterminate color="blue darken-3" width="1"/>
+                     </v-col>
+                  </v-row>
                   <v-row dense v-for="item in aggregates.daysByModel" :key="item.model">
                      <v-col sm="1">
                         <v-chip dark label color="blue-grey darken-1">
