@@ -19,7 +19,7 @@ export default new Vuex.Store({
 		needActivitiesReload: true,
 		needProfileReload: true,
 		isLoading: false,
-		mobileBreakpoint: 400
+		mobileBreakpoint: 350
 	},
 	getters: {
 		getAircraft: (state) => (registration) => {

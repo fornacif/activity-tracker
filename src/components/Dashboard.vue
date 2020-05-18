@@ -184,19 +184,19 @@
                </v-banner>
                <v-card-subtitle>
                   <v-row dense>
-                     <v-col cols="12" sm="2">
+                     <v-col cols="12" sm="2" class="my-n2">
                         <v-select :items="aggregates.categories" v-model="categoryFilter" label="Filter by Category" multiple dense outlined></v-select>
                      </v-col>
-                     <v-col cols="12" sm="2">
+                     <v-col cols="12" sm="2" class="my-n2">
                         <v-select :items="aggregates.registrations" v-model="registrationFilter" label="Filter by Registration" multiple dense outlined></v-select>
                      </v-col>
-                     <v-col cols="12" sm="2">
+                     <v-col cols="12" sm="2" class="my-n2">
                         <v-select :items="aggregates.models" v-model="modelFilter" label="Filter by Model" multiple dense outlined></v-select>
                      </v-col>
-                     <v-col cols="12" sm="2">
+                     <v-col cols="12" sm="2" class="my-n2">
                         <v-select :items="aggregates.captains" v-model="captainFilter" label="Filter by Captain" multiple dense outlined></v-select>
                      </v-col>
-                     <v-col cols="12" sm="1">
+                     <v-col cols="12" sm="1" class="mt-n2">
                         <v-btn depressed @click="resetFilters">RESET</v-btn>
                      </v-col>
                   </v-row>
@@ -226,17 +226,12 @@
     export default {
         data() {
             return {
-				drawDuration: 1000,
-				lineWidth: 2,
-				labelSize: 6,
-				padding: 25,
-				gradient: ['#f72047', '#ffd200', '#1feaea'],
 				categoryFilter: [],
 				registrationFilter: [],
 				captainFilter: [],
 				modelFilter: [],
 				headers: [
-                    { text: 'YEAR', value: 'year', width: 90},
+                    { text: 'YEAR', value: 'year'},
                     { text: 'DURATION', value: 'duration'},
                     { text: 'COUNT', value: 'count'},
                     { text: 'PRICE', value: 'price'},
@@ -282,7 +277,7 @@
 				aggregates.totalCdbPrice = this.sumByProperty(cdbActivities, 'price');
 				aggregates.totalInstPrice = this.sumByProperty(instActivities, 'price');
 				
-				aggregates.totalPassengersFlights = this.sumByFilledProperty(cdbActivities, 'passengers');
+				aggregates.totalPassengersFlights = this.sumByFilledProperty(activities, 'passengers');
 				aggregates.totalPassengersPrice = this.sumByPassengerPrice(activities);
 
 				aggregates.categories = this.aggregateByProperty(activities, "category");
