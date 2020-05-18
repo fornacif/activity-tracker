@@ -191,11 +191,14 @@
                      <v-col cols="12" sm="2">
                         <v-select :items="aggregates.categories" v-model="categoryFilter" label="Filter by Category" multiple dense outlined></v-select>
                      </v-col>
-                     <v-col cols="12" sm="3">
+                     <v-col cols="12" sm="2">
                         <v-select :items="aggregates.registrations" v-model="registrationFilter" label="Filter by Registration" multiple dense outlined></v-select>
                      </v-col>
                      <v-col cols="12" sm="2">
                         <v-select :items="aggregates.models" v-model="modelFilter" label="Filter by Model" multiple dense outlined></v-select>
+                     </v-col>
+                     <v-col cols="12" sm="2">
+                        <v-select :items="aggregates.captains" v-model="captainFilter" label="Filter by Captain" multiple dense outlined></v-select>
                      </v-col>
                      <v-col cols="12" sm="1">
                         <v-btn depressed rounded @click="resetFilters">RESET</v-btn>
@@ -234,9 +237,10 @@
 				gradient: ['#f72047', '#ffd200', '#1feaea'],
 				categoryFilter: [],
 				registrationFilter: [],
+				captainFilter: [],
 				modelFilter: [],
 				headers: [
-                    { text: 'YEAR', value: 'year', width: 50},
+                    { text: 'YEAR', value: 'year', width: 90},
                     { text: 'DURATION', value: 'duration'},
                     { text: 'COUNT', value: 'count'},
                     { text: 'PRICE', value: 'price'},
@@ -288,6 +292,7 @@
 				aggregates.categories = this.aggregateByProperty(activities, "category");
 				aggregates.registrations = this.aggregateByProperty(activities, "registration");
 				aggregates.models = this.aggregateByProperty(activities, "model");
+				aggregates.captains = this.aggregateByProperty(activities, "captain");
 
 				aggregates.all = this.aggreateItemsPerYear(activities);
 
@@ -341,7 +346,8 @@
 
 					if ((this.categoryFilter.length == 0 || this.categoryFilter.includes(activity.category)) && 
 						(this.registrationFilter.length == 0 || this.registrationFilter.includes(activity.registration)) &&
-						(this.modelFilter.length == 0 || this.modelFilter.includes(activity.model))) {
+						(this.modelFilter.length == 0 || this.modelFilter.includes(activity.model)) &&
+                        (this.captainFilter.length == 0 || this.captainFilter.includes(activity.captain))) {
 
 						if (items.has(year)) {
 							items.get(year).duration += item.duration;
