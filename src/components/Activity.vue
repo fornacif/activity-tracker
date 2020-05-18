@@ -81,11 +81,11 @@
                     <v-col cols="12" sm="2">
                         <v-text-field label="Price" v-model="price" readonly/>
                     </v-col>
-                    <v-col cols="12" sm="2">
-                        <v-switch label="Shared" v-model="activity.shared" inset/>
+                    <v-col cols="12" sm="4">
+                        <v-text-field label="Passengers (comma separated)" v-model="activity.passengers" :rules="passengersRequired"/>
                     </v-col>
                     <v-col cols="12" sm="2">
-                        <v-text-field label="Passengers (comma separated)" v-model="activity.passengers" :rules="passengersRequired" :disabled="!activity.shared"/>
+                        <v-switch label="Share Price" v-model="activity.shared" inset/>
                     </v-col>
                     <v-col cols="12" sm="2">
                         <v-text-field label="Passenger Price (round)" v-model="passengerPrice" :disabled="!activity.passengers"  v-mask="'####'"/>
