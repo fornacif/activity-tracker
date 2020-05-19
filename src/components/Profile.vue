@@ -165,6 +165,7 @@
             },
             saveAircraft() {
 				if (this.$refs.aircraftForm.validate()) {
+					this.aircraft.registration = this.aircraft.registration.toUpperCase();
 					if (this.editedIndex > -1) {
 						Object.assign(this.profile.aircrafts[this.editedIndex], this.aircraft);
                     } else {
