@@ -99,6 +99,10 @@
             </v-form>
          </v-card-text>
       </v-card>
+      
+      <v-snackbar v-model="confirmationSnackbar" :timeout="timeout" color="green darken-3">
+         <div>Activity saved</div>
+      </v-snackbar>
    </div>
 </template>
 
@@ -112,6 +116,8 @@
         data() {
             return {
                 valid: true,
+                confirmationSnackbar: false,
+                timeout: 2000,
                 activity: {
                     shared: false,
                     passengerPrice: 0,
@@ -255,6 +261,7 @@
             async addActivity() {
                 if (this.$refs.form.validate()) {
                     this.$store.dispatch('addActivity', this.activity);
+                    this.confirmationSnackbar = true;
                     this.resetForm();
                 }
             },
