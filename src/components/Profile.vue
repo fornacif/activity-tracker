@@ -22,10 +22,10 @@
                            <v-form ref="aircraftForm" v-model="valid" lazy-validation>
                               <v-row dense>
                                  <v-col cols="12" sm="4">
-                                    <v-text-field v-model="aircraft.registration" label="Registration" :rules="required" required></v-text-field>
+                                    <v-text-field v-model="aircraft.registration" label="Registration" :rules="required" required hint="Exemple: F-GIHE"></v-text-field>
                                  </v-col>
                                  <v-col cols="12" sm="4">
-                                    <v-text-field v-model="aircraft.model" label="Model" :rules="required" required></v-text-field>
+                                    <v-text-field v-model="aircraft.model" label="Model" :rules="required" required hint="Exemple: R22"></v-text-field>
                                  </v-col>
                                  <v-col cols="12" sm="4">
                                     <v-text-field v-model="aircraft.fuel" label="Fuel (liter/h)" v-mask="'####'" :rules="required" required></v-text-field>
