@@ -76,6 +76,9 @@ export default new Vuex.Store({
 					snapshot.forEach(doc => {
 						let activity = doc.data();
 						activity.id = doc.id;
+						
+						//update(docId);
+
 						commit(ADD_ACTIVITY, activity);
 					})
 					commit(NEED_ACTIVITIES_RELOAD, false);
@@ -85,7 +88,6 @@ export default new Vuex.Store({
 					commit(IS_LOADING, false);
 				}
 			}
-			//console.info(JSON.stringify(state.activities));
 		},
 		async addActivity({commit}, activity) {
             try {
@@ -141,6 +143,12 @@ export default new Vuex.Store({
 				commit(IS_LOADING, false);
 			}
 		},
+		updateDoc(activity) {
+			let ref = firebase.activitiesCollection.doc(activity.id);
+			if (activity.category == 'CDB') {
+				ref.update({captain: "Fornaciari"});							
+			}
+		}
 	},
 	modules: {
 	}

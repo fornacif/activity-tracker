@@ -93,14 +93,14 @@
                </v-row>
                <v-row dense>
                   <v-col sm="12">
-                     <v-btn depressed color="blue darken-3" dark @click="addActivity" :loading="$store.state.isLoading">SUBMIT</v-btn>
+                    <v-btn depressed  @click="addActivity" :loading="$store.state.isLoading">SUBMIT</v-btn>
                   </v-col>
                </v-row>
             </v-form>
          </v-card-text>
       </v-card>
       
-      <v-snackbar v-model="confirmationSnackbar" :timeout="timeout" color="green darken-3">
+      <v-snackbar v-model="confirmationSnackbar" :timeout="timeout" color="green darken-1">
          <div>Activity saved</div>
       </v-snackbar>
    </div>

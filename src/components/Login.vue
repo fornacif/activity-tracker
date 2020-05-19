@@ -11,7 +11,7 @@
                </v-card-text>
                <v-card-actions>
                   <v-spacer />
-                  <v-btn form="formLogin" type="submit" color="blue darken-3" dark :loading="loading">Login</v-btn>
+                  <v-btn depressed form="formLogin" type="submit" color="blue darken-3" dark :loading="loading">Login</v-btn>
                </v-card-actions>
             </v-card>
          </v-col>

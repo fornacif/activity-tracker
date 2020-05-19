@@ -55,7 +55,7 @@
          </v-btn>
       </v-app-bar>
       <v-content>
-         <v-alert color="green" dense dark v-show="updateExists">
+         <v-alert color="green darken-1" dense dark v-show="updateExists">
             New version available 
             <v-btn small depressed color="green darken-3" dark @click="refreshUI()">Refresh</v-btn>
          </v-alert>

@@ -10,36 +10,36 @@
                   Flight Checks
                </v-banner>
                <v-card-text>
-                  <v-row dense>
+                  <v-row dense align="end">
                      <v-col sm="1">
-                        <span>MODEL</span>
+                        <span class="subtitle-2">Model</span>
                      </v-col>
                      <v-col sm="3">
-                        <span>SINCE LAST INST FLIGHT</span>
+                        <span class="subtitle-2">Since Last INST Flight</span>
                      </v-col>
                      <v-col sm="3">
-                        <span>BEFORE TEST FLIGHT</span>
+                        <span class="subtitle-2">Before TEST Flight</span>
                      </v-col>
                      <v-col sm="3">
-                        <span>SINCE LAST CDB FLIGHT</span>
+                        <span class="subtitle-2">Since Last CDB Flight</span>
                      </v-col>
                   </v-row>
                   <v-divider></v-divider>
                   <v-row dense v-show="$store.state.isLoading">
                      <v-col sm="1">
-                        <v-progress-circular indeterminate color="blue darken-3" width="1"/>
+                        <v-progress-circular indeterminate width="1"/>
                      </v-col>
                      <v-col sm="3">
-                        <v-progress-circular indeterminate color="blue darken-3" width="1"/>
+                        <v-progress-circular indeterminate width="1"/>
                      </v-col>
                      <v-col sm="3">
-                        <v-progress-circular indeterminate color="blue darken-3" width="1"/>
+                        <v-progress-circular indeterminate width="1"/>
                      </v-col>
                      <v-col sm="3">
-                        <v-progress-circular indeterminate color="blue darken-3" width="1"/>
+                        <v-progress-circular indeterminate width="1"/>
                      </v-col>
                   </v-row>
-                  <v-row dense v-for="item in aggregates.daysByModel" :key="item.model">
+                  <v-row dense v-for="item in aggregates.daysByModel" :key="item.model" class="mt-1">
                      <v-col sm="1">
                         <v-chip dark label color="blue-grey darken-1">
                            <span class="subtitle-2">{{ item.model }}</span>
@@ -76,7 +76,7 @@
                   <v-col sm="6">
                      <v-card flat>
                         <v-card-title>
-                           <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
+                           <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
                            <span v-show="!$store.state.isLoading">{{ aggregates.totalCdbDuration | numeral('0,0.00') }} h</span>                
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total Duration</v-card-subtitle>
@@ -85,7 +85,7 @@
                   <v-col sm="6">
                      <v-card flat>
                         <v-card-title>
-                           <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
+                           <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
                            <span v-show="!$store.state.isLoading">{{ aggregates.totalCdbFlights }}</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total Flights</v-card-subtitle>
@@ -106,7 +106,7 @@
                   <v-col sm="6">
                      <v-card flat>
                         <v-card-title>
-                           <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
+                           <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
                            <span v-show="!$store.state.isLoading">{{ aggregates.totalInstDuration | numeral('0,0.00') }} h</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total Duration</v-card-subtitle>
@@ -115,7 +115,7 @@
                   <v-col sm="6">
                      <v-card flat>
                         <v-card-title>
-                           <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
+                           <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
                            <span v-show="!$store.state.isLoading">{{ aggregates.totalInstFlights }}</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total Flights</v-card-subtitle>
@@ -138,7 +138,7 @@
                   <v-col sm="6">
                      <v-card flat>
                         <v-card-title>
-                           <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
+                           <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
                            <span v-show="!$store.state.isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }} €</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total CDB</v-card-subtitle>
@@ -147,7 +147,7 @@
                   <v-col sm="6">
                      <v-card flat>
                         <v-card-title>
-                           <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
+                           <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
                            <span v-show="!$store.state.isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }} €</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total INST</v-card-subtitle>
@@ -168,7 +168,7 @@
                   <v-col sm="6">
                      <v-card flat>
                         <v-card-title>
-                           <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
+                           <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
                            <span v-show="!$store.state.isLoading">{{ aggregates.totalPassengersFlights }}</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">PAX Flights</v-card-subtitle>
@@ -177,7 +177,7 @@
                   <v-col sm="6">
                      <v-card flat>
                         <v-card-title>
-                           <v-progress-circular v-show="$store.state.isLoading" indeterminate color="blue darken-3" width="1"/>
+                           <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
                            <span v-show="!$store.state.isLoading">{{ aggregates.totalPassengersPrice | numeral('0,0') }} €</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Passengers Price</v-card-subtitle>
@@ -216,16 +216,16 @@
                   </v-row>
                   <v-data-table :items="aggregates.all" :headers="headers" :items-per-page="10" class="elevation-1" :loading="$store.state.isLoading" loading-text="Loading..." :mobile-breakpoint="$store.state.mobileBreakpoint">
                      <template v-slot:item.year="{ item }">
-                        <strong>{{ item.year }}</strong>
+                        <span class="text-no-wrap"><strong>{{ item.year }}</strong></span>
                      </template>
                      <template v-slot:item.duration="{ item }">
-                        {{ item.duration | numeral('0,0.00') }} h
+                        <span class="text-no-wrap">{{ item.duration | numeral('0,0.00') }}</span>
                      </template>
                      <template v-slot:item.price="{ item }">
-                        {{ item.price | numeral('0,0') }} €
+                        <span class="text-no-wrap">{{ item.price | numeral('0,0') }}</span>
                      </template>
                      <template v-slot:item.passengerPrice="{ item }">
-                        {{ item.passengerPrice | numeral('0,0') }} €
+                        <span class="text-no-wrap">{{ item.passengerPrice | numeral('0,0') }} €</span>
                      </template>
                   </v-data-table>
                </v-card-subtitle>
@@ -246,10 +246,10 @@
 				modelFilter: [],
 				headers: [
                     { text: 'YEAR', value: 'year'},
-                    { text: 'DURATION', value: 'duration'},
+                    { text: 'DURATION (h)', value: 'duration'},
                     { text: 'COUNT', value: 'count'},
-                    { text: 'PRICE', value: 'price'},
-                    { text: 'PASSENGERS PRICE', value: 'passengersPrice'},
+                    { text: 'PRICE (€)', value: 'price'},
+                    { text: 'PASSENGERS PRICE (€)', value: 'passengersPrice'},
                 ]
             }
         },
