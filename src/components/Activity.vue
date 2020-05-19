@@ -62,7 +62,7 @@
                      <v-text-field label="Date" v-model="activity.date" :rules="required" type="date"/>
                   </v-col>
                   <v-col cols="12" sm="2">
-                     <v-text-field label="Duration (decimal)" v-model.number="activity.duration" v-mask="'#.##'" :rules="required"/>
+                     <v-text-field label="Duration (decimal)" v-model.number="activity.duration" v-mask="'#.##'" :rules="required" hint="Exemple: 0.75"/>
                   </v-col>
                   <v-col cols="12" sm="2">
                      <v-text-field label="Start Time" v-model="activity.startTime" :rules="required" type="time"/>
@@ -82,7 +82,7 @@
                      <v-text-field label="Price" v-model="price" readonly/>
                   </v-col>
                   <v-col cols="12" sm="4">
-                     <v-text-field label="Passengers (comma separated)" v-model="activity.passengers" :rules="passengersRequired"/>
+                     <v-text-field label="Passenger Names" v-model="activity.passengers" :rules="passengersRequired" hint="Exemple: Alina, Cameron"/>
                   </v-col>
                   <v-col cols="12" sm="2">
                      <v-switch label="Share Price" v-model="activity.shared" inset/>
