@@ -101,8 +101,12 @@
          <v-card-text>
             <v-row dense>
                <v-col sm="12">
-                  <v-btn depressed @click="exportActivities">EXPORT ACTIVITIES</v-btn>
-                  <a id="exportLink" style="display:none"></a>
+                  <v-btn depressed @click="exportActivitiesAsJson">EXPORT ACTIVITIES AS JSON</v-btn>
+                  <a id="exportJsonLink" style="display:none"></a>
+               </v-col>
+               <v-col sm="12">
+                  <v-btn depressed @click="exportActivitiesAsCsv">EXPORT ACTIVITIES AS CSV</v-btn>
+                  <a id="exportCsvLink" style="display:none"></a>
                </v-col>
             </v-row>
          </v-card-text>
@@ -112,6 +116,7 @@
 
 <script>
     import { mask } from 'vue-the-mask'
+    const flatten = require('flat').flatten;
 
     export default {
         directives: {
@@ -187,13 +192,37 @@
                     this.$store.dispatch('setProfile', this.profile);
                 }
             },
-            async exportActivities() {
+            async exportActivitiesAsJson() {
 				await this.$store.dispatch('getActivities');
 				let data = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.$store.state.activities, null, 2));
-				let exportLink = document.getElementById('exportLink');
+				let exportLink = document.getElementById('exportJsonLink');
 				exportLink.setAttribute("href", data);
 				exportLink.setAttribute("download", "activities.json");
 				exportLink.click();
+            },
+            async exportActivitiesAsCsv() {
+                await this.$store.dispatch('getActivities');
+                
+                let flattenJsonActivities = [];
+                this.$store.state.activities.forEach(activity => {
+                    flattenJsonActivities.push(flatten(activity));
+                });
+   
+                var fields = Object.keys(flattenJsonActivities[0]);
+                var replacer = function(key, value) { return value === null ? '' : value };
+                var csv = flattenJsonActivities.map(function(row) {
+                  return fields.map(function(fieldName){
+                    return JSON.stringify(row[fieldName], replacer)
+                  }).join(',')
+                });
+                csv.unshift(fields.join(','));
+                csv = csv.join('\r\n');
+                
+                let data = "data:text/json;charset=utf-8," + encodeURIComponent(csv);
+                let exportLink = document.getElementById('exportCsvLink');
+                exportLink.setAttribute("href", data);
+                exportLink.setAttribute("download", "activities.csv");
+                exportLink.click();
             }
         }
     }
