@@ -17,10 +17,48 @@
             <template v-slot:item.captain="{ item }">
                <v-edit-dialog
                   :return-value.sync="item.captain"
-                  @save="updateActivity(item)">
+                  @save="updateActivity(item)"
+                  large
+                  persistent>
                   {{ item.captain }}
+                  <template v-slot:input >
+                    <v-text-field v-model="item.captain" label="Edit" v-show="item.category != 'CDB'"></v-text-field>
+                  </template>
+                </v-edit-dialog>
+            </template>
+            <template v-slot:item.shared="{ item }">
+               <v-edit-dialog
+                  :return-value.sync="item.shared"
+                  @save="updateActivity(item)"
+                  large
+                  persistent>
+                  {{ item.shared }}
+                  <template v-slot:input >
+                    <v-switch label="Share Price" v-model="item.shared" inset/>
+                  </template>
+                </v-edit-dialog>
+            </template>
+            <template v-slot:item.passengers="{ item }">
+               <v-edit-dialog
+                  :return-value.sync="item.passengers"
+                   @save="updateActivity(item)"
+                  large
+                  persistent>
+                  {{ item.passengers }}
                   <template v-slot:input>
-                    <v-text-field v-model="item.captain" label="Edit"></v-text-field>
+                    <v-text-field v-model="item.passengers" label="Edit"></v-text-field>
+                  </template>
+                </v-edit-dialog>
+            </template>
+            <template v-slot:item.passengerPrice="{ item }">
+               <v-edit-dialog
+                  :return-value.sync="item.passengerPrice"
+                   @save="updateActivity(item)"
+                  large
+                  persistent>
+                  {{ item.passengerPrice }}
+                  <template v-slot:input>
+                    <v-text-field v-model="item.passengerPrice" label="Edit" v-mask="'####'"></v-text-field>
                   </template>
                 </v-edit-dialog>
             </template>
