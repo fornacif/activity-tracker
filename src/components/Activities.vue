@@ -9,7 +9,7 @@
          </v-banner>
          <v-card-text>
             <v-alert dense text type="info" color="blue-grey darken-1">
-               <strong>CAPTAIN</strong>, <strong>PASSENGERS</strong>, <strong>SHARED</strong> and <strong>PAX PRICE</strong> are editable. Just click on the cell to update.
+               <strong>CAPTAIN</strong> (for INST flights), <strong>PASSENGERS</strong>, <strong>SHARED</strong> and <strong>PAX PRICE</strong> are editable. Just click the cell to update.
                <br />To update more fields, <strong>delete</strong> the activity and create a new one.
             </v-alert>
             <v-text-field v-model="search" prepend-icon="mdi-magnify" label="Type to search..." clearable single-line hide-details dense></v-text-field>
@@ -39,7 +39,7 @@
                   persistent>
                   {{ item.shared }}
                   <template v-slot:input >
-                    <v-switch label="Share Price" v-model="item.shared" inset/>
+                    <v-switch dense label="Share Price" v-model="item.shared" inset/>
                   </template>
                 </v-edit-dialog>
             </template>

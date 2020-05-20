@@ -45,7 +45,13 @@ export default new Vuex.Store({
 		[SET_PROFILE]: (state, profile) => {
 			if (profile.aircrafts === undefined) {
 				profile.aircrafts = [];
-			}			
+			} else {
+				profile.aircrafts = profile.aircrafts.sort(
+				    function(a, b) {
+					   return a.registration.localeCompare(b.registration);
+					}
+				);
+			}
 			state.profile = profile;
 		},
 		[NEED_PROFILE_RELOAD]: (state, value) => {
