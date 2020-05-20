@@ -104,7 +104,7 @@
                   <v-btn depressed @click="exportActivitiesAsJson">EXPORT ACTIVITIES AS JSON</v-btn>
                   <a id="exportJsonLink" style="display:none"></a>
                </v-col>
-               <v-col sm="12">
+               <v-col sm="12" class="mt-1">
                   <v-btn depressed @click="exportActivitiesAsCsv">EXPORT ACTIVITIES AS CSV</v-btn>
                   <a id="exportCsvLink" style="display:none"></a>
                </v-col>
@@ -218,7 +218,7 @@
                 csv.unshift(fields.join(','));
                 csv = csv.join('\r\n');
                 
-                let data = "data:text/json;charset=utf-8," + encodeURIComponent(csv);
+                let data = "data:text/csv;charset=utf-8," + encodeURIComponent(csv);
                 let exportLink = document.getElementById('exportCsvLink');
                 exportLink.setAttribute("href", data);
                 exportLink.setAttribute("download", "activities.csv");

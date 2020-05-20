@@ -93,7 +93,7 @@
                </v-row>
                <v-row dense>
                   <v-col sm="12">
-                    <v-btn depressed  @click="addActivity" :loading="$store.state.isLoading">SUBMIT</v-btn>
+                    <v-btn depressed  @click="addActivity" :disabled="$store.state.isLoading">SUBMIT</v-btn>
                   </v-col>
                </v-row>
             </v-form>
@@ -102,6 +102,10 @@
       
       <v-snackbar v-model="confirmationSnackbar" :timeout="timeout" color="green darken-1">
          <div>Activity saved</div>
+      </v-snackbar>
+      
+      <v-snackbar v-model="errorSnackbar" :timeout="timeout" color="red darken-1">
+         <div>Error saving activity</div>
       </v-snackbar>
    </div>
 </template>
@@ -117,6 +121,7 @@
             return {
                 valid: true,
                 confirmationSnackbar: false,
+                errorSnackbar: false,
                 timeout: 2000,
                 activity: {
                     shared: false,
@@ -258,11 +263,15 @@
 
                 items.push.apply(items, Array.from(locations.values()).slice(0, 3));
             },
-            async addActivity() {
+            addActivity() {
                 if (this.$refs.form.validate()) {
-                    this.$store.dispatch('addActivity', this.activity);
-                    this.confirmationSnackbar = true;
-                    this.resetForm();
+                    this.$store.dispatch('addActivity', Object.assign({}, this.activity)).then(() => {
+                        this.confirmationSnackbar = true;
+                        this.resetForm();
+                    },
+                    () => {
+                        this.errorSnackbar = true;
+                    });
                 }
             },
             async manageAutocomplete(searchInput, items, autocompleteField) {

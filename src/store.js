@@ -6,8 +6,7 @@ Vue.use(Vuex)
 const firebase = require('./firebaseConfig.js')
 
 const ADD_ACTIVITY = 'ADD_ACTIVITY';
-const CLEAR_ACTIVITIES = 'CLEAR_ACTIVITIES';
-const NEED_ACTIVITIES_RELOAD = 'NEED_ACTIVITIES_RELOAD';
+const DELETE_ACTIVITY = 'DELETE_ACTIVITY';
 const SET_PROFILE = 'SET_PROFILE';
 const NEED_PROFILE_RELOAD = 'NEED_PROFILE_RELOAD';
 const IS_LOADING = 'IS_LOADING';
@@ -38,25 +37,16 @@ export default new Vuex.Store({
 	},
 	mutations: {
 		[ADD_ACTIVITY]: (state, activity) => {
-			state.activities.push(activity);
+			state.activities.unshift(activity);
 		},
-		[CLEAR_ACTIVITIES]: (state,) => {
-			state.activities = [];
-		},
-		[NEED_ACTIVITIES_RELOAD]: (state, value) => {
-			state.needActivitiesReload = value;
+		[DELETE_ACTIVITY]: (state, activity) => {
+			state.activities.splice(state.activities.indexOf(activity), 1);
 		},
 		[SET_PROFILE]: (state, profile) => {
 			if (profile.aircrafts === undefined) {
 				profile.aircrafts = [];
-			}
-			
-			if (profile.preferedLocations === undefined) {
-				profile.preferedLocations = [];
-			}
-			
+			}			
 			state.profile = profile;
-			
 		},
 		[NEED_PROFILE_RELOAD]: (state, value) => {
 			state.needProfileReload = value;
@@ -70,18 +60,17 @@ export default new Vuex.Store({
 			if (state.needActivitiesReload) {
 				try {
 					commit(IS_LOADING, true);
-					commit(CLEAR_ACTIVITIES, true);
 					let uid = firebase.auth.currentUser.uid;
-					let snapshot = await firebase.activitiesCollection.where('uid', '==', uid).orderBy('date', 'desc').orderBy('startTime', 'desc').get();
+					let snapshot = await firebase.activitiesCollection.where('uid', '==', uid).orderBy('date').orderBy('startTime').get();
 					snapshot.forEach(doc => {
 						let activity = doc.data();
 						activity.id = doc.id;
 						
-						//update(docId);
+						//updateActivity(activity);
 
 						commit(ADD_ACTIVITY, activity);
-					})
-					commit(NEED_ACTIVITIES_RELOAD, false);
+					});
+					state.needActivitiesReload = false;
 				} catch(error) {
 					console.error(error);
 				} finally {
@@ -89,22 +78,37 @@ export default new Vuex.Store({
 				}
 			}
 		},
-		async addActivity({commit}, activity) {
-            try {
-				commit(NEED_ACTIVITIES_RELOAD, true);
+		addActivity({commit}, activity) {
+			return new Promise((resolve, reject) => {
 				commit(IS_LOADING, true);
 				activity.uid = firebase.auth.currentUser.uid;
-                await firebase.activitiesCollection.add(activity);
-			} catch(error) {
+				firebase.activitiesCollection.add(activity).then(response => {
+					activity.id = response.id;
+					commit(ADD_ACTIVITY, activity);
+					commit(IS_LOADING, false);
+					resolve();
+				}, error => {
+					console.error(error);
+					reject();
+					commit(IS_LOADING, false);
+				});
+			});
+        },
+		updateActivity({commit}, activity) {
+            try {
+				let activityReference = firebase.activitiesCollection.doc(activity.id);
+				activityReference.update(activity);
+            } catch(error) {
                 console.error(error);
             } finally {
 				commit(IS_LOADING, false);
             }
-        },
+		},
 		async deleteActivity({commit}, activity) {
             try {
-				commit(NEED_ACTIVITIES_RELOAD, true);
+                commit(IS_LOADING, true);
                 await firebase.activitiesCollection.doc(activity.id).delete();
+                commit(DELETE_ACTIVITY, activity);
             } catch(error) {
                 console.error(error);
             } finally {
@@ -141,12 +145,6 @@ export default new Vuex.Store({
 				console.error(error);
 			} finally {
 				commit(IS_LOADING, false);
-			}
-		},
-		updateDoc(activity) {
-			let ref = firebase.activitiesCollection.doc(activity.id);
-			if (activity.category == 'CDB') {
-				ref.update({captain: "Fornaciari"});							
 			}
 		}
 	},

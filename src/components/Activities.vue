@@ -14,6 +14,16 @@
             <template v-slot:item.category="{ item }">
                <v-chip label :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
             </template>
+            <template v-slot:item.captain="{ item }">
+               <v-edit-dialog
+                  :return-value.sync="item.captain"
+                  @save="updateActivity(item)">
+                  {{ item.captain }}
+                  <template v-slot:input>
+                    <v-text-field v-model="item.captain" label="Edit"></v-text-field>
+                  </template>
+                </v-edit-dialog>
+            </template>
             <template v-slot:item.action="{ item }">
                <v-speed-dial v-model="item.selected" direction="left">
                   <template v-slot:activator>
@@ -68,10 +78,12 @@
         methods: {
             async deleteActivity(activity) {
                 await this.$store.dispatch('deleteActivity', activity);
-                this.$store.dispatch('getActivities');
             },
             getCategoryColor(activity) {
                 return activity.category == "CDB" ? 'blue-grey darken-1' : 'lime darken-4';
+            },
+            updateActivity(activity) {
+                this.$store.dispatch('updateActivity', activity);
             }
         }
     }
