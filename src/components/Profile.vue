@@ -52,7 +52,7 @@
                      <v-btn text fab x-small>
                         <v-icon @click="editAircraft(item)">mdi-pencil</v-icon>
                      </v-btn>
-                     <v-speed-dial v-model="item.selected" direction="right">
+                     <v-speed-dial v-model="item.selected" direction="left">
                         <template v-slot:activator>
                            <v-btn text x-small v-model="item.selected" fab>
                               <v-icon v-if="item.selected">mdi-close</v-icon>
