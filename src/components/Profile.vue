@@ -48,12 +48,22 @@
                   </v-dialog>
                </template>
                <template v-slot:item.actions="{ item }">
-                  <v-btn text fab x-small>
-                     <v-icon @click="editAircraft(item)">mdi-pencil</v-icon>
-                  </v-btn>
-                  <v-btn text fab x-small>
-                     <v-icon @click="deleteAircraft(item)">mdi-trash-can</v-icon>
-                  </v-btn>
+                  <v-row>
+                     <v-btn text fab x-small>
+                        <v-icon @click="editAircraft(item)">mdi-pencil</v-icon>
+                     </v-btn>
+                     <v-speed-dial v-model="item.selected" direction="right">
+                        <template v-slot:activator>
+                           <v-btn text x-small v-model="item.selected" fab>
+                              <v-icon v-if="item.selected">mdi-close</v-icon>
+                              <v-icon v-else>mdi-delete</v-icon>
+                           </v-btn>
+                        </template>
+                        <v-btn fab x-small>
+                           <v-icon @click="deleteAircraft(item)">mdi-trash-can</v-icon>
+                        </v-btn>
+                     </v-speed-dial>
+                  </v-row>
                </template>
             </v-data-table>
          </v-card-text>

@@ -8,6 +8,10 @@
             Flight Records
          </v-banner>
          <v-card-text>
+            <v-alert dense text type="info" color="blue-grey darken-1">
+               <strong>CAPTAIN</strong>, <strong>PASSENGERS</strong>, <strong>SHARED</strong> and <strong>PAX PRICE</strong> are editable. Just click on the cell to update.
+               <br />To update more fields, <strong>delete</strong> the activity and create a new one.
+            </v-alert>
             <v-text-field v-model="search" prepend-icon="mdi-magnify" label="Type to search..." clearable single-line hide-details dense></v-text-field>
          </v-card-text>
          <v-data-table :items="$store.state.activities" :headers="headers" :items-per-page="10" :search="search" :loading="$store.state.isLoading" loading-text="Loading..." :mobile-breakpoint="$store.state.mobileBreakpoint">
@@ -47,7 +51,7 @@
                   persistent>
                   {{ item.passengers }}
                   <template v-slot:input>
-                    <v-text-field v-model="item.passengers" label="Passenger Names" v-mask="'####'"></v-text-field>
+                    <v-text-field v-model="item.passengers" label="Passenger Names"></v-text-field>
                   </template>
                 </v-edit-dialog>
             </template>
@@ -85,8 +89,12 @@
 </template>
 
 <script>
+    import { mask } from 'vue-the-mask'
 
     export default {
+        directives: {
+            mask,
+        },
         data() {
             return {
                 search: '',
