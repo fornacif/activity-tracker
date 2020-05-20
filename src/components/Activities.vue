@@ -15,16 +15,17 @@
                <v-chip label :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
             </template>
             <template v-slot:item.captain="{ item }">
-               <v-edit-dialog
+               <v-edit-dialog v-if="item.category != 'CDB'"
                   :return-value.sync="item.captain"
                   @save="updateActivity(item)"
                   large
                   persistent>
                   {{ item.captain }}
-                  <template v-slot:input >
-                    <v-text-field v-model="item.captain" label="Edit" v-show="item.category != 'CDB'"></v-text-field>
+                  <template v-slot:input>
+                    <v-text-field v-model="item.captain" label="Captain" v-show="item.category != 'CDB'"></v-text-field>
                   </template>
                 </v-edit-dialog>
+                <span v-if="item.category == 'CDB'">{{ item.captain }}</span>
             </template>
             <template v-slot:item.shared="{ item }">
                <v-edit-dialog
@@ -46,7 +47,7 @@
                   persistent>
                   {{ item.passengers }}
                   <template v-slot:input>
-                    <v-text-field v-model="item.passengers" label="Edit"></v-text-field>
+                    <v-text-field v-model="item.passengers" label="Passenger Names"></v-text-field>
                   </template>
                 </v-edit-dialog>
             </template>
@@ -58,7 +59,7 @@
                   persistent>
                   {{ item.passengerPrice }}
                   <template v-slot:input>
-                    <v-text-field v-model="item.passengerPrice" label="Edit" v-mask="'####'"></v-text-field>
+                    <v-text-field v-model="item.passengerPrice" label="PAX Price" v-mask="'####'"></v-text-field>
                   </template>
                 </v-edit-dialog>
             </template>
