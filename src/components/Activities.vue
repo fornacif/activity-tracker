@@ -47,7 +47,7 @@
                   persistent>
                   {{ item.passengers }}
                   <template v-slot:input>
-                    <v-text-field v-model="item.passengers" label="Passenger Names"></v-text-field>
+                    <v-text-field v-model="item.passengers" label="Passenger Names" v-mask="'####'"></v-text-field>
                   </template>
                 </v-edit-dialog>
             </template>
