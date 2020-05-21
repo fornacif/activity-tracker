@@ -8,7 +8,7 @@
             Flight Records
          </v-banner>
          <v-card-text>
-            <v-alert dense text type="info" color="blue-grey darken-1">
+            <v-alert dense text type="info" color="blue-grey darken-1" class="body-2">
                <strong>CAPTAIN</strong> (for INST flights), <strong>PASSENGERS</strong>, <strong>SHARED</strong> and <strong>PAX PRICE</strong> are editable. Just click the cell to update.
                <br />To update more fields, <strong>delete</strong> the activity and create a new one.
             </v-alert>

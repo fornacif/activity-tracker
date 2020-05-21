@@ -47,8 +47,8 @@ export default new Vuex.Store({
 				profile.aircrafts = [];
 			} else {
 				profile.aircrafts = profile.aircrafts.sort(
-				    function(a, b) {
-					   return a.registration.localeCompare(b.registration);
+                    function(a, b) {
+                        return a.registration.localeCompare(b.registration);
 					}
 				);
 			}
