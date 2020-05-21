@@ -59,7 +59,7 @@
                               <v-icon v-else>mdi-delete</v-icon>
                            </v-btn>
                         </template>
-                        <v-btn fab x-small>
+                        <v-btn fab x-small class="mr-4">
                            <v-icon @click="deleteAircraft(item)">mdi-trash-can</v-icon>
                         </v-btn>
                      </v-speed-dial>
