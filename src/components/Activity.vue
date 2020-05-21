@@ -101,11 +101,11 @@
       </v-card>
       
       <v-snackbar v-model="confirmationSnackbar" :timeout="timeout" color="green darken-1">
-         <div>Activity saved</div>
+         Activity saved
       </v-snackbar>
       
       <v-snackbar v-model="errorSnackbar" :timeout="timeout" color="red darken-1">
-         <div>Error saving activity</div>
+         Error saving activity
       </v-snackbar>
    </div>
 </template>
