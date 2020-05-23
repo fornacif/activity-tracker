@@ -58,7 +58,6 @@
          <v-alert type="info" color="green darken-1" dense dark v-show="updateExists" class="body-2">
             New version available. Please 
             <v-btn small depressed color="green darken-3" dark @click="refreshUI()">Refresh</v-btn>
-            the application.
          </v-alert>
          <v-container fluid>
             <router-view/>
