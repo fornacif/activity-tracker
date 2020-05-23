@@ -208,7 +208,7 @@
                         <v-select :items="aggregates.types" v-model="typeFilter" label="Filter by Type" multiple dense outlined></v-select>
                      </v-col>
                      <v-col cols="12" sm="2" class="my-n2">
-                        <v-select :items="aggregates.types" v-model="picFilter" label="Filter by PIC" multiple dense outlined></v-select>
+                        <v-select :items="aggregates.pics" v-model="picFilter" label="Filter by PIC" multiple dense outlined></v-select>
                      </v-col>
                      <v-col cols="12" sm="1" class="mt-n2">
                         <v-btn depressed @click="resetFilters">RESET</v-btn>
@@ -383,7 +383,7 @@
 			resetFilters() {
 				this.categoryFilter = [];
 				this.registrationFilter = [];
-				this.picFilter = [];
+				this.typeFilter = [];
 				this.picFilter = [];
             },
             getDaysSinceLastFlight(activities) {
