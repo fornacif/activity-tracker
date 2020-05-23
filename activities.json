@@ -1,109 +1,126 @@
 [
   {
+    "passengers": "Hélène",
+    "shared": true,
+    "date": "2020-05-21",
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "duration": 0.79,
+    "id": "kC746EI7YseaKZK1nmMe",
+    "totalTime": "00:47",
+    "pic": "Fornaciari",
+    "passengerPrice": 138,
     "price": 276.5,
-    "model": "R22",
+    "type": "R22",
+    "endTime": "09:31",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "fuel": 26,
+    "startTime": "08:44",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "PIC"
+  },
+  {
+    "price": 276.5,
+    "type": "R22",
     "endTime": "10:17",
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
+        "latitude": 48.7519,
+        "longitude": 2.10619
       },
       "name": "LFPN - Toussus-le-Noble"
     },
     "fuel": 26,
-    "captain": "Fornaciari",
     "startTime": "09:30",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC",
     "shared": false,
     "date": "2020-05-15",
     "duration": 0.79,
     "toLocation": {
       "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "id": "VWeL2cuJXfY54CrmI40Z",
-    "passengerPrice": 0,
-    "totalTime": "00:47"
-  },
-  {
-    "endTime": "10:53",
-    "fuel": 42,
-    "fromLocation": {
-      "coordinates": {
         "longitude": 2.10619,
         "latitude": 48.7519
       },
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
-    "captain": "Fornaciari",
+    "id": "mUIjTNUWCcWrIRmpc8ja",
+    "totalTime": "00:47",
+    "passengerPrice": 0,
+    "pic": "Fornaciari"
+  },
+  {
+    "date": "2020-02-22",
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "duration": 1.28,
+    "id": "x5VKJDJf6XrPnrA4VyyU",
+    "pic": "Fornaciari",
+    "totalTime": "01:17",
+    "passengerPrice": 224,
+    "price": 448,
+    "type": "R22",
+    "endTime": "10:53",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "fuel": 42,
     "startTime": "09:36",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC",
     "passengers": "Alina",
-    "shared": true,
-    "date": "2020-02-22",
-    "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      }
-    },
-    "duration": 1.28,
-    "id": "2GG1QIzI0HYO5qLrxXYU",
-    "passengerPrice": 224,
-    "totalTime": "01:17",
-    "price": 448,
-    "model": "R22"
+    "shared": true
   },
   {
+    "registration": "F-GIHE",
+    "category": "P/UT",
     "shared": false,
     "date": "2020-02-07",
     "toLocation": {
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
       "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "duration": 1.03,
-    "id": "zADjwAHATfTfjZTZIzQA",
-    "totalTime": "01:02",
-    "passengerPrice": 0,
-    "price": 391.4,
-    "model": "R22",
-    "fuel": 34,
-    "endTime": "14:38",
-    "fromLocation": {
+      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      }
     },
-    "startTime": "13:36",
-    "captain": "Corré",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST"
-  },
-  {
-    "price": 304.5,
-    "model": "R22",
-    "fuel": 29,
-    "endTime": "14:39",
+    "duration": 1.03,
+    "id": "R5MO77ckc6JftPuPflu8",
+    "pic": "Corré",
+    "passengerPrice": 0,
+    "totalTime": "01:02",
+    "price": 391.4,
+    "type": "R22",
+    "fuel": 34,
     "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
@@ -112,33 +129,17 @@
         "longitude": 2.10619
       }
     },
-    "captain": "Fornaciari",
-    "startTime": "13:47",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "endTime": "14:38",
+    "startTime": "13:36",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
+  },
+  {
     "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC",
     "passengers": "Vincent",
     "shared": true,
     "date": "2019-12-31",
     "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      }
-    },
-    "duration": 0.87,
-    "id": "vqCWFDvI7e2JoMv5rXRq",
-    "passengerPrice": 152.25,
-    "totalTime": "00:52"
-  },
-  {
-    "totalTime": "00:40",
-    "passengerPrice": 117.25,
-    "price": 234.5,
-    "model": "R22",
-    "fromLocation": {
       "code": "LFPN",
       "coordinates": {
         "longitude": 2.10619,
@@ -146,98 +147,44 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "endTime": "10:25",
-    "fuel": 22,
-    "startTime": "09:45",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB",
-    "passengers": "Katel",
-    "shared": true,
-    "date": "2019-12-21",
-    "duration": 0.67,
-    "toLocation": {
-      "code": "LFPN",
+    "duration": 0.87,
+    "id": "df1DoHUM2n8wc3iawR6F",
+    "passengerPrice": 152.25,
+    "totalTime": "00:52",
+    "pic": "Fornaciari",
+    "price": 304.5,
+    "type": "R22",
+    "fuel": 29,
+    "fromLocation": {
       "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "i153Kem1HBnhDE2ePEFi"
-  },
-  {
-    "registration": "F-GIHE",
-    "category": "CDB",
-    "passengers": "Alina",
-    "shared": true,
-    "date": "2019-11-16",
-    "toLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
+        "longitude": 2.10619,
+        "latitude": 48.7519
       },
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
-    "duration": 0.5,
-    "id": "0ckfO4Vv6LqlfNH8QrYs",
-    "passengerPrice": 87.5,
-    "totalTime": "00:30",
-    "price": 175,
-    "model": "R22",
-    "fuel": 17,
-    "endTime": "16:13",
-    "fromLocation": {
-      "name": "UGOLF: Golf du Château de Cély (Pays de Fontainebleau - Grand Paris Sud)",
-      "code": "ZZZZ",
-      "coordinates": {
-        "latitude": 48.4667506,
-        "longitude": 2.5227824
-      }
-    },
-    "startTime": "15:43",
-    "captain": "Fornaciari",
+    "endTime": "14:39",
+    "startTime": "13:47",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
   },
   {
-    "registration": "F-GIHE",
-    "category": "CDB",
-    "passengers": "Alina",
-    "shared": true,
-    "date": "2019-11-16",
     "toLocation": {
-      "code": "ZZZZ",
-      "coordinates": {
-        "latitude": 48.4667506,
-        "longitude": 2.5227824
-      },
-      "name": "UGOLF: Golf du Château de Cély (Pays de Fontainebleau - Grand Paris Sud)"
-    },
-    "duration": 0.8,
-    "id": "TOwEfUh57V7p3tax6Jvp",
-    "passengerPrice": 140,
-    "totalTime": "00:48",
-    "price": 280,
-    "model": "R22",
-    "fuel": 26,
-    "endTime": "15:03",
-    "fromLocation": {
-      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "longitude": 2.10619,
         "latitude": 48.7519
-      }
+      },
+      "name": "LFPN - Toussus-le-Noble"
     },
-    "captain": "Fornaciari",
-    "startTime": "14:15",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
-  },
-  {
-    "fuel": 23,
-    "endTime": "14:00",
+    "duration": 0.67,
+    "id": "9jiTECIGYtEoImxPwg09",
+    "totalTime": "00:40",
+    "passengerPrice": 117.25,
+    "pic": "Fornaciari",
+    "price": 234.5,
+    "type": "R22",
+    "endTime": "10:25",
+    "fuel": 22,
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -246,47 +193,139 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "startTime": "13:18",
-    "captain": "Fornaciari",
+    "startTime": "09:45",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC",
+    "passengers": "Katel",
+    "shared": true,
+    "date": "2019-12-21"
+  },
+  {
+    "type": "R22",
+    "fuel": 17,
+    "endTime": "16:13",
+    "fromLocation": {
+      "coordinates": {
+        "latitude": 48.4667506,
+        "longitude": 2.5227824
+      },
+      "name": "UGOLF: Golf du Château de Cély (Pays de Fontainebleau - Grand Paris Sud)",
+      "code": "ZZZZ"
+    },
+    "startTime": "15:43",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "PIC",
+    "passengers": "Alina",
+    "shared": true,
+    "date": "2019-11-16",
+    "duration": 0.5,
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "id": "9kD1Bec67YbokcsggOGp",
+    "passengerPrice": 87.5,
+    "totalTime": "00:30",
+    "pic": "Fornaciari",
+    "price": 175
+  },
+  {
+    "registration": "F-GIHE",
+    "category": "PIC",
+    "passengers": "Alina",
+    "shared": true,
+    "date": "2019-11-16",
+    "duration": 0.8,
+    "toLocation": {
+      "coordinates": {
+        "latitude": 48.4667506,
+        "longitude": 2.5227824
+      },
+      "name": "UGOLF: Golf du Château de Cély (Pays de Fontainebleau - Grand Paris Sud)",
+      "code": "ZZZZ"
+    },
+    "id": "Mwr0SxXEzvR3vLKRidki",
+    "totalTime": "00:48",
+    "passengerPrice": 140,
+    "pic": "Fornaciari",
+    "price": 280,
+    "type": "R22",
+    "fuel": 26,
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "endTime": "15:03",
+    "startTime": "14:15",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
+  },
+  {
+    "category": "PIC",
     "passengers": "Isabelle",
     "shared": true,
     "date": "2019-10-05",
     "duration": 0.7,
     "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      }
     },
-    "id": "lJRcvaLs2rLe7dg4dKZt",
+    "id": "8jVy8S5IQ3AOjwGZsEug",
     "passengerPrice": 122.5,
     "totalTime": "00:42",
+    "pic": "Fornaciari",
     "price": 245,
-    "model": "R22"
+    "type": "R22",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "endTime": "14:00",
+    "fuel": 23,
+    "startTime": "13:18",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE"
   },
   {
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "PIC",
     "passengers": "Alina",
     "shared": false,
     "date": "2019-09-21",
     "duration": 1.2,
     "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      }
     },
-    "id": "LYrXWppg1E7G8nxFeiCp",
+    "id": "yuDm3KjtgbOFF4IjuIWn",
+    "pic": "Fornaciari",
     "totalTime": "01:12",
     "passengerPrice": 0,
     "price": 420,
-    "model": "R22",
+    "type": "R22",
+    "endTime": "09:03",
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -295,51 +334,31 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "endTime": "09:03",
     "fuel": 40,
-    "startTime": "07:51",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB"
+    "startTime": "07:51"
   },
   {
-    "model": "R22",
-    "fromLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "fuel": 24,
-    "endTime": "08:32",
-    "startTime": "07:48",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC",
     "passengers": "Fabienne",
     "shared": true,
     "date": "2019-08-31",
     "toLocation": {
       "code": "LFPN",
       "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
+        "latitude": 48.7519,
+        "longitude": 2.10619
       },
       "name": "LFPN - Toussus-le-Noble"
     },
     "duration": 0.73,
-    "id": "A3yrGPDAbuTEwIm2N6rd",
+    "id": "OxvbmkPlblQR3F5czgV5",
+    "pic": "Fornaciari",
     "totalTime": "00:44",
     "passengerPrice": 127.75,
-    "price": 255.5
-  },
-  {
-    "fuel": 28,
-    "endTime": "08:59",
+    "price": 255.5,
+    "type": "R22",
+    "fuel": 24,
+    "endTime": "08:32",
     "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
@@ -348,30 +367,12 @@
         "longitude": 2.10619
       }
     },
-    "startTime": "08:08",
-    "captain": "Lecomte",
+    "startTime": "07:48",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST",
-    "shared": false,
-    "date": "2019-08-16",
-    "duration": 0.85,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "fwcxWhp7Z5iEZj563gTY",
-    "passengerPrice": 0,
-    "totalTime": "00:51",
-    "price": 365.5,
-    "model": "R22"
+    "registration": "F-GIHE"
   },
   {
-    "duration": 0.83,
+    "date": "2019-08-16",
     "toLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
@@ -380,13 +381,32 @@
         "longitude": 2.10619
       }
     },
-    "id": "EFhueMOuqXnCdp7r2szY",
-    "totalTime": "00:50",
-    "passengerPrice": 145.25,
-    "price": 290.5,
-    "model": "R22",
+    "duration": 0.85,
+    "id": "FZmjYL2LO5v9EfbtfGWL",
+    "pic": "Lecomte",
+    "passengerPrice": 0,
+    "totalTime": "00:51",
+    "price": 365.5,
+    "type": "R22",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      }
+    },
+    "fuel": 28,
+    "endTime": "08:59",
+    "startTime": "08:08",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT",
+    "shared": false
+  },
+  {
+    "type": "R22",
     "fuel": 27,
-    "endTime": "08:30",
     "fromLocation": {
       "coordinates": {
         "longitude": 2.10619,
@@ -395,38 +415,15 @@
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
+    "endTime": "08:30",
     "startTime": "07:40",
-    "captain": "Fornaciari",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC",
     "passengers": "Alice",
     "shared": true,
-    "date": "2019-07-21"
-  },
-  {
-    "id": "OjP5msBg5lWtr9rLEHc4",
-    "passengerPrice": 0,
-    "totalTime": "00:50",
-    "price": 294,
-    "model": "R22",
-    "endTime": "08:29",
-    "fuel": 28,
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "captain": "Fornaciari",
-    "startTime": "07:39",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "CDB",
-    "shared": false,
-    "date": "2019-07-06",
+    "date": "2019-07-21",
+    "duration": 0.83,
     "toLocation": {
       "coordinates": {
         "latitude": 48.7519,
@@ -435,45 +432,70 @@
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
-    "duration": 0.84
+    "id": "WZ8MVlQTaqtDmxYPJI9M",
+    "pic": "Fornaciari",
+    "passengerPrice": 145.25,
+    "totalTime": "00:50",
+    "price": 290.5
   },
   {
-    "price": 378,
-    "model": "R22",
-    "endTime": "09:27",
-    "fromLocation": {
+    "registration": "F-HFCK",
+    "category": "PIC",
+    "shared": false,
+    "date": "2019-07-06",
+    "duration": 0.84,
+    "toLocation": {
+      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
       },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      "name": "LFPN - Toussus-le-Noble"
     },
+    "id": "iBQ8XU0CecJmXisRdmKz",
+    "pic": "Fornaciari",
+    "totalTime": "00:50",
+    "passengerPrice": 0,
+    "price": 294,
+    "type": "R22",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      }
+    },
+    "endTime": "08:29",
+    "fuel": 28,
+    "startTime": "07:39",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
+  },
+  {
+    "passengerPrice": 0,
+    "totalTime": "01:05",
+    "pic": "Fornaciari",
+    "price": 378,
+    "type": "R22",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "endTime": "09:27",
     "fuel": 36,
     "startTime": "08:22",
-    "captain": "Fornaciari",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC",
     "passengers": "Alina",
     "shared": false,
     "date": "2019-06-22",
     "duration": 1.08,
     "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "mH7j1ilXjiHzXhOAZaOH",
-    "totalTime": "01:05",
-    "passengerPrice": 0
-  },
-  {
-    "duration": 0.32,
-    "toLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
@@ -481,37 +503,18 @@
         "longitude": 2.10619
       }
     },
-    "id": "OU5SsPqVfUuqQdjHTfQC",
+    "id": "oyiplsLn9Jkcd9kW1L9F"
+  },
+  {
+    "id": "o8diWYspEp7X5SO9HJGx",
+    "pic": "Fornaciari",
     "totalTime": "00:19",
     "passengerPrice": 56,
     "price": 112,
-    "model": "R22",
+    "type": "R22",
+    "fuel": 11,
     "endTime": "13:19",
     "fromLocation": {
-      "coordinates": {
-        "latitude": 48.68413,
-        "longitude": 1.936166
-      },
-      "name": "Abbaye des Vaux de Cernay",
-      "code": "ZZZZ"
-    },
-    "fuel": 11,
-    "captain": "Fornaciari",
-    "startTime": "13:00",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "CDB",
-    "passengers": "Alina",
-    "shared": true,
-    "date": "2019-05-31"
-  },
-  {
-    "category": "CDB",
-    "passengers": "Alina",
-    "shared": true,
-    "date": "2019-05-31",
-    "duration": 0.4,
-    "toLocation": {
       "code": "ZZZZ",
       "coordinates": {
         "latitude": 48.68413,
@@ -519,43 +522,68 @@
       },
       "name": "Abbaye des Vaux de Cernay"
     },
-    "id": "l7T45X5uj7AsFPoknsip",
-    "totalTime": "00:24",
-    "passengerPrice": 70,
-    "price": 140,
-    "model": "R22",
-    "fuel": 13,
-    "endTime": "09:35",
-    "fromLocation": {
+    "startTime": "13:00",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-HFCK",
+    "category": "PIC",
+    "passengers": "Alina",
+    "shared": true,
+    "date": "2019-05-31",
+    "duration": 0.32,
+    "toLocation": {
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
       },
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
-    },
-    "startTime": "09:11",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK"
+    }
   },
   {
-    "id": "Aug8QxmJsvaKe2mXyGgA",
-    "totalTime": "01:05",
-    "passengerPrice": 0,
-    "price": 464.4,
-    "model": "R22",
+    "duration": 0.4,
+    "toLocation": {
+      "name": "Abbaye des Vaux de Cernay",
+      "code": "ZZZZ",
+      "coordinates": {
+        "latitude": 48.68413,
+        "longitude": 1.936166
+      }
+    },
+    "id": "UwZhzvtFD3DwYcA7re6C",
+    "passengerPrice": 70,
+    "totalTime": "00:24",
+    "pic": "Fornaciari",
+    "price": 140,
+    "type": "R22",
+    "fuel": 13,
+    "endTime": "09:35",
+    "fromLocation": {
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "startTime": "09:11",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-HFCK",
+    "category": "PIC",
+    "passengers": "Alina",
+    "shared": true,
+    "date": "2019-05-31"
+  },
+  {
     "fuel": 36,
     "endTime": "09:53",
     "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
+      }
     },
-    "captain": "Sabater",
     "startTime": "08:48",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
@@ -563,69 +591,45 @@
     "shared": false,
     "date": "2019-05-22",
     "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
+      }
     },
-    "duration": 1.08
+    "duration": 1.08,
+    "id": "x8UnWRNoXmQEhcs9BVvE",
+    "pic": "Sabater",
+    "passengerPrice": 0,
+    "totalTime": "01:05",
+    "price": 464.4,
+    "type": "R22"
   },
   {
-    "fuel": 24,
-    "endTime": "09:31",
-    "fromLocation": {
-      "coordinates": {
-        "latitude": 48.220191,
-        "longitude": 1.618503
-      },
-      "name": "Amoinville",
-      "code": "ZZZZ"
-    },
-    "startTime": "08:47",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB",
-    "passengers": "Rémi",
-    "shared": false,
-    "date": "2019-05-12",
-    "duration": 0.74,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "mqJUPWfWuLQAU3ke7ePK",
+    "pic": "Fornaciari",
     "passengerPrice": 0,
     "totalTime": "00:44",
     "price": 259,
-    "model": "R22"
-  },
-  {
-    "passengers": "Rémi",
-    "shared": false,
-    "date": "2019-05-12",
-    "toLocation": {
-      "name": "Amoinville",
+    "type": "R22",
+    "fuel": 24,
+    "endTime": "09:31",
+    "fromLocation": {
       "code": "ZZZZ",
       "coordinates": {
         "latitude": 48.220191,
         "longitude": 1.618503
-      }
+      },
+      "name": "Amoinville"
     },
-    "duration": 0.66,
-    "id": "IPKLPavLLJUf6wUvXips",
-    "passengerPrice": 0,
-    "totalTime": "00:40",
-    "price": 231,
-    "model": "R22",
-    "endTime": "07:59",
-    "fromLocation": {
+    "startTime": "08:47",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "PIC",
+    "passengers": "Rémi",
+    "shared": false,
+    "date": "2019-05-12",
+    "toLocation": {
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
@@ -633,20 +637,29 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "fuel": 22,
-    "startTime": "07:19",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB"
+    "duration": 0.74,
+    "id": "oKN7zKk4yeS44nMvJzcf"
   },
   {
-    "id": "vHWNS6spvSxhBrL1ofNb",
-    "passengerPrice": 115.5,
+    "passengers": "Rémi",
+    "shared": false,
+    "date": "2019-05-12",
+    "toLocation": {
+      "code": "ZZZZ",
+      "coordinates": {
+        "latitude": 48.220191,
+        "longitude": 1.618503
+      },
+      "name": "Amoinville"
+    },
+    "duration": 0.66,
+    "id": "1VLFnxuj1RIhycFWYhmF",
     "totalTime": "00:40",
+    "pic": "Fornaciari",
+    "passengerPrice": 0,
     "price": 231,
-    "model": "R22",
-    "endTime": "09:25",
+    "type": "R22",
+    "fuel": 22,
     "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
@@ -655,26 +668,69 @@
         "longitude": 2.10619
       }
     },
-    "fuel": 22,
-    "captain": "Fornaciari",
-    "startTime": "08:45",
+    "endTime": "07:59",
+    "startTime": "07:19",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "PIC"
+  },
+  {
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-HFCK",
-    "category": "CDB",
+    "category": "PIC",
     "passengers": "Benoît",
     "shared": true,
     "date": "2019-04-19",
-    "duration": 0.66,
     "toLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "duration": 0.66,
+    "id": "o55gc1t8rXWm8LYEZGCn",
+    "passengerPrice": 115.5,
+    "pic": "Fornaciari",
+    "totalTime": "00:40",
+    "price": 231,
+    "type": "R22",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "endTime": "09:25",
+    "fuel": 22,
+    "startTime": "08:45"
+  },
+  {
+    "passengerPrice": 143.5,
+    "totalTime": "00:49",
+    "pic": "Fornaciari",
+    "price": 287,
+    "type": "R22",
+    "fuel": 27,
+    "fromLocation": {
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
       },
       "name": "LFPN - Toussus-le-Noble"
-    }
-  },
-  {
+    },
+    "endTime": "08:48",
+    "startTime": "07:59",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "PIC",
+    "passengers": "Alina",
+    "shared": true,
+    "date": "2019-04-07",
     "duration": 0.82,
     "toLocation": {
       "code": "LFPN",
@@ -684,13 +740,26 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "id": "LGxVLTSjYPbJeJSVA0Dk",
-    "passengerPrice": 143.5,
-    "totalTime": "00:49",
-    "price": 287,
-    "model": "R22",
-    "endTime": "08:48",
-    "fuel": 27,
+    "id": "V0wyhKL3f3Nedt4A5E15"
+  },
+  {
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "duration": 0.87,
+    "id": "tlPaScNY4Dc3Z9lApSO6",
+    "totalTime": "00:52",
+    "passengerPrice": 0,
+    "pic": "Ouzé",
+    "price": 374.1,
+    "type": "R22",
+    "fuel": 29,
+    "endTime": "10:59",
     "fromLocation": {
       "coordinates": {
         "latitude": 48.7519,
@@ -699,82 +768,62 @@
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
-    "startTime": "07:59",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB",
-    "passengers": "Alina",
-    "shared": true,
-    "date": "2019-04-07"
-  },
-  {
-    "id": "jyXxQFZTxhrT9fsP8UGp",
-    "totalTime": "00:52",
-    "passengerPrice": 0,
-    "price": 374.1,
-    "model": "R22",
-    "fromLocation": {
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "endTime": "10:59",
-    "fuel": 29,
-    "captain": "Ouzé",
     "startTime": "10:07",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
-    "date": "2019-03-23",
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "duration": 0.87
+    "date": "2019-03-23"
   },
   {
-    "id": "SQkjt7EEfpqknvNIe87j",
-    "totalTime": "01:31",
-    "passengerPrice": 0,
-    "price": 649.3,
-    "model": "R22",
-    "endTime": "11:11",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "fuel": 50,
-    "captain": "Ouzé",
-    "startTime": "09:40",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
     "date": "2019-03-16",
+    "duration": 1.51,
     "toLocation": {
+      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
       },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      "name": "LFPN - Toussus-le-Noble"
     },
-    "duration": 1.51
+    "id": "n4n3rDEXE4g5RUDb3stn",
+    "totalTime": "01:31",
+    "passengerPrice": 0,
+    "pic": "Ouzé",
+    "price": 649.3,
+    "type": "R22",
+    "fuel": 50,
+    "endTime": "11:11",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "startTime": "09:40"
   },
   {
+    "type": "R22",
+    "fuel": 43,
+    "endTime": "11:11",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      }
+    },
+    "startTime": "09:53",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT",
     "shared": false,
     "date": "2019-03-02",
     "toLocation": {
@@ -786,76 +835,68 @@
       "code": "LFPN"
     },
     "duration": 1.3,
-    "id": "iTP6rRsrgru9qSWA69Po",
+    "id": "mdMqXFKDUyGgCDlWKXT1",
     "totalTime": "01:18",
+    "pic": "Ouzé",
     "passengerPrice": 0,
-    "price": 559,
-    "model": "R22",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "endTime": "11:11",
-    "fuel": 43,
-    "startTime": "09:53",
-    "captain": "Ouzé",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST"
+    "price": 559
   },
   {
+    "type": "R22",
+    "fromLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "endTime": "14:44",
+    "fuel": 45,
+    "startTime": "13:22",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-HFCK",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
     "date": "2019-02-24",
-    "duration": 1.37,
     "toLocation": {
-      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
       },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "IZLMuClZYBZGMhHyCHbg",
-    "passengerPrice": 0,
-    "totalTime": "01:22",
-    "price": 589.1,
-    "model": "R22",
-    "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      }
+      "code": "LFPN"
     },
-    "fuel": 45,
-    "endTime": "14:44",
-    "startTime": "13:22",
-    "captain": "Ouzé",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
+    "duration": 1.37,
+    "id": "YqgEcGgL5TtUoDncmIiq",
+    "passengerPrice": 0,
+    "pic": "Ouzé",
+    "totalTime": "01:22",
+    "price": 589.1
   },
   {
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "PIC",
+    "passengers": "Katel",
+    "shared": true,
     "date": "2019-02-16",
-    "duration": 0.74,
     "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      }
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
     },
-    "id": "FY5CpuNklm4VT8ns61vD",
+    "duration": 0.74,
+    "id": "ueqkMNbtXOHs9pc19bL2",
     "totalTime": "00:44",
     "passengerPrice": 129.5,
+    "pic": "Fornaciari",
     "price": 259,
-    "model": "R22",
+    "type": "R22",
+    "fuel": 24,
     "endTime": "13:56",
     "fromLocation": {
       "code": "LFPN",
@@ -865,19 +906,63 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "fuel": 24,
-    "captain": "Fornaciari",
-    "startTime": "13:12",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB",
-    "passengers": "Katel",
-    "shared": true
+    "startTime": "13:12"
   },
   {
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "duration": 1.03,
+    "id": "GDWt8oKFDjTvs2pMLz2b",
+    "pic": "Fornaciari",
+    "passengerPrice": 0,
+    "totalTime": "01:02",
     "price": 360.5,
-    "model": "R22",
+    "type": "R22",
+    "fuel": 34,
+    "endTime": "14:19",
     "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "startTime": "13:17",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "PIC",
+    "passengers": "Alina",
+    "shared": false,
+    "date": "2019-02-03"
+  },
+  {
+    "price": 357,
+    "type": "R22",
+    "fuel": 34,
+    "endTime": "11:11",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "startTime": "10:10",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-HFCK",
+    "category": "PIC",
+    "passengers": "Alina",
+    "shared": false,
+    "date": "2019-01-09",
+    "toLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
@@ -885,69 +970,33 @@
         "longitude": 2.10619
       }
     },
-    "fuel": 34,
-    "endTime": "14:19",
-    "startTime": "13:17",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB",
-    "passengers": "Alina",
-    "shared": false,
-    "date": "2019-02-03",
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "duration": 1.03,
-    "id": "Boos5NUrvArvvkxVv7sr",
-    "totalTime": "01:02",
-    "passengerPrice": 0
-  },
-  {
-    "passengers": "Alina",
-    "shared": false,
-    "date": "2019-01-09",
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
     "duration": 1.02,
-    "id": "L0nTHYfCN2bnmfiiNvY9",
-    "totalTime": "01:01",
+    "id": "Ewzr2RabBfS6Cu9km1XN",
+    "pic": "Fornaciari",
     "passengerPrice": 0,
-    "price": 357,
-    "model": "R22",
-    "endTime": "11:11",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "fuel": 34,
-    "startTime": "10:10",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "CDB"
+    "totalTime": "01:01"
   },
   {
-    "id": "MMtcXkNXeBdysaLCEP3D",
-    "passengerPrice": 280,
+    "registration": "N44KY",
+    "category": "P/UT",
+    "passengers": "Alice, Pauline",
+    "shared": true,
+    "date": "2018-12-15",
+    "duration": 1.7,
+    "toLocation": {
+      "code": "KVGT",
+      "coordinates": {
+        "latitude": 36.210694,
+        "longitude": -115.194444
+      },
+      "name": "KVGT - North Las Vefuel"
+    },
+    "id": "ITNfEghZ40YksPgELUNB",
     "totalTime": "01:42",
+    "pic": "Saunders",
+    "passengerPrice": 280,
     "price": 842,
-    "model": "R44",
+    "type": "R44",
     "fromLocation": {
       "name": "KVGT - North Las Vefuel",
       "code": "KVGT",
@@ -959,93 +1008,26 @@
     "endTime": "11:42",
     "fuel": 112,
     "startTime": "10:00",
-    "captain": "Saunders",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "N44KY",
-    "category": "INST",
-    "passengers": "Alice, Pauline",
-    "shared": true,
-    "date": "2018-12-15",
-    "duration": 1.7,
-    "toLocation": {
-      "coordinates": {
-        "latitude": 36.210694,
-        "longitude": -115.194444
-      },
-      "name": "KVGT - North Las Vefuel",
-      "code": "KVGT"
-    }
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
   },
   {
-    "shared": false,
     "date": "2018-11-17",
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
     "duration": 1.08,
-    "id": "S9yERz1s44bJTlg55AKM",
-    "totalTime": "01:05",
-    "passengerPrice": 0,
-    "price": 464.4,
-    "model": "R22",
-    "fuel": 36,
-    "endTime": "13:37",
-    "fromLocation": {
+    "toLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
+        "longitude": 2.10619,
+        "latitude": 48.7519
       }
     },
-    "startTime": "12:32",
-    "captain": "Lecomte",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST"
-  },
-  {
-    "category": "CDB",
-    "passengers": "Guido",
-    "shared": false,
-    "date": "2018-11-03",
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "duration": 0.61,
-    "id": "HpAcje8jbC7Ih58whK0Q",
-    "totalTime": "00:37",
+    "id": "KASzXCe5bK1nuHKQGQbz",
+    "pic": "Lecomte",
+    "totalTime": "01:05",
     "passengerPrice": 0,
-    "price": 213.5,
-    "model": "R22",
-    "fuel": 20,
-    "endTime": "10:41",
+    "price": 464.4,
+    "type": "R22",
     "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "startTime": "10:04",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK"
-  },
-  {
-    "duration": 0.68,
-    "toLocation": {
       "code": "LFPN",
       "coordinates": {
         "longitude": 2.10619,
@@ -1053,82 +1035,135 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "id": "xawQbdkCNwGmZn3j8HOj",
-    "totalTime": "00:41",
+    "endTime": "13:37",
+    "fuel": 36,
+    "startTime": "12:32",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT",
+    "shared": false
+  },
+  {
+    "duration": 0.61,
+    "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "id": "fieR8X2q4Wn3pP8sDm8F",
+    "totalTime": "00:37",
+    "pic": "Fornaciari",
     "passengerPrice": 0,
-    "price": 238,
-    "model": "R22",
+    "price": 213.5,
+    "type": "R22",
+    "fuel": 20,
     "fromLocation": {
+      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
       },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      "name": "LFPN - Toussus-le-Noble"
     },
-    "endTime": "09:46",
-    "fuel": 22,
-    "captain": "Fornaciari",
-    "startTime": "09:05",
+    "endTime": "10:41",
+    "startTime": "10:04",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB",
-    "passengers": "Sandra",
+    "registration": "F-HFCK",
+    "category": "PIC",
+    "passengers": "Guido",
     "shared": false,
     "date": "2018-11-03"
   },
   {
+    "registration": "F-GIHE",
+    "category": "PIC",
+    "passengers": "Sandra",
     "shared": false,
-    "date": "2018-10-14",
+    "date": "2018-11-03",
     "toLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
+        "longitude": 2.10619,
+        "latitude": 48.7519
       }
     },
-    "duration": 0.82,
-    "id": "7divw098AQOu9ToYLAZp",
-    "totalTime": "00:49",
+    "duration": 0.68,
+    "id": "PFITxGLxrwi7ZvD5vfDX",
+    "pic": "Fornaciari",
     "passengerPrice": 0,
-    "price": 287,
-    "model": "R22",
-    "fuel": 27,
+    "totalTime": "00:41",
+    "price": 238,
+    "type": "R22",
+    "fuel": 22,
+    "endTime": "09:46",
     "fromLocation": {
-      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      }
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "startTime": "09:05",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
+  },
+  {
+    "type": "R22",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
     },
     "endTime": "09:07",
-    "captain": "Fornaciari",
+    "fuel": 27,
     "startTime": "08:18",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB"
+    "category": "PIC",
+    "shared": false,
+    "date": "2018-10-14",
+    "duration": 0.82,
+    "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "id": "oUsSIyW35wMdkF3IAOM1",
+    "totalTime": "00:49",
+    "passengerPrice": 0,
+    "pic": "Fornaciari",
+    "price": 287
   },
   {
-    "category": "CDB",
     "passengers": "Camron",
     "shared": false,
     "date": "2018-09-26",
+    "duration": 1.56,
     "toLocation": {
-      "name": "LFRG - Deauville-Saint-Gatien",
       "code": "LFRG",
       "coordinates": {
-        "latitude": 49.365299,
-        "longitude": 0.154306
-      }
+        "longitude": 0.154306,
+        "latitude": 49.365299
+      },
+      "name": "LFRG - Deauville-Saint-Gatien"
     },
-    "duration": 1.56,
-    "id": "zcBc1kVmE7koPEdDkde2",
-    "passengerPrice": 0,
+    "id": "FhYgGxncHVeKC6jSPW2y",
+    "pic": "Fornaciari",
     "totalTime": "01:34",
+    "passengerPrice": 0,
     "price": 546,
-    "model": "R22",
+    "type": "R22",
+    "fuel": 51,
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -1138,16 +1173,34 @@
       "name": "LFPN - Toussus-le-Noble"
     },
     "endTime": "10:54",
-    "fuel": 51,
-    "captain": "Fornaciari",
     "startTime": "09:20",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK"
+    "registration": "F-HFCK",
+    "category": "PIC"
   },
   {
+    "passengerPrice": 187.25,
+    "pic": "Fornaciari",
+    "totalTime": "01:04",
+    "price": 374.5,
+    "type": "R22",
+    "fromLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "fuel": 35,
+    "endTime": "09:04",
+    "startTime": "08:00",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-HFCK",
+    "category": "PIC",
+    "passengers": "Dieter",
     "shared": false,
     "date": "2018-09-12",
-    "duration": 1.07,
     "toLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -1156,32 +1209,10 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "id": "JSzuVwIFojdjr8esjKmI",
-    "totalTime": "01:04",
-    "passengerPrice": 187.25,
-    "price": 374.5,
-    "model": "R22",
-    "endTime": "09:04",
-    "fuel": 35,
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "startTime": "08:00",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "CDB",
-    "passengers": "Dieter"
+    "duration": 1.07,
+    "id": "5UlI1KntnJya3A7CUIdv"
   },
   {
-    "category": "CDB",
-    "passengers": "Alina",
-    "shared": false,
     "date": "2018-08-28",
     "toLocation": {
       "name": "LFPN - Toussus-le-Noble",
@@ -1192,11 +1223,14 @@
       }
     },
     "duration": 1.14,
-    "id": "pg7RmgdLG1DWJgr3C6pv",
+    "id": "WAxqjnlLE4pTjgBH66ia",
     "passengerPrice": 0,
     "totalTime": "01:08",
+    "pic": "Fornaciari",
     "price": 399,
-    "model": "R22",
+    "type": "R22",
+    "endTime": "15:03",
+    "fuel": 38,
     "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
@@ -1205,101 +1239,100 @@
         "longitude": 2.10619
       }
     },
-    "endTime": "15:03",
-    "fuel": 38,
-    "captain": "Fornaciari",
     "startTime": "13:55",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE"
+    "registration": "F-GIHE",
+    "category": "PIC",
+    "passengers": "Alina",
+    "shared": false
   },
   {
-    "category": "CDB",
+    "registration": "F-GIHE",
+    "category": "PIC",
     "passengers": "Emilie",
     "shared": true,
     "date": "2018-08-12",
     "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      }
-    },
-    "duration": 0.8,
-    "id": "JEVWZYHSWCcPP8k9h0th",
-    "passengerPrice": 140,
-    "totalTime": "00:48",
-    "price": 280,
-    "model": "R22",
-    "fuel": 26,
-    "endTime": "08:39",
-    "fromLocation": {
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
       },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      "name": "LFPN - Toussus-le-Noble"
     },
-    "captain": "Fornaciari",
+    "duration": 0.8,
+    "id": "Z2jmrGbNYdNNnrBfs42T",
+    "pic": "Fornaciari",
+    "passengerPrice": 140,
+    "totalTime": "00:48",
+    "price": 280,
+    "type": "R22",
+    "endTime": "08:39",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "fuel": 26,
     "startTime": "07:51",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE"
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
   },
   {
-    "totalTime": "01:01",
+    "category": "PIC",
+    "passengers": "Camron",
+    "shared": false,
+    "date": "2018-07-29",
+    "toLocation": {
+      "coordinates": {
+        "latitude": 47.6553479,
+        "longitude": 1.487246
+      },
+      "name": "Saint-Dyé-sur-Loire",
+      "code": "ZZZZ"
+    },
+    "duration": 1.01,
+    "id": "Nca1w8g0ioXe74ZxlgCA",
+    "pic": "Fornaciari",
     "passengerPrice": 0,
+    "totalTime": "01:01",
     "price": 353.5,
-    "model": "R22",
+    "type": "R22",
+    "fuel": 33,
     "fromLocation": {
-      "name": "LFOQ - Blois-Le Breuil",
-      "code": "LFOQ",
       "coordinates": {
         "latitude": 47.678501,
         "longitude": 1.20884
-      }
+      },
+      "name": "LFOQ - Blois-Le Breuil",
+      "code": "LFOQ"
     },
     "endTime": "12:31",
-    "fuel": 33,
-    "captain": "Fornaciari",
     "startTime": "11:30",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "CDB",
-    "passengers": "Camron",
-    "shared": false,
-    "date": "2018-07-29",
-    "duration": 1.01,
-    "toLocation": {
-      "code": "ZZZZ",
-      "coordinates": {
-        "longitude": 1.487246,
-        "latitude": 47.6553479
-      },
-      "name": "Saint-Dyé-sur-Loire"
-    },
-    "id": "XSyg5ZOs7c17Ku0VkQR8"
+    "registration": "F-HFCK"
   },
   {
-    "registration": "F-HFCK",
-    "category": "CDB",
     "passengers": "Camron",
     "shared": false,
     "date": "2018-07-29",
     "toLocation": {
-      "name": "LFOQ - Blois-Le Breuil",
       "code": "LFOQ",
       "coordinates": {
         "latitude": 47.678501,
         "longitude": 1.20884
-      }
+      },
+      "name": "LFOQ - Blois-Le Breuil"
     },
     "duration": 1.6,
-    "id": "jYwgRLd2GB8KdbylW5Yr",
+    "id": "SVcFlnz536etofuBVcew",
     "passengerPrice": 0,
+    "pic": "Fornaciari",
     "totalTime": "01:36",
     "price": 560,
-    "model": "R22",
+    "type": "R22",
     "endTime": "10:08",
     "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
@@ -1311,25 +1344,26 @@
     },
     "fuel": 53,
     "startTime": "08:32",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-HFCK",
+    "category": "PIC"
   },
   {
+    "type": "R22",
+    "fuel": 26,
+    "endTime": "08:48",
     "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      }
     },
-    "endTime": "08:48",
-    "fuel": 26,
-    "captain": "Fornaciari",
     "startTime": "08:00",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC",
     "passengers": "Alina",
     "shared": false,
     "date": "2018-07-21",
@@ -1337,53 +1371,106 @@
     "toLocation": {
       "code": "LFPN",
       "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
+        "latitude": 48.7519,
+        "longitude": 2.10619
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "id": "gSIev0aMoYCM8yEAWnyZ",
+    "id": "chznWtpQLI5nQdADVLbc",
     "passengerPrice": 0,
+    "pic": "Fornaciari",
     "totalTime": "00:48",
-    "price": 280,
-    "model": "R22"
+    "price": 280
   },
   {
-    "duration": 1.08,
-    "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
+    "fuel": 36,
+    "fromLocation": {
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      }
-    },
-    "id": "NnbgxMCMyd9L7jfC7dQQ",
-    "totalTime": "01:05",
-    "passengerPrice": 0,
-    "price": 378,
-    "model": "R22",
-    "fromLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
       },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      "name": "LFPN - Toussus-le-Noble"
     },
     "endTime": "11:46",
-    "fuel": 36,
-    "captain": "Fornaciari",
     "startTime": "10:41",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC",
     "shared": false,
-    "date": "2018-07-18"
+    "date": "2018-07-18",
+    "duration": 1.08,
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "id": "b6sMAxSWkIn4ELZMgohX",
+    "totalTime": "01:05",
+    "pic": "Fornaciari",
+    "passengerPrice": 0,
+    "price": 378,
+    "type": "R22"
   },
   {
-    "duration": 1.18,
+    "fuel": 39,
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      }
+    },
+    "endTime": "09:36",
+    "startTime": "08:25",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-HFCK",
+    "category": "PIC",
+    "shared": false,
+    "date": "2018-07-01",
     "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "duration": 1.18,
+    "id": "ccFV7aDPzzp3ZurkFenh",
+    "pic": "Fornaciari",
+    "passengerPrice": 0,
+    "totalTime": "01:11",
+    "price": 413,
+    "type": "R22"
+  },
+  {
+    "registration": "F-GIHE",
+    "category": "PIC",
+    "shared": false,
+    "date": "2018-06-17",
+    "toLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "duration": 0.8,
+    "id": "zcRdO8k06A2AOfLyhSB1",
+    "pic": "Fornaciari",
+    "passengerPrice": 0,
+    "totalTime": "00:48",
+    "price": 280,
+    "type": "R22",
+    "fuel": 26,
+    "endTime": "08:46",
+    "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
@@ -1391,11 +1478,14 @@
         "longitude": 2.10619
       }
     },
-    "id": "J1tH1Amc0OrX9m6q5qjf",
-    "totalTime": "01:11",
-    "passengerPrice": 0,
-    "price": 413,
-    "model": "R22",
+    "startTime": "07:58",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
+  },
+  {
+    "price": 868.6,
+    "type": "R22",
+    "endTime": "13:38",
+    "fuel": 67,
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -1404,50 +1494,11 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "fuel": 39,
-    "endTime": "09:36",
-    "captain": "Fornaciari",
-    "startTime": "08:25",
+    "startTime": "11:37",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-HFCK",
-    "category": "CDB",
+    "category": "EXAM",
     "shared": false,
-    "date": "2018-07-01"
-  },
-  {
-    "shared": false,
-    "date": "2018-06-17",
-    "duration": 0.8,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "hxyOItkV4tCJSPNfWn1t",
-    "passengerPrice": 0,
-    "totalTime": "00:48",
-    "price": 280,
-    "model": "R22",
-    "fromLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "endTime": "08:46",
-    "fuel": 26,
-    "captain": "Fornaciari",
-    "startTime": "07:58",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB"
-  },
-  {
     "date": "2018-06-12",
     "toLocation": {
       "coordinates": {
@@ -1458,263 +1509,19 @@
       "code": "LFPN"
     },
     "duration": 2.02,
-    "id": "LTzc28E3M4nsa8D2aBkc",
-    "totalTime": "02:01",
+    "id": "LNipgVD1VbI8Mw1sXubl",
+    "pic": "Lecomte",
     "passengerPrice": 0,
-    "price": 868.6,
-    "model": "R22",
-    "fuel": 67,
-    "endTime": "13:38",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "startTime": "11:37",
-    "captain": "Lecomte",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "EXAM",
-    "shared": false
+    "totalTime": "02:01"
   },
   {
-    "model": "R22",
+    "pic": "Ouzé",
+    "passengerPrice": 0,
+    "totalTime": "01:44",
+    "price": 748.2,
+    "type": "R22",
     "fuel": 57,
     "endTime": "09:35",
-    "fromLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "captain": "Ouzé",
-    "startTime": "07:51",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "INST",
-    "shared": false,
-    "date": "2018-06-03",
-    "toLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "duration": 1.74,
-    "id": "MNzq8PVQJlsRv4WZNY34",
-    "totalTime": "01:44",
-    "passengerPrice": 0,
-    "price": 748.2
-  },
-  {
-    "date": "2018-05-22",
-    "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      }
-    },
-    "duration": 1.01,
-    "id": "CH10yZtOfMunAmyDSij2",
-    "totalTime": "01:01",
-    "passengerPrice": 0,
-    "price": 434.3,
-    "model": "R22",
-    "endTime": "14:44",
-    "fromLocation": {
-      "coordinates": {
-        "longitude": 2.79944,
-        "latitude": 48.3419
-      },
-      "name": "LFPU - Moret Episy",
-      "code": "LFPU"
-    },
-    "fuel": 33,
-    "captain": "Ouzé",
-    "startTime": "13:43",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "INST",
-    "shared": false
-  },
-  {
-    "date": "2018-05-22",
-    "toLocation": {
-      "name": "LFPU - Moret Episy",
-      "code": "LFPU",
-      "coordinates": {
-        "longitude": 2.79944,
-        "latitude": 48.3419
-      }
-    },
-    "duration": 0.34,
-    "id": "kwEEzUAivzl8HUND1mSd",
-    "totalTime": "00:20",
-    "passengerPrice": 0,
-    "price": 146.2,
-    "model": "R22",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "fuel": 11,
-    "endTime": "13:42",
-    "captain": "Ouzé",
-    "startTime": "13:22",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "INST",
-    "shared": false
-  },
-  {
-    "date": "2018-05-22",
-    "duration": 0.78,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "PtTaRjoXXppdOLKyYujJ",
-    "passengerPrice": 0,
-    "totalTime": "00:47",
-    "price": 335.4,
-    "model": "R22",
-    "fuel": 26,
-    "endTime": "13:23",
-    "fromLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      }
-    },
-    "captain": "Ouzé",
-    "startTime": "12:36",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "INST",
-    "shared": false
-  },
-  {
-    "id": "KgjtMp6UYdwrfR9kNaUV",
-    "passengerPrice": 0,
-    "totalTime": "00:58",
-    "price": 336,
-    "model": "R22",
-    "fuel": 32,
-    "fromLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      }
-    },
-    "endTime": "12:33",
-    "startTime": "11:35",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB",
-    "shared": false,
-    "date": "2018-05-17",
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "duration": 0.96
-  },
-  {
-    "duration": 1.06,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "6co7GuSwP6trDz5Cb2zL",
-    "totalTime": "01:04",
-    "passengerPrice": 0,
-    "price": 371,
-    "model": "R22",
-    "fuel": 35,
-    "endTime": "10:45",
-    "fromLocation": {
-      "code": "LFGO",
-      "coordinates": {
-        "latitude": 48.2906,
-        "longitude": 3.25083
-      },
-      "name": "LFGO - Pont Sur Yonne"
-    },
-    "captain": "Fornaciari",
-    "startTime": "09:41",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB",
-    "shared": false,
-    "date": "2018-05-12"
-  },
-  {
-    "shared": false,
-    "date": "2018-05-12",
-    "duration": 0.89,
-    "toLocation": {
-      "coordinates": {
-        "latitude": 48.2906,
-        "longitude": 3.25083
-      },
-      "name": "LFGO - Pont Sur Yonne",
-      "code": "LFGO"
-    },
-    "id": "INhFX4nUJgBe9b5A2Hl2",
-    "passengerPrice": 0,
-    "totalTime": "00:53",
-    "price": 311.5,
-    "model": "R22",
-    "fromLocation": {
-      "code": "LFOX",
-      "coordinates": {
-        "latitude": 48.381901,
-        "longitude": 2.07528
-      },
-      "name": "LFOX - Étampes Mondésir"
-    },
-    "endTime": "09:11",
-    "fuel": 29,
-    "startTime": "08:18",
-    "captain": "Fornaciari",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB"
-  },
-  {
-    "model": "R22",
-    "endTime": "08:19",
-    "fuel": 19,
     "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
@@ -1723,31 +1530,271 @@
         "latitude": 48.7519
       }
     },
-    "captain": "Fornaciari",
-    "startTime": "07:44",
+    "startTime": "07:51",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-HFCK",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2018-06-03",
+    "duration": 1.74,
+    "toLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "id": "PjisCTS2JJZLyPvzOnBe"
+  },
+  {
+    "category": "P/UT",
+    "shared": false,
+    "date": "2018-05-22",
+    "duration": 1.01,
+    "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "id": "wQZ3KkY1UEsmZuuvR4Jp",
+    "totalTime": "01:01",
+    "pic": "Ouzé",
+    "passengerPrice": 0,
+    "price": 434.3,
+    "type": "R22",
+    "fuel": 33,
+    "fromLocation": {
+      "name": "LFPU - Moret Episy",
+      "code": "LFPU",
+      "coordinates": {
+        "latitude": 48.3419,
+        "longitude": 2.79944
+      }
+    },
+    "endTime": "14:44",
+    "startTime": "13:43",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-HFCK"
+  },
+  {
+    "registration": "F-HFCK",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2018-05-22",
+    "duration": 0.34,
+    "toLocation": {
+      "coordinates": {
+        "latitude": 48.3419,
+        "longitude": 2.79944
+      },
+      "name": "LFPU - Moret Episy",
+      "code": "LFPU"
+    },
+    "id": "G0eMDBQ5ZTtma3JEUnOr",
+    "passengerPrice": 0,
+    "pic": "Ouzé",
+    "totalTime": "00:20",
+    "price": 146.2,
+    "type": "R22",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "endTime": "13:42",
+    "fuel": 11,
+    "startTime": "13:22",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
+  },
+  {
+    "id": "D6k0BaUCTNrpIJACeJec",
+    "pic": "Ouzé",
+    "passengerPrice": 0,
+    "totalTime": "00:47",
+    "price": 335.4,
+    "type": "R22",
+    "fuel": 26,
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "endTime": "13:23",
+    "startTime": "12:36",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-HFCK",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2018-05-22",
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "duration": 0.78
+  },
+  {
+    "type": "R22",
+    "fromLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "endTime": "12:33",
+    "fuel": 32,
+    "startTime": "11:35",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC",
+    "shared": false,
+    "date": "2018-05-17",
+    "toLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "duration": 0.96,
+    "id": "kKTEKKKOd9zWXRZ2yyMt",
+    "pic": "Fornaciari",
+    "passengerPrice": 0,
+    "totalTime": "00:58",
+    "price": 336
+  },
+  {
+    "id": "HtO0ObeHSUFNEB9ogD7L",
+    "pic": "Fornaciari",
+    "passengerPrice": 0,
+    "totalTime": "01:04",
+    "price": 371,
+    "type": "R22",
+    "fuel": 35,
+    "fromLocation": {
+      "code": "LFGO",
+      "coordinates": {
+        "latitude": 48.2906,
+        "longitude": 3.25083
+      },
+      "name": "LFGO - Pont Sur Yonne"
+    },
+    "endTime": "10:45",
+    "startTime": "09:41",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "PIC",
     "shared": false,
     "date": "2018-05-12",
     "toLocation": {
-      "name": "LFOX - Étampes Mondésir",
-      "code": "LFOX",
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
       "coordinates": {
-        "latitude": 48.381901,
-        "longitude": 2.07528
+        "latitude": 48.7519,
+        "longitude": 2.10619
       }
     },
+    "duration": 1.06
+  },
+  {
+    "registration": "F-GIHE",
+    "category": "PIC",
+    "shared": false,
+    "date": "2018-05-12",
+    "toLocation": {
+      "code": "LFGO",
+      "coordinates": {
+        "latitude": 48.2906,
+        "longitude": 3.25083
+      },
+      "name": "LFGO - Pont Sur Yonne"
+    },
+    "duration": 0.89,
+    "id": "r952tnhA7WmLAM1dOtH3",
+    "pic": "Fornaciari",
+    "totalTime": "00:53",
+    "passengerPrice": 0,
+    "price": 311.5,
+    "type": "R22",
+    "endTime": "09:11",
+    "fromLocation": {
+      "coordinates": {
+        "longitude": 2.07528,
+        "latitude": 48.381901
+      },
+      "name": "LFOX - Étampes Mondésir",
+      "code": "LFOX"
+    },
+    "fuel": 29,
+    "startTime": "08:18",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
+  },
+  {
+    "type": "R22",
+    "fuel": 19,
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "endTime": "08:19",
+    "startTime": "07:44",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "PIC",
+    "shared": false,
+    "date": "2018-05-12",
     "duration": 0.58,
-    "id": "UZhpWHs45FjASbaUbg6H",
+    "toLocation": {
+      "code": "LFOX",
+      "coordinates": {
+        "longitude": 2.07528,
+        "latitude": 48.381901
+      },
+      "name": "LFOX - Étampes Mondésir"
+    },
+    "id": "3ADGgGGoPMASA11xzhzJ",
     "totalTime": "00:35",
     "passengerPrice": 0,
+    "pic": "Fornaciari",
     "price": 203
   },
   {
+    "price": 591.5,
+    "type": "R22",
+    "fuel": 56,
+    "endTime": "09:14",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "startTime": "07:33",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC",
     "shared": false,
     "date": "2018-05-06",
     "duration": 1.69,
@@ -1759,107 +1806,64 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "id": "7Pig17NeqplvQbQwdt5A",
+    "id": "MEXvIXD5Z6exGbH0tv3C",
+    "pic": "Fornaciari",
     "passengerPrice": 0,
-    "totalTime": "01:41",
-    "price": 591.5,
-    "model": "R22",
-    "endTime": "09:14",
-    "fuel": 56,
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "captain": "Fornaciari",
-    "startTime": "07:33"
+    "totalTime": "01:41"
   },
   {
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB",
     "shared": false,
     "date": "2018-05-01",
+    "duration": 1.56,
     "toLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
+        "latitude": 48.7519,
+        "longitude": 2.10619
       }
     },
-    "duration": 1.56,
-    "id": "bRybKGarQX5nQIWH4WF2",
-    "passengerPrice": 0,
+    "id": "mbQsqa6lIGnSdU6PYb6H",
     "totalTime": "01:34",
+    "passengerPrice": 0,
+    "pic": "Fornaciari",
     "price": 546,
-    "model": "R22",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
+    "type": "R22",
     "fuel": 51,
-    "endTime": "14:54",
-    "captain": "Fornaciari",
-    "startTime": "13:20"
-  },
-  {
-    "price": 507.4,
-    "model": "R22",
-    "endTime": "09:21",
     "fromLocation": {
-      "code": "LFPN",
       "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
+        "latitude": 48.7519,
+        "longitude": 2.10619
       },
-      "name": "LFPN - Toussus-le-Noble"
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
     },
-    "fuel": 39,
-    "captain": "Fornaciari",
-    "startTime": "08:10",
+    "endTime": "14:54",
+    "startTime": "13:20",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
+    "category": "PIC"
+  },
+  {
+    "category": "PIC",
     "shared": false,
     "date": "2018-04-22",
     "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      }
+      },
+      "name": "LFPN - Toussus-le-Noble"
     },
     "duration": 1.18,
-    "id": "o1MAJ3uZzHTECROpY4br",
+    "id": "3biCoVXhM0b1RI0bqtqM",
+    "pic": "Fornaciari",
+    "totalTime": "01:11",
     "passengerPrice": 0,
-    "totalTime": "01:11"
-  },
-  {
-    "date": "2018-04-19",
-    "duration": 0.81,
-    "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      }
-    },
-    "id": "wIEkbdawWDSTOpbvsUeQ",
-    "passengerPrice": 0,
-    "totalTime": "00:49",
-    "price": 348.3,
-    "model": "R22",
-    "endTime": "11:50",
+    "price": 507.4,
+    "type": "R22",
+    "fuel": 39,
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -1868,34 +1872,65 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "fuel": 27,
-    "captain": "Fornaciari",
-    "startTime": "11:01",
+    "endTime": "09:21",
+    "startTime": "08:10",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "CDB",
-    "shared": false
+    "registration": "F-GIHE"
   },
   {
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "INST",
+    "category": "PIC",
+    "shared": false,
+    "date": "2018-04-19",
+    "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "duration": 0.81,
+    "id": "14RVRdVZ7oFFgwk9emih",
+    "totalTime": "00:49",
+    "passengerPrice": 0,
+    "pic": "Fornaciari",
+    "price": 348.3,
+    "type": "R22",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "endTime": "11:50",
+    "fuel": 27,
+    "startTime": "11:01",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
+  },
+  {
+    "registration": "F-GIHE",
+    "category": "P/UT",
     "shared": false,
     "date": "2018-04-08",
     "duration": 0.48,
     "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
       "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      }
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
     },
-    "id": "a1D96nr9jlf3x5EG7lJH",
-    "totalTime": "00:29",
+    "id": "clXa82eb2bSYWkfH2Qi8",
     "passengerPrice": 0,
+    "pic": "Sabater",
+    "totalTime": "00:29",
     "price": 168,
-    "model": "R22",
+    "type": "R22",
+    "fuel": 16,
     "fromLocation": {
       "code": "LFOX",
       "coordinates": {
@@ -1905,11 +1940,12 @@
       "name": "LFOX - Étampes Mondésir"
     },
     "endTime": "08:44",
-    "fuel": 16,
     "startTime": "08:15",
-    "captain": "Sabater"
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
   },
   {
+    "date": "2018-04-08",
+    "duration": 0.5,
     "toLocation": {
       "code": "LFOX",
       "coordinates": {
@@ -1918,12 +1954,12 @@
       },
       "name": "LFOX - Étampes Mondésir"
     },
-    "duration": 0.5,
-    "id": "xEmiRLtDTIBg4RVVTUFA",
+    "id": "G35mMlAcxyBmLaLuDkMY",
+    "pic": "Fornaciari",
     "passengerPrice": 0,
     "totalTime": "00:30",
     "price": 215,
-    "model": "R22",
+    "type": "R22",
     "fromLocation": {
       "code": "LFOX",
       "coordinates": {
@@ -1934,53 +1970,65 @@
     },
     "endTime": "08:15",
     "fuel": 17,
-    "captain": "Fornaciari",
     "startTime": "07:45",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
-    "shared": false,
-    "date": "2018-04-08"
+    "category": "PIC",
+    "shared": false
   },
   {
-    "totalTime": "00:41",
-    "passengerPrice": 0,
-    "price": 292.4,
-    "model": "R22",
-    "fromLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      }
-    },
-    "endTime": "07:45",
-    "fuel": 22,
-    "captain": "Sabater",
-    "startTime": "07:04",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
     "date": "2018-04-08",
-    "duration": 0.68,
     "toLocation": {
+      "name": "LFOX - Étampes Mondésir",
       "code": "LFOX",
       "coordinates": {
         "latitude": 48.381901,
         "longitude": 2.07528
-      },
-      "name": "LFOX - Étampes Mondésir"
+      }
     },
-    "id": "gMWaHuLhlo6YYM97r7Yt"
+    "duration": 0.68,
+    "id": "9iYP9xqN9B3A6HtQswjo",
+    "totalTime": "00:41",
+    "passengerPrice": 0,
+    "pic": "Sabater",
+    "price": 292.4,
+    "type": "R22",
+    "endTime": "07:45",
+    "fuel": 22,
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "startTime": "07:04",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE"
   },
   {
+    "shared": false,
+    "date": "2018-04-03",
+    "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      }
+    },
+    "duration": 0.67,
+    "id": "F485ONt0jYEjlKqoHldx",
     "passengerPrice": 0,
     "totalTime": "00:40",
+    "pic": "Fornaciari",
     "price": 288.1,
-    "model": "R22",
+    "type": "R22",
     "fuel": 22,
+    "endTime": "14:06",
     "fromLocation": {
       "coordinates": {
         "latitude": 48.7519,
@@ -1989,28 +2037,28 @@
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
-    "endTime": "14:06",
-    "captain": "Fornaciari",
     "startTime": "13:26",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "CDB",
-    "shared": false,
-    "date": "2018-04-03",
-    "duration": 0.67,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "37bNspysVvXF7vdYsszM"
+    "category": "PIC"
   },
   {
+    "duration": 0.1,
+    "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      }
+    },
+    "id": "xgE9pREUxTV4So49jl0w",
+    "pic": "Lecomte",
+    "passengerPrice": 0,
+    "totalTime": "00:06",
     "price": 43,
-    "model": "R22",
+    "type": "R22",
+    "fuel": 3,
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -2019,16 +2067,19 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "fuel": 3,
     "endTime": "13:26",
-    "captain": "Lecomte",
     "startTime": "13:20",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
-    "date": "2018-04-03",
-    "duration": 0.1,
+    "date": "2018-04-03"
+  },
+  {
+    "category": "PIC",
+    "shared": false,
+    "date": "2018-03-25",
+    "duration": 0.27,
     "toLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -2037,28 +2088,27 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "id": "84dDMbHQ74VOCWOLgwCe",
+    "id": "4OdDvJlS5AyOKfTFCM5e",
+    "pic": "Fornaciari",
     "passengerPrice": 0,
-    "totalTime": "00:06"
-  },
-  {
-    "endTime": "08:08",
+    "totalTime": "00:16",
+    "price": 116.1,
+    "type": "R22",
     "fuel": 9,
+    "endTime": "08:08",
     "fromLocation": {
       "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
+        "longitude": 2.10619,
+        "latitude": 48.7519
       },
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
-    "captain": "Fornaciari",
     "startTime": "07:52",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "CDB",
-    "shared": false,
-    "date": "2018-03-25",
+    "registration": "F-HFCK"
+  },
+  {
     "toLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -2067,19 +2117,13 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "duration": 0.27,
-    "id": "oUSjf2BLsjT1ALcTPtpM",
-    "totalTime": "00:16",
-    "passengerPrice": 0,
-    "price": 116.1,
-    "model": "R22"
-  },
-  {
-    "id": "bTVXxxs8TFStrt5lQJ7c",
-    "passengerPrice": 0,
+    "duration": 0.73,
+    "id": "dgRX4aBTRM0zbopRjxHt",
     "totalTime": "00:44",
+    "pic": " Sabater",
+    "passengerPrice": 0,
     "price": 313.9,
-    "model": "R22",
+    "type": "R22",
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -2090,61 +2134,15 @@
     },
     "endTime": "07:52",
     "fuel": 24,
-    "captain": " Sabater",
     "startTime": "07:08",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-HFCK",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
-    "date": "2018-03-25",
-    "duration": 0.73,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    }
+    "date": "2018-03-25"
   },
   {
-    "registration": "F-GIHE",
-    "category": "INST",
-    "shared": false,
-    "date": "2018-03-11",
-    "toLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "duration": 2.15,
-    "id": "sqtqnO1dgCGpc5QG4UAw",
-    "totalTime": "02:09",
-    "passengerPrice": 0,
-    "price": 924.5,
-    "model": "R22",
-    "fuel": 71,
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "endTime": "14:12",
-    "startTime": "12:03",
-    "captain": "Sabater",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
-  },
-  {
-    "price": 524.6,
-    "model": "R22",
-    "fuel": 40,
-    "endTime": "10:23",
+    "type": "R22",
     "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
@@ -2153,13 +2151,34 @@
         "longitude": 2.10619
       }
     },
-    "captain": "Sabater",
-    "startTime": "09:10",
+    "endTime": "14:12",
+    "fuel": 71,
+    "startTime": "12:03",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "INST",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2018-03-11",
+    "toLocation": {
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "duration": 2.15,
+    "id": "S5AhgutpBMnb8QvJ8o9J",
+    "pic": "Sabater",
+    "passengerPrice": 0,
+    "totalTime": "02:09",
+    "price": 924.5
+  },
+  {
+    "category": "P/UT",
     "shared": false,
     "date": "2018-02-11",
+    "duration": 1.22,
     "toLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -2168,10 +2187,25 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "duration": 1.22,
-    "id": "HebgFYNhEtKFKzN3K4jA",
+    "id": "0LMSnuu1M84IvD6LkGyY",
     "passengerPrice": 0,
-    "totalTime": "01:13"
+    "totalTime": "01:13",
+    "pic": "Sabater",
+    "price": 524.6,
+    "type": "R22",
+    "endTime": "10:23",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "fuel": 40,
+    "startTime": "09:10",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE"
   },
   {
     "duration": 1.62,
@@ -2183,11 +2217,12 @@
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
-    "id": "s05INBUGiFUAFrKk49QN",
+    "id": "J9NxlHnzqQ2D8OR1o5Ih",
     "passengerPrice": 0,
     "totalTime": "01:37",
+    "pic": "Javornik",
     "price": 696.6,
-    "model": "R22",
+    "type": "R22",
     "fuel": 53,
     "fromLocation": {
       "code": "LFPN",
@@ -2198,32 +2233,16 @@
       "name": "LFPN - Toussus-le-Noble"
     },
     "endTime": "12:20",
-    "captain": "Javornik",
     "startTime": "10:43",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-HFCK",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
     "date": "2018-01-08"
   },
   {
-    "shared": false,
-    "date": "2017-12-31",
     "duration": 0.97,
     "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      }
-    },
-    "id": "j6zagoZZwI4Ue1BthboH",
-    "passengerPrice": 0,
-    "totalTime": "00:58",
-    "price": 417.1,
-    "model": "R22",
-    "fromLocation": {
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
@@ -2231,15 +2250,33 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "fuel": 32,
+    "id": "WYV4SnzKiEP0MclMcTnF",
+    "pic": "Sabater",
+    "totalTime": "00:58",
+    "passengerPrice": 0,
+    "price": 417.1,
+    "type": "R22",
+    "fromLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
     "endTime": "12:42",
-    "captain": "Sabater",
+    "fuel": 32,
     "startTime": "11:44",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "INST"
+    "category": "P/UT",
+    "shared": false,
+    "date": "2017-12-31"
   },
   {
+    "registration": "F-GIHE",
+    "category": "P/UT",
+    "shared": false,
     "date": "2017-12-04",
     "toLocation": {
       "code": "LFPN",
@@ -2250,34 +2287,43 @@
       "name": "LFPN - Toussus-le-Noble"
     },
     "duration": 0.86,
-    "id": "FK6zFsHKOB9umZarKH7q",
+    "id": "Ov7HfHxK2kO22QZaZnAv",
     "passengerPrice": 0,
     "totalTime": "00:52",
+    "pic": "Sabater",
     "price": 369.8,
-    "model": "R22",
+    "type": "R22",
     "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "endTime": "11:46",
+    "fuel": 28,
+    "startTime": "10:54",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
+  },
+  {
+    "shared": false,
+    "date": "2017-11-27",
+    "duration": 1.54,
+    "toLocation": {
+      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
       },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      "name": "LFPN - Toussus-le-Noble"
     },
-    "endTime": "11:46",
-    "fuel": 28,
-    "captain": "Sabater",
-    "startTime": "10:54",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST",
-    "shared": false
-  },
-  {
-    "id": "bpL5h04YPSsBXsf5dnhN",
-    "totalTime": "01:32",
+    "id": "rKR8uFXbAd5tFnN51lLS",
+    "pic": "Sabater",
     "passengerPrice": 0,
+    "totalTime": "01:32",
     "price": 662.2,
-    "model": "R22",
+    "type": "R22",
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -2289,23 +2335,13 @@
     "endTime": "15:57",
     "fuel": 51,
     "startTime": "14:25",
-    "captain": "Sabater",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-HFCK",
-    "category": "INST",
-    "shared": false,
-    "date": "2017-11-27",
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "duration": 1.54
+    "category": "P/UT"
   },
   {
+    "price": 434.3,
+    "type": "R22",
     "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
@@ -2314,13 +2350,12 @@
         "longitude": 2.10619
       }
     },
-    "fuel": 33,
     "endTime": "11:16",
-    "captain": "Sabater",
+    "fuel": 33,
     "startTime": "10:15",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-HFCK",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
     "date": "2017-10-08",
     "duration": 1.01,
@@ -2332,246 +2367,248 @@
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
-    "id": "k879JRt6uBrD6m4XYfgB",
+    "id": "lRyM6w4pd38lMyFIx6qO",
     "passengerPrice": 0,
     "totalTime": "01:01",
-    "price": 434.3,
-    "model": "R22"
+    "pic": "Sabater"
   },
   {
-    "model": "R22",
-    "fromLocation": {
+    "registration": "F-GIHE",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2017-09-03",
+    "toLocation": {
+      "code": "LFPN",
       "coordinates": {
         "longitude": 2.10619,
         "latitude": 48.7519
       },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "duration": 1.15,
+    "id": "HZKIT63susAAFiGjN5UO",
+    "pic": "Lecomte",
+    "passengerPrice": 0,
+    "totalTime": "01:09",
+    "price": 494.5,
+    "type": "R22",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
     },
     "fuel": 38,
     "endTime": "11:00",
     "startTime": "09:51",
-    "captain": "Lecomte",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST",
-    "shared": false,
-    "date": "2017-09-03",
-    "duration": 1.15,
-    "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      }
-    },
-    "id": "a9gHiDGBNpqf2ulfYoeW",
-    "totalTime": "01:09",
-    "passengerPrice": 0,
-    "price": 494.5
-  },
-  {
-    "shared": false,
-    "date": "2017-08-06",
-    "duration": 1.26,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "UVwE36JW6kg4kD1l12DA",
-    "totalTime": "01:16",
-    "passengerPrice": 0,
-    "price": 541.8,
-    "model": "R22",
-    "fromLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "endTime": "11:14",
-    "fuel": 42,
-    "startTime": "09:58",
-    "captain": "Sabater",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST"
-  },
-  {
-    "model": "R22",
-    "endTime": "11:14",
-    "fuel": 37,
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "startTime": "10:07",
-    "captain": "Sabater",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST",
-    "shared": false,
-    "date": "2017-07-09",
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "duration": 1.12,
-    "id": "de0UiqNaozoYNArrHGEJ",
-    "passengerPrice": 0,
-    "totalTime": "01:07",
-    "price": 481.6
-  },
-  {
-    "registration": "F-SPSG",
-    "category": "INST",
-    "passengers": "Marta, Mauro",
-    "shared": false,
-    "date": "2017-06-17",
-    "duration": 0.87,
-    "toLocation": {
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "id": "Uiv2DoY8RGcR4HfbkCWV",
-    "totalTime": "00:52",
-    "passengerPrice": 0,
-    "price": 635.1,
-    "model": "R44",
-    "fuel": 57,
-    "endTime": "10:52",
-    "fromLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "captain": "Hebili",
-    "startTime": "10:00",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
   },
   {
-    "price": 860,
-    "model": "R22",
-    "endTime": "11:55",
-    "fromLocation": {
-      "name": "LFPN - Toussus-le-Noble",
+    "toLocation": {
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      }
+      },
+      "name": "LFPN - Toussus-le-Noble"
     },
-    "fuel": 66,
-    "startTime": "09:55",
-    "captain": "Sabater",
+    "duration": 1.26,
+    "id": "LWvBRChTxUGxbsTkmsx9",
+    "passengerPrice": 0,
+    "totalTime": "01:16",
+    "pic": "Sabater",
+    "price": 541.8,
+    "type": "R22",
+    "fuel": 42,
+    "endTime": "11:14",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "startTime": "09:58",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "INST",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2017-08-06"
+  },
+  {
+    "id": "XyAHB6EzJtBEJ6SqHg65",
+    "totalTime": "01:07",
+    "passengerPrice": 0,
+    "pic": "Sabater",
+    "price": 481.6,
+    "type": "R22",
+    "endTime": "11:14",
+    "fromLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "fuel": 37,
+    "startTime": "10:07",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2017-07-09",
+    "toLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "duration": 1.12
+  },
+  {
+    "duration": 0.87,
+    "toLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "id": "dgz8OSu9fVG2Lkjw3Lpw",
+    "pic": "Hebili",
+    "totalTime": "00:52",
+    "passengerPrice": 0,
+    "price": 635.1,
+    "type": "R44",
+    "fuel": 57,
+    "endTime": "10:52",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "startTime": "10:00",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-SPSG",
+    "category": "P/UT",
+    "passengers": "Marta, Mauro",
+    "shared": false,
+    "date": "2017-06-17"
+  },
+  {
+    "fuel": 66,
+    "fromLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "endTime": "11:55",
+    "startTime": "09:55",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT",
     "shared": false,
     "date": "2017-06-11",
     "duration": 2,
     "toLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "id": "n8nYflqOItVC0MoycWkU",
+    "pic": "Sabater",
+    "passengerPrice": 0,
+    "totalTime": "02:00",
+    "price": 860,
+    "type": "R22"
+  },
+  {
+    "date": "2017-05-07",
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "duration": 1.12,
+    "id": "1nlLgzuwwbuG0pGjprCd",
+    "totalTime": "01:07",
+    "passengerPrice": 0,
+    "pic": "Sabater",
+    "price": 481.6,
+    "type": "R22",
+    "fuel": 37,
+    "endTime": "11:25",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "startTime": "10:18",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT",
+    "shared": false
+  },
+  {
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "duration": 1.28,
+    "id": "mw7vBpBx28i6DlZpjRVk",
+    "totalTime": "01:17",
+    "passengerPrice": 0,
+    "pic": "Hebili",
+    "price": 550.4,
+    "type": "R22",
+    "fuel": 42,
+    "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
+        "latitude": 48.7519,
+        "longitude": 2.10619
       }
     },
-    "id": "ESLASORTKCAxWhwKtTLF",
-    "passengerPrice": 0,
-    "totalTime": "02:00"
-  },
-  {
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "fuel": 37,
-    "endTime": "11:25",
-    "startTime": "10:18",
-    "captain": "Sabater",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST",
-    "shared": false,
-    "date": "2017-05-07",
-    "duration": 1.12,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "UNBmYIofIvKVrn0npFg7",
-    "totalTime": "01:07",
-    "passengerPrice": 0,
-    "price": 481.6,
-    "model": "R22"
-  },
-  {
-    "price": 550.4,
-    "model": "R22",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
     "endTime": "11:32",
-    "fuel": 42,
     "startTime": "10:15",
-    "captain": "Hebili",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
-    "date": "2017-04-09",
-    "duration": 1.28,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "Hoo6ttjL7KawfT2unY9U",
-    "passengerPrice": 0,
-    "totalTime": "01:17"
+    "date": "2017-04-09"
   },
   {
-    "duration": 0.99,
+    "registration": "F-HFCK",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2017-03-24",
     "toLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -2580,284 +2617,50 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "id": "1spqYsyfqcZZatAxTIcC",
+    "duration": 0.99,
+    "id": "mIYxfiZyD3mmvYyFwwYx",
+    "pic": "Sabater",
     "passengerPrice": 0,
     "totalTime": "00:59",
     "price": 425.7,
-    "model": "R22",
+    "type": "R22",
     "fromLocation": {
       "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
+        "latitude": 48.7519,
+        "longitude": 2.10619
       },
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
-    "endTime": "14:26",
     "fuel": 33,
-    "captain": "Sabater",
+    "endTime": "14:26",
     "startTime": "13:27",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "INST",
-    "shared": false,
-    "date": "2017-03-24"
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
   },
   {
+    "id": "8x0003NSQlAY9PLQUXyS",
     "totalTime": "02:07",
     "passengerPrice": 0,
+    "pic": "Sabater",
     "price": 911.6,
-    "model": "R22",
-    "fuel": 70,
-    "endTime": "14:57",
+    "type": "R22",
     "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
+        "longitude": 2.10619,
+        "latitude": 48.7519
       }
     },
+    "endTime": "14:57",
+    "fuel": 70,
     "startTime": "12:50",
-    "captain": "Sabater",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
     "date": "2017-03-17",
     "duration": 2.12,
-    "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      }
-    },
-    "id": "6z3PfVKI0NjodXnsL2lH"
-  },
-  {
-    "shared": false,
-    "date": "2017-03-12",
-    "duration": 1.76,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "pKtZtWJGGoo1q5jVnZ4h",
-    "totalTime": "01:46",
-    "passengerPrice": 0,
-    "price": 756.8,
-    "model": "R22",
-    "endTime": "11:56",
-    "fromLocation": {
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "fuel": 58,
-    "startTime": "10:10",
-    "captain": "Sabater",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST"
-  },
-  {
-    "duration": 0.91,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "YIALgOn2vAc0Wlg7yL5A",
-    "totalTime": "00:55",
-    "passengerPrice": 0,
-    "price": 391.3,
-    "model": "R22",
-    "fromLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "fuel": 30,
-    "endTime": "11:23",
-    "captain": "Sabater",
-    "startTime": "10:28",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST",
-    "shared": false,
-    "date": "2017-02-27"
-  },
-  {
-    "category": "INST",
-    "shared": false,
-    "date": "2017-02-19",
-    "duration": 1.01,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "xemKBXuROdziMuMnLhx3",
-    "passengerPrice": 0,
-    "totalTime": "01:01",
-    "price": 434.3,
-    "model": "R22",
-    "fuel": 33,
-    "endTime": "12:00",
-    "fromLocation": {
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "startTime": "10:59",
-    "captain": "Sabater",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE"
-  },
-  {
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "duration": 1.16,
-    "id": "1p6J7TuwRL75AU7BkUgw",
-    "passengerPrice": 0,
-    "totalTime": "01:10",
-    "price": 498.8,
-    "model": "R22",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "fuel": 38,
-    "endTime": "16:39",
-    "startTime": "15:29",
-    "captain": "Sabater",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-HFCK",
-    "category": "INST",
-    "shared": false,
-    "date": "2017-02-12"
-  },
-  {
-    "category": "INST",
-    "shared": false,
-    "date": "2017-02-05",
-    "duration": 1.34,
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "njbRx1oFiPDiV3KLJRt5",
-    "totalTime": "01:20",
-    "passengerPrice": 0,
-    "price": 576.2,
-    "model": "R22",
-    "fuel": 44,
-    "fromLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      }
-    },
-    "endTime": "17:12",
-    "startTime": "15:52",
-    "captain": "Lecomte",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE"
-  },
-  {
-    "passengerPrice": 0,
-    "totalTime": "01:29",
-    "price": 640.7,
-    "model": "R22",
-    "endTime": "11:49",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "fuel": 49,
-    "captain": "Lecomte",
-    "startTime": "10:20",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST",
-    "shared": false,
-    "date": "2017-01-22",
-    "duration": 1.49,
-    "toLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "id": "LO6KEr6JYsiFlAkLkCpK"
-  },
-  {
-    "id": "19BATiBJMg4zy5NYC3Ix",
-    "passengerPrice": 0,
-    "totalTime": "01:06",
-    "price": 473,
-    "model": "R22",
-    "endTime": "11:34",
-    "fuel": 36,
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "startTime": "10:28",
-    "captain": "Sabater",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GIHE",
-    "category": "INST",
-    "shared": false,
-    "date": "2017-01-15",
-    "duration": 1.1,
     "toLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -2868,23 +2671,41 @@
     }
   },
   {
-    "date": "2016-12-28",
-    "duration": 1.51,
+    "pic": "Sabater",
+    "passengerPrice": 0,
+    "totalTime": "01:46",
+    "price": 756.8,
+    "type": "R22",
+    "fuel": 58,
+    "endTime": "11:56",
+    "fromLocation": {
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "startTime": "10:10",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2017-03-12",
+    "duration": 1.76,
     "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      }
     },
-    "id": "URpuOp9dFLg2xj6i1p6e",
-    "totalTime": "01:31",
-    "passengerPrice": 0,
-    "price": 649.3,
-    "model": "R22",
-    "fuel": 50,
-    "endTime": "11:58",
+    "id": "qfDMJqK0YPF2qnquFHf6"
+  },
+  {
+    "type": "R22",
+    "fuel": 30,
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -2893,20 +2714,79 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "startTime": "10:27",
-    "captain": "Sabater",
+    "endTime": "11:23",
+    "startTime": "10:28",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GIHE",
-    "category": "INST",
-    "shared": false
+    "category": "P/UT",
+    "shared": false,
+    "date": "2017-02-27",
+    "duration": 0.91,
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "id": "SWL6g4uPzy1jWayGgQC4",
+    "passengerPrice": 0,
+    "pic": "Sabater",
+    "totalTime": "00:55",
+    "price": 391.3
   },
   {
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GLET",
-    "category": "INST",
     "shared": false,
-    "date": "2016-11-27",
-    "duration": 1.23,
+    "date": "2017-02-19",
+    "duration": 1.01,
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "id": "tNV6QYS7THAC9Si46gP4",
+    "passengerPrice": 0,
+    "totalTime": "01:01",
+    "pic": "Sabater",
+    "price": 434.3,
+    "type": "R22",
+    "endTime": "12:00",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "fuel": 33,
+    "startTime": "10:59",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT"
+  },
+  {
+    "type": "R22",
+    "fromLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "endTime": "16:39",
+    "fuel": 38,
+    "startTime": "15:29",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-HFCK",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2017-02-12",
     "toLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
@@ -2915,62 +2795,214 @@
         "longitude": 2.10619
       }
     },
-    "id": "BgcnP60KUiMz5HQng3s3",
+    "duration": 1.16,
+    "id": "dfbYdKNhxVoLasVCtPpe",
+    "totalTime": "01:10",
+    "passengerPrice": 0,
+    "pic": "Sabater",
+    "price": 498.8
+  },
+  {
+    "type": "R22",
+    "fuel": 44,
+    "endTime": "17:12",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "startTime": "15:52",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2017-02-05",
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "duration": 1.34,
+    "id": "uPQCUGesBl0DVwgfpFx7",
+    "passengerPrice": 0,
+    "pic": "Lecomte",
+    "totalTime": "01:20",
+    "price": 576.2
+  },
+  {
+    "price": 640.7,
+    "type": "R22",
+    "fuel": 49,
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "endTime": "11:49",
+    "startTime": "10:20",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2017-01-22",
+    "duration": 1.49,
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "id": "2g34rOzWVFhMGoyedrjb",
+    "totalTime": "01:29",
+    "pic": "Lecomte",
+    "passengerPrice": 0
+  },
+  {
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2017-01-15",
+    "duration": 1.1,
+    "toLocation": {
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "id": "EALkVwAL1BcEelvwnW63",
+    "totalTime": "01:06",
+    "pic": "Sabater",
+    "passengerPrice": 0,
+    "price": 473,
+    "type": "R22",
+    "fuel": 36,
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "endTime": "11:34",
+    "startTime": "10:28"
+  },
+  {
+    "price": 649.3,
+    "type": "R22",
+    "endTime": "11:58",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "fuel": 50,
+    "startTime": "10:27",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GIHE",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2016-12-28",
+    "duration": 1.51,
+    "toLocation": {
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "id": "xa4ulufIMRdpa5twJsfP",
+    "totalTime": "01:31",
+    "pic": "Sabater",
+    "passengerPrice": 0
+  },
+  {
+    "date": "2016-11-27",
+    "duration": 1.23,
+    "toLocation": {
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "id": "WitJUCYMBHjW2qCeHN3u",
+    "pic": "Sabater",
     "passengerPrice": 0,
     "totalTime": "01:14",
     "price": 528.9,
-    "model": "R22",
+    "type": "R22",
     "fuel": 41,
     "endTime": "11:29",
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
+        "longitude": 2.10619,
+        "latitude": 48.7519
       },
       "name": "LFPN - Toussus-le-Noble"
     },
     "startTime": "10:15",
-    "captain": "Sabater"
-  },
-  {
-    "id": "n5n7lgjK5g7D7Gb1QZVy",
-    "passengerPrice": 0,
-    "totalTime": "01:12",
-    "price": 516,
-    "model": "R22",
-    "fromLocation": {
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "endTime": "11:26",
-    "fuel": 40,
-    "startTime": "10:14",
-    "captain": "Sabater",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GLET",
-    "category": "INST",
+    "category": "P/UT",
+    "shared": false
+  },
+  {
+    "registration": "F-GLET",
+    "category": "P/UT",
     "shared": false,
     "date": "2016-11-06",
     "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      }
+      },
+      "name": "LFPN - Toussus-le-Noble"
     },
-    "duration": 1.2
+    "duration": 1.2,
+    "id": "lK4krGNWnj4QVjYVD2ak",
+    "pic": "Sabater",
+    "totalTime": "01:12",
+    "passengerPrice": 0,
+    "price": 516,
+    "type": "R22",
+    "fuel": 40,
+    "endTime": "11:26",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "startTime": "10:14",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
   },
   {
-    "category": "INST",
     "shared": false,
     "date": "2016-10-28",
-    "duration": 1.09,
     "toLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -2979,29 +3011,33 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "id": "hSJrLsaBiuvauaAdr3Al",
+    "duration": 1.09,
+    "id": "D3WIGLqNB1K7OXPnahrt",
     "totalTime": "01:05",
     "passengerPrice": 0,
+    "pic": "Hebili",
     "price": 468.7,
-    "model": "R22",
+    "type": "R22",
+    "fuel": 36,
     "fromLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      }
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
     },
     "endTime": "14:08",
-    "fuel": 36,
     "startTime": "13:03",
-    "captain": "Hebili",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GLET"
+    "registration": "F-GLET",
+    "category": "P/UT"
   },
   {
-    "date": "2016-10-23",
-    "toLocation": {
+    "type": "R22",
+    "fuel": 38,
+    "endTime": "11:52",
+    "fromLocation": {
       "coordinates": {
         "longitude": 2.10619,
         "latitude": 48.7519
@@ -3009,68 +3045,82 @@
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
-    "duration": 1.16,
-    "id": "yjCrxAmb79q1X2TrvnaT",
-    "totalTime": "01:10",
-    "passengerPrice": 0,
-    "price": 498.8,
-    "model": "R22",
-    "endTime": "11:52",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "fuel": 38,
-    "captain": "Sabater",
     "startTime": "10:42",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GLET",
-    "category": "INST",
-    "shared": false
-  },
-  {
-    "date": "2016-10-16",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2016-10-23",
+    "duration": 1.16,
     "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      }
     },
-    "duration": 1.08,
-    "id": "WqYZYjXSVOpEFxcBUCgo",
-    "totalTime": "01:05",
+    "id": "2jHWvcrCpLIGBYWhAqTH",
+    "totalTime": "01:10",
     "passengerPrice": 0,
+    "pic": "Sabater",
+    "price": 498.8
+  },
+  {
     "price": 464.4,
-    "model": "R22",
+    "type": "R22",
     "endTime": "11:25",
     "fuel": 36,
     "fromLocation": {
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "startTime": "10:20",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GLET",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2016-10-16",
+    "duration": 1.08,
+    "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
+      }
     },
-    "captain": "Sabater",
-    "startTime": "10:20",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GLET",
-    "category": "INST",
-    "shared": false
+    "id": "kVN3vz7we0N37rvjlsKz",
+    "pic": "Sabater",
+    "passengerPrice": 0,
+    "totalTime": "01:05"
   },
   {
-    "id": "tORK7sZXKwfWWHMCeJoV",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GLET",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2016-10-09",
+    "duration": 1.14,
+    "toLocation": {
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
+    },
+    "id": "bXfUukulQIlY3xlt0IhY",
     "totalTime": "01:08",
     "passengerPrice": 0,
+    "pic": "Sabater",
     "price": 490.2,
-    "model": "R22",
+    "type": "R22",
+    "endTime": "11:33",
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -3079,27 +3129,29 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "endTime": "11:33",
     "fuel": 38,
-    "captain": "Sabater",
-    "startTime": "10:25",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "startTime": "10:25"
+  },
+  {
     "registration": "F-GLET",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
-    "date": "2016-10-09",
+    "date": "2016-10-03",
     "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      }
     },
-    "duration": 1.14
-  },
-  {
-    "model": "R22",
+    "duration": 1.09,
+    "id": "WcOWpqd0dO4HmXGls08W",
+    "totalTime": "01:05",
+    "passengerPrice": 0,
+    "pic": "Sabater",
+    "price": 468.7,
+    "type": "R22",
     "endTime": "11:34",
     "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
@@ -3110,63 +3162,29 @@
       }
     },
     "fuel": 36,
-    "captain": "Sabater",
     "startTime": "10:29",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GLET",
-    "category": "INST",
-    "shared": false,
-    "date": "2016-10-03",
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "duration": 1.09,
-    "id": "S4PZxk3qVTEzbMK9HzX0",
-    "passengerPrice": 0,
-    "totalTime": "01:05",
-    "price": 468.7
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
   },
   {
+    "type": "R22",
+    "fuel": 32,
+    "endTime": "18:47",
+    "fromLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      }
+    },
+    "startTime": "17:49",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GLET",
+    "category": "P/UT",
     "shared": false,
     "date": "2016-09-25",
     "duration": 0.96,
     "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "id": "HZdy83mxnLqufcxn120a",
-    "totalTime": "00:58",
-    "passengerPrice": 0,
-    "price": 412.8,
-    "model": "R22",
-    "fuel": 32,
-    "endTime": "18:47",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "captain": "Sabater",
-    "startTime": "17:49",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GLET",
-    "category": "INST"
-  },
-  {
-    "model": "R22",
-    "fromLocation": {
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
@@ -3174,46 +3192,63 @@
         "longitude": 2.10619
       }
     },
+    "id": "wZaBZEI84dsQAjhquIXl",
+    "passengerPrice": 0,
+    "totalTime": "00:58",
+    "pic": "Sabater",
+    "price": 412.8
+  },
+  {
+    "pic": "Sabater",
+    "passengerPrice": 0,
+    "totalTime": "00:59",
+    "price": 421.4,
+    "type": "R22",
     "endTime": "11:36",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
     "fuel": 32,
-    "captain": "Sabater",
     "startTime": "10:37",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GLET",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
     "date": "2016-09-18",
     "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      }
+      },
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN"
     },
     "duration": 0.98,
-    "id": "gLS22mJyUgW3z5DjzHUa",
-    "passengerPrice": 0,
-    "totalTime": "00:59",
-    "price": 421.4
+    "id": "ksWnPnSjFMqr65hD4CXK"
   },
   {
+    "shared": false,
     "date": "2016-09-04",
     "duration": 1.58,
     "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      }
+      },
+      "name": "LFPN - Toussus-le-Noble"
     },
-    "id": "unctstcoaenLAVznVtL0",
+    "id": "OICug6uDFwEEFx9cBB8i",
+    "pic": "Hebili",
     "passengerPrice": 0,
     "totalTime": "01:35",
     "price": 679.4,
-    "model": "R22",
-    "endTime": "11:49",
+    "type": "R22",
     "fromLocation": {
       "coordinates": {
         "longitude": 2.10619,
@@ -3222,55 +3257,31 @@
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
+    "endTime": "11:49",
     "fuel": 52,
     "startTime": "10:14",
-    "captain": "Hebili",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-HFCK",
-    "category": "INST",
-    "shared": false
+    "category": "P/UT"
   },
   {
-    "model": "R22",
-    "fuel": 35,
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "endTime": "11:27",
-    "startTime": "10:23",
-    "captain": "Lecomte",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GLET",
-    "category": "INST",
     "shared": false,
     "date": "2016-08-28",
     "duration": 1.06,
     "toLocation": {
       "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
+        "latitude": 48.7519,
+        "longitude": 2.10619
       },
       "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN"
     },
-    "id": "dYvhv0MBhdVGKspGe6mI",
+    "id": "nJkyyvuHOcX4Sb3tnRWk",
+    "passengerPrice": 0,
     "totalTime": "01:04",
-    "passengerPrice": 0,
-    "price": 455.8
-  },
-  {
-    "id": "5K343rLLy0K3ujgIZKgT",
-    "totalTime": "00:59",
-    "passengerPrice": 0,
-    "price": 425.7,
-    "model": "R22",
-    "fuel": 33,
-    "endTime": "11:19",
+    "pic": "Lecomte",
+    "price": 455.8,
+    "type": "R22",
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -3279,43 +3290,63 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "captain": "Lecomte",
+    "fuel": 35,
+    "endTime": "11:27",
+    "startTime": "10:23",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GLET",
+    "category": "P/UT"
+  },
+  {
+    "pic": "Lecomte",
+    "totalTime": "00:59",
+    "passengerPrice": 0,
+    "price": 425.7,
+    "type": "R22",
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "endTime": "11:19",
+    "fuel": 33,
     "startTime": "10:20",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GLET",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
     "date": "2016-08-18",
+    "duration": 0.99,
     "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
+      }
     },
-    "duration": 0.99
+    "id": "v75w4paREqrnyPguIT10"
   },
   {
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GLET",
-    "category": "INST",
-    "shared": false,
     "date": "2016-08-14",
-    "duration": 1.05,
     "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
+      }
     },
-    "id": "rnUnzKbz0CmaETC4F9Ik",
+    "duration": 1.05,
+    "id": "N6fy6Bad5aQ58mrFWNAr",
+    "pic": "Lecomte",
     "passengerPrice": 0,
     "totalTime": "01:03",
     "price": 451.5,
-    "model": "R22",
+    "type": "R22",
     "fuel": 35,
     "endTime": "11:28",
     "fromLocation": {
@@ -3327,123 +3358,96 @@
       "name": "LFPN - Toussus-le-Noble"
     },
     "startTime": "10:25",
-    "captain": "Lecomte"
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GLET",
+    "category": "P/UT",
+    "shared": false
   },
   {
-    "id": "2knizEauA8lLyhj41CPQ",
-    "totalTime": "01:08",
-    "passengerPrice": 0,
-    "price": 485.9,
-    "model": "R22",
+    "type": "R22",
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
+        "latitude": 48.7519,
+        "longitude": 2.10619
       },
       "name": "LFPN - Toussus-le-Noble"
     },
     "fuel": 37,
     "endTime": "11:31",
-    "captain": "Sabater",
     "startTime": "10:23",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GLET",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
     "date": "2016-08-07",
-    "duration": 1.13,
     "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      }
-    }
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "duration": 1.13,
+    "id": "yfdCkdlyyH5sCTcTbDHn",
+    "pic": "Sabater",
+    "passengerPrice": 0,
+    "totalTime": "01:08",
+    "price": 485.9
   },
   {
-    "registration": "F-HFCK",
-    "category": "INST",
-    "shared": false,
-    "date": "2016-08-04",
-    "toLocation": {
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
-    },
-    "duration": 1.03,
-    "id": "mLifZs1fIn97tTXM31li",
-    "passengerPrice": 0,
-    "totalTime": "01:02",
     "price": 442.9,
-    "model": "R22",
+    "type": "R22",
     "endTime": "11:12",
     "fromLocation": {
+      "code": "LFPN",
       "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
+        "latitude": 48.7519,
+        "longitude": 2.10619
       },
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN"
+      "name": "LFPN - Toussus-le-Noble"
     },
     "fuel": 34,
-    "captain": "Sabater",
     "startTime": "10:10",
-    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1"
-  },
-  {
-    "date": "2016-07-31",
-    "toLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "duration": 1.02,
-    "id": "o9pGqiuhYXzZ4vZ2BeJk",
-    "passengerPrice": 0,
-    "totalTime": "01:01",
-    "price": 438.6,
-    "model": "R22",
-    "endTime": "16:06",
-    "fromLocation": {
-      "code": "LFPN",
-      "coordinates": {
-        "longitude": 2.10619,
-        "latitude": 48.7519
-      },
-      "name": "LFPN - Toussus-le-Noble"
-    },
-    "fuel": 34,
-    "captain": "Sabater",
-    "startTime": "15:05",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
-    "registration": "F-GLET",
-    "category": "INST",
-    "shared": false
-  },
-  {
+    "registration": "F-HFCK",
+    "category": "P/UT",
+    "shared": false,
+    "date": "2016-08-04",
+    "duration": 1.03,
     "toLocation": {
-      "name": "LFPN - Toussus-le-Noble",
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
         "longitude": 2.10619
-      }
+      },
+      "name": "LFPN - Toussus-le-Noble"
     },
-    "duration": 1.04,
-    "id": "fZ3cixooop3KROLDqz1y",
+    "id": "q5q0fUhwPtkhsithYBPf",
     "passengerPrice": 0,
     "totalTime": "01:02",
-    "price": 447.2,
-    "model": "R22",
-    "fuel": 34,
+    "pic": "Sabater"
+  },
+  {
+    "category": "P/UT",
+    "shared": false,
+    "date": "2016-07-31",
+    "duration": 1.02,
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "id": "sYqrxbjpGT1sAtv96WlB",
+    "totalTime": "01:01",
+    "passengerPrice": 0,
+    "pic": "Sabater",
+    "price": 438.6,
+    "type": "R22",
     "fromLocation": {
       "code": "LFPN",
       "coordinates": {
@@ -3452,36 +3456,68 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
+    "fuel": 34,
+    "endTime": "16:06",
+    "startTime": "15:05",
+    "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
+    "registration": "F-GLET"
+  },
+  {
+    "shared": false,
+    "date": "2016-07-22",
+    "duration": 1.04,
+    "toLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
+    "id": "skmw4dIPKpCDBY1xaxA9",
+    "passengerPrice": 0,
+    "totalTime": "01:02",
+    "pic": "Sabater",
+    "price": 447.2,
+    "type": "R22",
     "endTime": "11:07",
-    "captain": "Sabater",
+    "fuel": 34,
+    "fromLocation": {
+      "code": "LFPN",
+      "coordinates": {
+        "longitude": 2.10619,
+        "latitude": 48.7519
+      },
+      "name": "LFPN - Toussus-le-Noble"
+    },
     "startTime": "10:05",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GLET",
-    "category": "INST",
-    "shared": false,
-    "date": "2016-07-22"
+    "category": "P/UT"
   },
   {
-    "model": "R22",
-    "fuel": 25,
-    "fromLocation": {
-      "name": "LFPN - Toussus-le-Noble",
-      "code": "LFPN",
-      "coordinates": {
-        "latitude": 48.7519,
-        "longitude": 2.10619
-      }
-    },
-    "endTime": "11:36",
-    "captain": "Sabater",
-    "startTime": "10:50",
     "uid": "aAJ60alFA4RgpukYkEFydi13fHu1",
     "registration": "F-GLET",
-    "category": "INST",
+    "category": "P/UT",
     "shared": false,
     "date": "2016-07-17",
     "duration": 0.77,
     "toLocation": {
+      "name": "LFPN - Toussus-le-Noble",
+      "code": "LFPN",
+      "coordinates": {
+        "latitude": 48.7519,
+        "longitude": 2.10619
+      }
+    },
+    "id": "doCTKtWHHh21fP5DFLwe",
+    "totalTime": "00:46",
+    "passengerPrice": 0,
+    "pic": "Sabater",
+    "price": 331.1,
+    "type": "R22",
+    "fuel": 25,
+    "fromLocation": {
       "code": "LFPN",
       "coordinates": {
         "latitude": 48.7519,
@@ -3489,9 +3525,7 @@
       },
       "name": "LFPN - Toussus-le-Noble"
     },
-    "id": "dXz434WmvPKDqTmWBGPn",
-    "passengerPrice": 0,
-    "totalTime": "00:46",
-    "price": 331.1
+    "endTime": "11:36",
+    "startTime": "10:50"
   }
 ]

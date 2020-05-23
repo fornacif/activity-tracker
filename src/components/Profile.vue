@@ -25,7 +25,7 @@
                                     <v-text-field v-model="aircraft.registration" label="Registration" :rules="required" required hint="Exemple: F-GIHE"></v-text-field>
                                  </v-col>
                                  <v-col cols="12" sm="4">
-                                    <v-text-field v-model="aircraft.model" label="Model" :rules="required" required hint="Exemple: R22"></v-text-field>
+                                    <v-text-field v-model="aircraft.type" label="Type" :rules="required" required hint="Exemple: R22"></v-text-field>
                                  </v-col>
                                  <v-col cols="12" sm="4">
                                     <v-text-field v-model="aircraft.fuel" label="Fuel (liter/h)" v-mask="'####'" :rules="required" required></v-text-field>
@@ -140,10 +140,10 @@
                 editedIndex: -1,
                 aircraftsHeaders: [
 					{ text: 'REGISTRATION', value: 'registration', sortable: true },
-                    { text: 'MODEL', value: 'model', sortable: true },
+                    { text: 'TYPE', value: 'type', sortable: true },
                     { text: 'FUEL', value: 'fuel', sortable: true },
-                    { text: 'CDB PRICE', value: 'cdbPrice', sortable: true },
-                    { text: 'INST PRICE', value: 'instPrice', sortable: true },
+                    { text: 'PIC PRICE', value: 'picPrice', sortable: true },
+                    { text: 'P/UT PRICE', value: 'putPrice', sortable: true },
                     { text: 'ACTIONS', value: 'actions', sortable: false },
                 ],
                 aircraftDialog: false,

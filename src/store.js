@@ -28,7 +28,7 @@ export default new Vuex.Store({
 			return aircrafts[0];
 		},
 		getPrice: () => (aircraft, category) => {
-			if (category == 'CDB') {
+			if (category == 'PIC') {
 				return aircraft.cdbPrice;
 			} else {
 				return aircraft.instPrice;
@@ -71,8 +71,6 @@ export default new Vuex.Store({
 					snapshot.forEach(doc => {
 						let activity = doc.data();
 						activity.id = doc.id;
-						
-						//updateActivity(activity);
 
 						commit(ADD_ACTIVITY, activity);
 					});
@@ -102,7 +100,7 @@ export default new Vuex.Store({
         },
 		updateActivity({commit}, activity) {
             try {
-				let activityReference = firebase.activitiesCollection.doc(activity.id);
+				let activityReference = firebase.activitiesCollection.doc(activity.id);				
 				activityReference.update(activity);
             } catch(error) {
                 console.error(error);

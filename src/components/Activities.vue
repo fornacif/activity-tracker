@@ -9,7 +9,7 @@
          </v-banner>
          <v-card-text>
             <v-alert dense text type="info" color="blue-grey darken-1" class="body-2">
-               <strong>CAPTAIN</strong> (for INST flights), <strong>PASSENGERS</strong>, <strong>SHARED</strong> and <strong>PAX PRICE</strong> are editable. Just click the cell to update.
+               <strong>PIC</strong> (for training flights), <strong>PASSENGERS</strong>, <strong>SHARED</strong> and <strong>PAX PRICE</strong> are editable. Just click the cell to update.
                <br />To update more fields, <strong>delete</strong> the activity and create a new one.
             </v-alert>
             <v-text-field v-model="search" prepend-icon="mdi-magnify" label="Type to search..." clearable single-line hide-details dense></v-text-field>
@@ -18,18 +18,18 @@
             <template v-slot:item.category="{ item }">
                <v-chip label :color="getCategoryColor(item)" dark>{{ item.category }}</v-chip>
             </template>
-            <template v-slot:item.captain="{ item }">
-               <v-edit-dialog v-if="item.category != 'CDB'"
-                  :return-value.sync="item.captain"
+            <template v-slot:item.pic="{ item }">
+               <v-edit-dialog v-if="item.category != 'PIC'"
+                  :return-value.sync="item.pic"
                   @save="updateActivity(item)"
                   large
                   persistent>
-                  {{ item.captain }}
+                  {{ item.pic }}
                   <template v-slot:input>
-                    <v-text-field v-model="item.captain" label="Captain" v-show="item.category != 'CDB'"></v-text-field>
+                    <v-text-field v-model="item.pic" label="Pilot In Command" v-show="item.category != 'PIC'"></v-text-field>
                   </template>
                 </v-edit-dialog>
-                <span v-if="item.category == 'CDB'">{{ item.captain }}</span>
+                <span v-if="item.category == 'PIC'">{{ item.pic }}</span>
             </template>
             <template v-slot:item.shared="{ item }">
                <v-edit-dialog
@@ -100,10 +100,10 @@
                 search: '',
                 headers: [
                     { text: 'DATE', value: 'date', sortable: true },
-                    { text: 'MODEL', value: 'model', sortable: true },
                     { text: 'REGISTRATION', value: 'registration', sortable: true },
+                    { text: 'TYPE', value: 'type', sortable: true },
                     { text: 'CATEGORY', value: 'category', sortable: true },
-                    { text: 'CAPTAIN', value: 'captain', sortable: true },
+                    { text: 'PIC', value: 'pic', sortable: true },
                     { text: 'FROM', value: 'fromLocation.code', sortable: true },
                     { text: 'TO', value: 'toLocation.code', sortable: true },
                     { text: 'DURATION', value: 'duration', sortable: true },
@@ -127,7 +127,7 @@
                 await this.$store.dispatch('deleteActivity', activity);
             },
             getCategoryColor(activity) {
-                return activity.category == "CDB" ? 'blue-grey darken-1' : 'lime darken-4';
+                return activity.category == "PIC" ? 'blue-grey darken-1' : 'lime darken-4';
             },
             updateActivity(activity) {
                 this.$store.dispatch('updateActivity', activity);

@@ -13,18 +13,30 @@
                   <v-col cols="12" sm="2">
                      <v-select label="Aircraft" v-model="activity.registration" :items="$store.state.profile.aircrafts" item-value="registration" :rules="required">
                         <template slot="selection" slot-scope="data">
-                           {{ data.item.registration }} | {{ data.item.model }}
+                           {{ data.item.registration }} | {{ data.item.type }}
                         </template>
                         <template slot="item" slot-scope="data">
-                           {{ data.item.registration }} | {{ data.item.model }}
+                           {{ data.item.registration }} | {{ data.item.type }}
                         </template>
                      </v-select>
                   </v-col>
                   <v-col cols="12" sm="2">
-                     <v-select label="Category" v-model="activity.category" :items="categories" :rules="required"/>
+                     <v-select label="Category" v-model="activity.category" :items="categories" :rules="required">
+                        <template v-slot:prepend>
+                          <v-tooltip bottom>
+                            <template v-slot:activator="{ on }">
+                              <v-icon v-on="on">mdi-help-circle-outline</v-icon>
+                            </template>
+                            <strong>PIC</strong> - Pilot In Command
+                            <br/><strong>P/UT</strong> - Pilot Under Training
+                            <br/><strong>TEST</strong> - Test Flight
+                            <br/><strong>EXAM</strong> - Exam Flight
+                          </v-tooltip>
+                        </template>
+                     </v-select>
                   </v-col>
                   <v-col cols="12" sm="2">
-                     <v-text-field label=Captain v-model="captain" :rules="captainRequired" :disabled="!activity.category || activity.category == 'CDB'"/>
+                     <v-text-field label="Pilot In Command" v-model="pic" :rules="picRequired" :disabled="!activity.category || activity.category == 'PIC'"/>
                   </v-col>
                </v-row>
                <v-row dense>
@@ -129,13 +141,13 @@
                     date: new Date().toISOString().substr(0, 10)
                 },
                 categories: [
-                  { value: 'CDB', text: 'CDB' },
-                  { value: 'INST', text: 'INST' },
+                  { value: 'PIC', text: 'PIC' },
+                  { value: 'P/UT', text: 'P/UT' },
                   { value: 'TEST', text: 'TEST' },
                   { value: 'EXAM', text: 'EXAM' }
                 ],
                 required: [v => !!v || 'Input is required'],
-                captainRequired: [v => (!this.activity.category || this.activity.category == 'CDB' || !!v) || 'Input is required'],
+                picRequired: [v => (!this.activity.category || this.activity.category == 'CDB' || !!v) || 'Input is required'],
                 passengersRequired: [v => (!this.activity.shared || !!v) || 'Input is required'],
                 aircraft: {},
                 fromLocationItems: [],
@@ -156,16 +168,16 @@
 			this.initLastLocations(this.toLocationItems, 'toLocation');
         },
         computed: {
-            captain: {
+            pic: {
                 get: function () {
-                    if (this.activity.category == 'CDB') {
+                    if (this.activity.category == 'PIC') {
                         return this.$store.state.profile.lastName;
                     } else {
                         return '';
                     }
                 },
                 set: function(value) {
-                    this.activity.captain = value;
+                    this.activity.pic = value;
                 }
             },
             price: function() {
@@ -213,11 +225,11 @@
         watch: {
 			"activity.registration": function(value) {
 				if (value) {
-                  this.activity.model = this.$store.getters.getAircraft(value).model;					
+                  this.activity.type = this.$store.getters.getAircraft(value).type;					
 				}
             },
-            captain: function(value) {
-                this.activity.captain = value;
+            pic: function(value) {
+                this.activity.pic = value;
             },
             price: function(value) {
                 this.activity.price = value;

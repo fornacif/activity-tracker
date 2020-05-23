@@ -12,16 +12,16 @@
                <v-card-text>
                   <v-row dense align="end">
                      <v-col sm="1">
-                        <span class="subtitle-2">Model</span>
+                        <span class="subtitle-2">Type</span>
                      </v-col>
                      <v-col sm="3">
-                        <span class="subtitle-2">Since Last INST Flight</span>
+                        <span class="subtitle-2">Since Last DUAL Flight</span>
                      </v-col>
                      <v-col sm="3">
                         <span class="subtitle-2">Before TEST Flight</span>
                      </v-col>
                      <v-col sm="3">
-                        <span class="subtitle-2">Since Last CDB Flight</span>
+                        <span class="subtitle-2">Since Last PIC Flight</span>
                      </v-col>
                   </v-row>
                   <v-divider></v-divider>
@@ -39,10 +39,10 @@
                         <v-progress-circular indeterminate width="1"/>
                      </v-col>
                   </v-row>
-                  <v-row dense v-for="item in aggregates.daysByModel" :key="item.model" class="mt-1">
+                  <v-row dense v-for="item in aggregates.daysByType" :key="item.type" class="mt-1">
                      <v-col sm="1">
                         <v-chip dark label color="blue-grey darken-1">
-                           <span class="subtitle-2">{{ item.model }}</span>
+                           <span class="subtitle-2">{{ item.type }}</span>
                         </v-chip>
                      </v-col>
                      <v-col sm="3">
@@ -70,7 +70,7 @@
                   <v-avatar slot="icon" color="blue-grey darken-3" size="40">
                      <v-icon dark>mdi-counter</v-icon>
                   </v-avatar>
-                  CDB - Global Metrics
+                  PIC - Global Metrics
                </v-banner>
                <v-row dense>
                   <v-col sm="6">
@@ -100,7 +100,7 @@
                   <v-avatar slot="icon" color="blue-grey darken-3" size="40">
                      <v-icon dark>mdi-counter</v-icon>
                   </v-avatar>
-                  INST - Global Metrics
+                  DUAL - Global Metrics
                </v-banner>
                <v-row dense>
                   <v-col sm="6">
@@ -141,7 +141,7 @@
                            <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
                            <span v-show="!$store.state.isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }} €</span>
                         </v-card-title>
-                        <v-card-subtitle class="subtitle-2">Total CDB</v-card-subtitle>
+                        <v-card-subtitle class="subtitle-2">Total PIC</v-card-subtitle>
                      </v-card>
                   </v-col>
                   <v-col sm="6">
@@ -150,7 +150,7 @@
                            <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
                            <span v-show="!$store.state.isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }} €</span>
                         </v-card-title>
-                        <v-card-subtitle class="subtitle-2">Total INST</v-card-subtitle>
+                        <v-card-subtitle class="subtitle-2">Total DUAL</v-card-subtitle>
                      </v-card>
                   </v-col>
                </v-row>
@@ -205,10 +205,10 @@
                         <v-select :items="aggregates.registrations" v-model="registrationFilter" label="Filter by Registration" multiple dense outlined></v-select>
                      </v-col>
                      <v-col cols="12" sm="2" class="my-n2">
-                        <v-select :items="aggregates.models" v-model="modelFilter" label="Filter by Model" multiple dense outlined></v-select>
+                        <v-select :items="aggregates.types" v-model="typeFilter" label="Filter by Type" multiple dense outlined></v-select>
                      </v-col>
                      <v-col cols="12" sm="2" class="my-n2">
-                        <v-select :items="aggregates.captains" v-model="captainFilter" label="Filter by Captain" multiple dense outlined></v-select>
+                        <v-select :items="aggregates.types" v-model="picFilter" label="Filter by PIC" multiple dense outlined></v-select>
                      </v-col>
                      <v-col cols="12" sm="1" class="mt-n2">
                         <v-btn depressed @click="resetFilters">RESET</v-btn>
@@ -242,8 +242,8 @@
             return {
 				categoryFilter: [],
 				registrationFilter: [],
-				captainFilter: [],
-				modelFilter: [],
+				picFilter: [],
+				typeFilter: [],
 				headers: [
                     { text: 'YEAR', value: 'year'},
                     { text: 'DURATION (h)', value: 'duration'},
@@ -261,27 +261,27 @@
 				let aggregates = {};
 				let activities = this.$store.state.activities;
 
-				let cdbActivities = this.filterByCategories(activities, ['CDB']);
-				let instActivities = this.filterByCategories(activities, ['INST', 'TEST', 'EXAM']);
+				let cdbActivities = this.filterByCategories(activities, ['PIC']);
+				let instActivities = this.filterByCategories(activities, ['P/UT', 'TEST', 'EXAM']);
 				
-				aggregates.daysByModel = [];
+				aggregates.daysByType = [];
 				
 				console.info();
 				
-				for (const [model, daysBeforeTestFlight] of Object.entries(this.getDaysBeforeTestFlight(instActivities))) {
-					let daysByModel = {};
-					daysByModel.model = model;
+				for (const [type, daysBeforeTestFlight] of Object.entries(this.getDaysBeforeTestFlight(instActivities))) {
+					let daysByType = {};
+					daysByType.type = type;
 					
-					daysByModel.daysBeforeTestFlight = daysBeforeTestFlight;
-					daysByModel.daysBeforeTestFlightColor = daysByModel.daysBeforeTestFlight > 30 ? 'green' : 'orange';
+					daysByType.daysBeforeTestFlight = daysBeforeTestFlight;
+					daysByType.daysBeforeTestFlightColor = daysByType.daysBeforeTestFlight > 30 ? 'green' : 'orange';
 					
-					daysByModel.daysSinceLastInstFlight = this.getDaysSinceLastFlight(this.filterByModel(instActivities, model));
-					daysByModel.daysSinceLastInstFlightColor = daysByModel.daysSinceLastInstFlight < 90 ? 'green' : 'orange';
+					daysByType.daysSinceLastInstFlight = this.getDaysSinceLastFlight(this.filterByType(instActivities, type));
+					daysByType.daysSinceLastInstFlightColor = daysByType.daysSinceLastInstFlight < 90 ? 'green' : 'orange';
 					
-					daysByModel.daysSinceLastCdbFlight = this.getDaysSinceLastFlight(this.filterByModel(cdbActivities, model));
-					daysByModel.daysSinceLastCdbFlightColor = daysByModel.daysSinceLastCdbFlight < 30 ? 'green' : 'orange';
+					daysByType.daysSinceLastCdbFlight = this.getDaysSinceLastFlight(this.filterByType(cdbActivities, type));
+					daysByType.daysSinceLastCdbFlightColor = daysByType.daysSinceLastCdbFlight < 30 ? 'green' : 'orange';
 					
-					aggregates.daysByModel.push(daysByModel);
+					aggregates.daysByType.push(daysByType);
 				}
 
 				aggregates.totalCdbDuration = this.sumByProperty(cdbActivities, 'duration');
@@ -296,8 +296,8 @@
 
 				aggregates.categories = this.aggregateByProperty(activities, "category");
 				aggregates.registrations = this.aggregateByProperty(activities, "registration");
-				aggregates.models = this.aggregateByProperty(activities, "model");
-				aggregates.captains = this.aggregateByProperty(activities, "captain");
+				aggregates.pics = this.aggregateByProperty(activities, "pic");
+				aggregates.types = this.aggregateByProperty(activities, "type");
 
 				aggregates.all = this.aggreateItemsPerYear(activities);
 
@@ -310,9 +310,9 @@
 					return categories.includes(activity.category);
                 });
             },
-            filterByModel(activities, model) {
+            filterByType(activities, type) {
 				return activities.filter((activity) => {
-					return activity.model == model;
+					return activity.type == type;
                 });
             },
             sumByPassengerPrice(items) {
@@ -351,8 +351,8 @@
 
 					if ((this.categoryFilter.length == 0 || this.categoryFilter.includes(activity.category)) && 
 						(this.registrationFilter.length == 0 || this.registrationFilter.includes(activity.registration)) &&
-						(this.modelFilter.length == 0 || this.modelFilter.includes(activity.model)) &&
-                        (this.captainFilter.length == 0 || this.captainFilter.includes(activity.captain))) {
+						(this.typeFilter.length == 0 || this.typeFilter.includes(activity.type)) &&
+                        (this.picFilter.length == 0 || this.picFilter.includes(activity.pic))) {
 
 						if (items.has(year)) {
 							items.get(year).duration += item.duration;
@@ -383,7 +383,8 @@
 			resetFilters() {
 				this.categoryFilter = [];
 				this.registrationFilter = [];
-				this.modelFilter = [];
+				this.picFilter = [];
+				this.picFilter = [];
             },
             getDaysSinceLastFlight(activities) {
 				if (activities.length == 0) {
@@ -401,23 +402,23 @@
 
 				let now = this.$moment();
 
-				let lastExamFlightDateByModel = [];
-				let lastTestFlightDateByModel = [];
+				let lastExamFlightDateByType = [];
+				let lastTestFlightDateByType = [];
 
 				instActivities.forEach(activity => {
-					if (activity.category === 'EXAM' && !lastExamFlightDateByModel[activity.model]) {
-						lastExamFlightDateByModel[activity.model] = activity.date;
+					if (activity.category === 'EXAM' && !lastExamFlightDateByType[activity.type]) {
+						lastExamFlightDateByType[activity.type] = activity.date;
 					}
-					if (activity.category === 'TEST' && !lastTestFlightDateByModel[activity.model]) {
-						lastTestFlightDateByModel[activity.model] = activity.date;
+					if (activity.category === 'TEST' && !lastTestFlightDateByType[activity.type]) {
+						lastTestFlightDateByType[activity.type] = activity.date;
 					}
 				});
 
-				let daysBeforeTestFlightByModel = [];
+				let daysBeforeTestFlightByType = [];
 
-				for (const [year, value] of Object.entries(lastExamFlightDateByModel)) {
+				for (const [year, value] of Object.entries(lastExamFlightDateByType)) {
 					let lastExamFlightDate = this.$moment(value);
-					let lastTestFlightDate = this.$moment(lastTestFlightDateByModel[year]);
+					let lastTestFlightDate = this.$moment(lastTestFlightDateByType[year]);
 					let nextTestFlightDueDate = this.$moment(lastExamFlightDate).year(now.year()).endOf('month');	
 					let nextTestFlightStartDate = this.$moment(lastExamFlightDate).year(now.year()).subtract(3, "months");
 					
@@ -425,10 +426,10 @@
 						nextTestFlightDueDate.add(1, "years");
 					}
 					
-					daysBeforeTestFlightByModel[year] = nextTestFlightDueDate.diff(now, 'days');
+					daysBeforeTestFlightByType[year] = nextTestFlightDueDate.diff(now, 'days');
 				}
 
-				return daysBeforeTestFlightByModel;
+				return daysBeforeTestFlightByType;
             }
         }
     }
