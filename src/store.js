@@ -29,9 +29,9 @@ export default new Vuex.Store({
 		},
 		getPrice: () => (aircraft, category) => {
 			if (category == 'PIC') {
-				return aircraft.cdbPrice;
+				return aircraft.picPrice;
 			} else {
-				return aircraft.instPrice;
+				return aircraft.dualPrice;
 			}
 		},
 	},

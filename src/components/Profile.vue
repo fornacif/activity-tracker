@@ -31,10 +31,10 @@
                                     <v-text-field v-model="aircraft.fuel" label="Fuel (liter/h)" v-mask="'####'" :rules="required" required></v-text-field>
                                  </v-col>
                                  <v-col cols="12" sm="4">
-                                    <v-text-field v-model="aircraft.cdbPrice" label="CDB Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
+                                    <v-text-field v-model="aircraft.picPrice" label="PIC Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
                                  </v-col>
                                  <v-col cols="12" sm="4">
-                                    <v-text-field v-model="aircraft.instPrice" label="INST Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
+                                    <v-text-field v-model="aircraft.dualPrice" label="Dual Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
                                  </v-col>
                               </v-row>
                            </v-form>

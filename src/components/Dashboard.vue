@@ -46,8 +46,8 @@
                         </v-chip>
                      </v-col>
                      <v-col sm="3">
-                        <v-chip label outlined :color="item.daysSinceLastInstFlightColor">
-                           <span class="subtitle-1 font-weight-bold">{{ item.daysSinceLastInstFlight }} d</span>
+                        <v-chip label outlined :color="item.daysSinceLastDualFlightColor">
+                           <span class="subtitle-1 font-weight-bold">{{ item.daysSinceLastDualFlight }} d</span>
                         </v-chip>
                      </v-col>
                      <v-col sm="3">
@@ -56,8 +56,8 @@
                         </v-chip>
                      </v-col>
                      <v-col sm="3">
-                        <v-chip label outlined :color="item.daysSinceLastCdbFlightColor">
-                           <span class="subtitle-1 font-weight-bold">{{ item.daysSinceLastCdbFlight }} d</span>
+                        <v-chip label outlined :color="item.daysSinceLastPicFlightColor">
+                           <span class="subtitle-1 font-weight-bold">{{ item.daysSinceLastPicFlight }} d</span>
                         </v-chip>
                      </v-col>
                   </v-row>
@@ -77,7 +77,7 @@
                      <v-card flat>
                         <v-card-title>
                            <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
-                           <span v-show="!$store.state.isLoading">{{ aggregates.totalCdbDuration | numeral('0,0.00') }} h</span>                
+                           <span v-show="!$store.state.isLoading">{{ aggregates.totalPicDuration | numeral('0,0.00') }} h</span>                
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total Duration</v-card-subtitle>
                      </v-card>
@@ -86,7 +86,7 @@
                      <v-card flat>
                         <v-card-title>
                            <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
-                           <span v-show="!$store.state.isLoading">{{ aggregates.totalCdbFlights }}</span>
+                           <span v-show="!$store.state.isLoading">{{ aggregates.totalPicFlights }}</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total Flights</v-card-subtitle>
                      </v-card>
@@ -107,7 +107,7 @@
                      <v-card flat>
                         <v-card-title>
                            <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
-                           <span v-show="!$store.state.isLoading">{{ aggregates.totalInstDuration | numeral('0,0.00') }} h</span>
+                           <span v-show="!$store.state.isLoading">{{ aggregates.totalDualDuration | numeral('0,0.00') }} h</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total Duration</v-card-subtitle>
                      </v-card>
@@ -116,7 +116,7 @@
                      <v-card flat>
                         <v-card-title>
                            <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
-                           <span v-show="!$store.state.isLoading">{{ aggregates.totalInstFlights }}</span>
+                           <span v-show="!$store.state.isLoading">{{ aggregates.totalDualFlights }}</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total Flights</v-card-subtitle>
                      </v-card>
@@ -139,7 +139,7 @@
                      <v-card flat>
                         <v-card-title>
                            <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
-                           <span v-show="!$store.state.isLoading">{{ aggregates.totalCdbPrice | numeral('0,0') }} €</span>
+                           <span v-show="!$store.state.isLoading">{{ aggregates.totalPicPrice | numeral('0,0') }} €</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total PIC</v-card-subtitle>
                      </v-card>
@@ -148,7 +148,7 @@
                      <v-card flat>
                         <v-card-title>
                            <v-progress-circular v-show="$store.state.isLoading" indeterminate width="1"/>
-                           <span v-show="!$store.state.isLoading">{{ aggregates.totalInstPrice | numeral('0,0') }} €</span>
+                           <span v-show="!$store.state.isLoading">{{ aggregates.totalDualPrice | numeral('0,0') }} €</span>
                         </v-card-title>
                         <v-card-subtitle class="subtitle-2">Total DUAL</v-card-subtitle>
                      </v-card>
@@ -261,35 +261,35 @@
 				let aggregates = {};
 				let activities = this.$store.state.activities;
 
-				let cdbActivities = this.filterByCategories(activities, ['PIC']);
-				let instActivities = this.filterByCategories(activities, ['P/UT', 'TEST', 'EXAM']);
+				let picActivities = this.filterByCategories(activities, ['PIC']);
+				let dualActivities = this.filterByCategories(activities, ['P/UT', 'TEST', 'EXAM']);
 				
 				aggregates.daysByType = [];
 				
 				console.info();
 				
-				for (const [type, daysBeforeTestFlight] of Object.entries(this.getDaysBeforeTestFlight(instActivities))) {
+				for (const [type, daysBeforeTestFlight] of Object.entries(this.getDaysBeforeTestFlight(dualActivities))) {
 					let daysByType = {};
 					daysByType.type = type;
 					
 					daysByType.daysBeforeTestFlight = daysBeforeTestFlight;
 					daysByType.daysBeforeTestFlightColor = daysByType.daysBeforeTestFlight > 30 ? 'green' : 'orange';
 					
-					daysByType.daysSinceLastInstFlight = this.getDaysSinceLastFlight(this.filterByType(instActivities, type));
-					daysByType.daysSinceLastInstFlightColor = daysByType.daysSinceLastInstFlight < 90 ? 'green' : 'orange';
+					daysByType.daysSinceLastDualFlight = this.getDaysSinceLastFlight(this.filterByType(dualActivities, type));
+					daysByType.daysSinceLastDualFlightColor = daysByType.daysSinceLastDualFlight < 90 ? 'green' : 'orange';
 					
-					daysByType.daysSinceLastCdbFlight = this.getDaysSinceLastFlight(this.filterByType(cdbActivities, type));
-					daysByType.daysSinceLastCdbFlightColor = daysByType.daysSinceLastCdbFlight < 30 ? 'green' : 'orange';
+					daysByType.daysSinceLastPicFlight = this.getDaysSinceLastFlight(this.filterByType(picActivities, type));
+					daysByType.daysSinceLastPicFlightColor = daysByType.daysSinceLastPicFlight < 30 ? 'green' : 'orange';
 					
 					aggregates.daysByType.push(daysByType);
 				}
 
-				aggregates.totalCdbDuration = this.sumByProperty(cdbActivities, 'duration');
-				aggregates.totalInstDuration = this.sumByProperty(instActivities, 'duration');
-				aggregates.totalCdbFlights = cdbActivities.length;
-				aggregates.totalInstFlights = instActivities.length;
-				aggregates.totalCdbPrice = this.sumByProperty(cdbActivities, 'price');
-				aggregates.totalInstPrice = this.sumByProperty(instActivities, 'price');
+				aggregates.totalPicDuration = this.sumByProperty(picActivities, 'duration');
+				aggregates.totalDualDuration = this.sumByProperty(dualActivities, 'duration');
+				aggregates.totalPicFlights = picActivities.length;
+				aggregates.totalDualFlights = dualActivities.length;
+				aggregates.totalPicPrice = this.sumByProperty(picActivities, 'price');
+				aggregates.totalDualPrice = this.sumByProperty(dualActivities, 'price');
 				
 				aggregates.totalPassengersFlights = this.sumByFilledProperty(activities, 'passengers');
 				aggregates.totalPassengersPrice = this.sumByPassengerPrice(activities);
@@ -395,8 +395,8 @@
 				let lastActivityDate = this.$moment(activities[0].date);
 				return now.diff(lastActivityDate, 'days');
             },
-            getDaysBeforeTestFlight(instActivities) {
-				if (instActivities.length == 0) {
+            getDaysBeforeTestFlight(dualActivities) {
+				if (dualActivities.length == 0) {
 					return 0;
 				}
 
@@ -405,7 +405,7 @@
 				let lastExamFlightDateByType = [];
 				let lastTestFlightDateByType = [];
 
-				instActivities.forEach(activity => {
+				dualActivities.forEach(activity => {
 					if (activity.category === 'EXAM' && !lastExamFlightDateByType[activity.type]) {
 						lastExamFlightDateByType[activity.type] = activity.date;
 					}

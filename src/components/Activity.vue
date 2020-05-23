@@ -147,7 +147,7 @@
                   { value: 'EXAM', text: 'EXAM' }
                 ],
                 required: [v => !!v || 'Input is required'],
-                picRequired: [v => (!this.activity.category || this.activity.category == 'CDB' || !!v) || 'Input is required'],
+                picRequired: [v => (!this.activity.category || this.activity.category == 'PIC' || !!v) || 'Input is required'],
                 passengersRequired: [v => (!this.activity.shared || !!v) || 'Input is required'],
                 aircraft: {},
                 fromLocationItems: [],
@@ -362,7 +362,7 @@
                 this.activity.shared = false;
                 this.activity.registration = '';
                 this.activity.category = '';
-                this.activity.instructor = '';
+                this.activity.pic = '';
                 this.activity.duration = '';
                 this.activity.passengers = '';
                 this.activity.fromLocation = '';
