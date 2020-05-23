@@ -29,8 +29,8 @@
                             </template>
                             <strong>PIC</strong> - Pilot In Command
                             <br/><strong>P/UT</strong> - Pilot Under Training
-                            <br/><strong>TEST</strong> - Test Flight
-                            <br/><strong>EXAM</strong> - Exam Flight
+                            <br/><strong>TEST</strong> - Test or Revalidation Flight
+                            <br/><strong>EXAM</strong> - Exam or Renewal Flight
                           </v-tooltip>
                         </template>
                      </v-select>
