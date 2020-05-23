@@ -31,6 +31,22 @@
                 </v-edit-dialog>
                 <span v-if="item.category == 'PIC'">{{ item.pic }}</span>
             </template>
+            <template v-slot:item.fromLocation.code="{ item }">
+                <v-tooltip bottom>
+                  <template v-slot:activator="{ on }">
+                    <span v-on="on">{{ item.fromLocation.code }}</span>
+                  </template>
+                  <span>{{ item.fromLocation.name }}</span>
+                </v-tooltip>
+            </template>
+            <template v-slot:item.toLocation.code="{ item }">
+                <v-tooltip bottom>
+                  <template v-slot:activator="{ on }">
+                    <span v-on="on">{{ item.toLocation.code }}</span>
+                  </template>
+                  <span>{{ item.toLocation.name }}</span>
+                </v-tooltip>
+            </template>
             <template v-slot:item.shared="{ item }">
                <v-edit-dialog
                   :return-value.sync="item.shared"
