@@ -34,7 +34,7 @@
                                     <v-text-field v-model="aircraft.picPrice" label="PIC Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
                                  </v-col>
                                  <v-col cols="12" sm="4">
-                                    <v-text-field v-model="aircraft.dualPrice" label="Dual Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
+                                    <v-text-field v-model="aircraft.dualPrice" label="DUAL Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
                                  </v-col>
                               </v-row>
                            </v-form>
@@ -143,7 +143,7 @@
                     { text: 'TYPE', value: 'type', sortable: true },
                     { text: 'FUEL', value: 'fuel', sortable: true },
                     { text: 'PIC PRICE', value: 'picPrice', sortable: true },
-                    { text: 'P/UT PRICE', value: 'putPrice', sortable: true },
+                    { text: 'DUAL PRICE', value: 'dualPrice', sortable: true },
                     { text: 'ACTIONS', value: 'actions', sortable: false },
                 ],
                 aircraftDialog: false,
