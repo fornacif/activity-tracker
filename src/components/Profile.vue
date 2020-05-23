@@ -141,9 +141,9 @@
                 aircraftsHeaders: [
 					{ text: 'REGISTRATION', value: 'registration', sortable: true },
                     { text: 'TYPE', value: 'type', sortable: true },
-                    { text: 'FUEL', value: 'fuel', sortable: true },
-                    { text: 'PIC PRICE', value: 'picPrice', sortable: true },
-                    { text: 'DUAL PRICE', value: 'dualPrice', sortable: true },
+                    { text: 'FUEL (liter/h)', value: 'fuel', sortable: true },
+                    { text: 'PIC PRICE (€/h)', value: 'picPrice', sortable: true },
+                    { text: 'DUAL PRICE (€/h)', value: 'dualPrice', sortable: true },
                     { text: 'ACTIONS', value: 'actions', sortable: false },
                 ],
                 aircraftDialog: false,
