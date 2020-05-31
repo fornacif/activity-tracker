@@ -307,7 +307,7 @@
                             let headers = new Headers();
                             headers.append('X-API-Key', process.env.VUE_APP_CHECKWS_API_KEY);
                             let params = { headers: headers};
-                            let request = new Request('https://api.checkwx.com/station/' + searchInput, params);
+                            let request = new Request('https://api.checkwx.com/station/' + searchInput + "/timestamp", params);
                             
                             let result = await fetch(request);
                             result = await result.json();
