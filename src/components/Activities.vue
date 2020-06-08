@@ -9,7 +9,7 @@
          </v-banner>
          <v-card-text>
             <v-alert dense text type="info" color="blue-grey darken-1" class="body-2">
-               <strong>PIC</strong> name (for P/UT flights), <strong>PASSENGERS</strong>, <strong>SHARED</strong> and <strong>PAX PRICE</strong> are editable (click the cell to update).
+               <strong>PIC</strong> name (for P/UT flights), <strong>PRICE</strong>, <strong>PASSENGERS</strong>, <strong>SHARED</strong>,  and <strong>PAX PRICE</strong> are editable (click the cell to update).
                To update more fields, <strong>delete</strong> the activity and create a new one.
             </v-alert>
             <v-text-field v-model="search" prepend-icon="mdi-magnify" label="Type to search..." clearable single-line hide-details dense></v-text-field>
@@ -71,6 +71,18 @@
                   </template>
                 </v-edit-dialog>
             </template>
+            <template v-slot:item.price="{ item }">
+               <v-edit-dialog
+                  :return-value.sync="item.price"
+                   @save="updateActivity(item)"
+                  large
+                  persistent>
+                  {{ item.price }}
+                  <template v-slot:input>
+                    <v-text-field v-model="item.price" label="Price" v-mask="numberMask"></v-text-field>
+                  </template>
+                </v-edit-dialog>
+            </template>
             <template v-slot:item.passengerPrice="{ item }">
                <v-edit-dialog
                   :return-value.sync="item.passengerPrice"
@@ -79,7 +91,7 @@
                   persistent>
                   {{ item.passengerPrice }}
                   <template v-slot:input>
-                    <v-text-field v-model="item.passengerPrice" label="PAX Price" v-mask="'####'"></v-text-field>
+                    <v-text-field v-model="item.passengerPrice" label="PAX Price" v-mask="numberMask"></v-text-field>
                   </template>
                 </v-edit-dialog>
             </template>
@@ -105,15 +117,14 @@
 </template>
 
 <script>
-    import { mask } from 'vue-the-mask'
-
+    import createNumberMask from 'text-mask-addons/dist/createNumberMask';
+    
     export default {
-        directives: {
-            mask,
-        },
+
         data() {
             return {
                 search: '',
+                numberMask: createNumberMask({ prefix: '', allowDecimal: true }),
                 headers: [
                     { text: 'DATE', value: 'date', sortable: true },
                     { text: 'REGISTRATION', value: 'registration', sortable: true },

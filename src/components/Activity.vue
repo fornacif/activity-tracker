@@ -91,7 +91,7 @@
                </v-row>
                <v-row dense>
                   <v-col cols="12" sm="2">
-                     <v-text-field label="Price" v-model="price" readonly/>
+                     <v-text-field label="Price" v-model="price" v-mask="numberMask"/>
                   </v-col>
                   <v-col cols="12" sm="4">
                      <v-text-field label="Passenger Names" v-model="activity.passengers" :rules="passengersRequired" hint="Exemple: Alina, Cameron"/>
@@ -100,7 +100,7 @@
                      <v-switch label="Share Price" v-model="activity.shared" inset/>
                   </v-col>
                   <v-col cols="12" sm="2">
-                     <v-text-field label="Passenger Price (round)" v-model="passengerPrice" :disabled="!activity.passengers" v-mask="'####'"/>
+                     <v-text-field label="Passenger Price (round)" v-model="passengerPrice" :disabled="!activity.passengers" v-mask="numberMask"/>
                   </v-col>
                </v-row>
                <v-row dense>
@@ -123,18 +123,16 @@
 </template>
 
 <script>
-    import { mask } from 'vue-the-mask'
+    import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
     export default {
-        directives: {
-          mask,
-        },
         data() {
             return {
                 valid: true,
                 confirmationSnackbar: false,
                 errorSnackbar: false,
                 timeout: 2000,
+                numberMask: createNumberMask({ prefix: '', allowDecimal: true }),
                 activity: {
                     shared: false,
                     passengerPrice: 0,
@@ -192,7 +190,7 @@
             passengerPrice: function() {
                 if (this.activity.shared && this.activity.passengers) {
                     let passengerCount = this.activity.passengers.split(",").length;
-                    return Math.round(this.price / (passengerCount + 1));
+                    return Math.round((this.price / (passengerCount + 1)) * 100) / 100;
                 } else {
                     return 0;
                 }

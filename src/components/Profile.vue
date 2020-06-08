@@ -125,13 +125,9 @@
 </template>
 
 <script>
-    import { mask } from 'vue-the-mask'
     const flatten = require('flat').flatten;
 
     export default {
-        directives: {
-          mask,
-        },
         data() {
             return {
                 valid: true,
