@@ -28,13 +28,13 @@
                                     <v-text-field v-model="aircraft.type" label="Type" :rules="required" required hint="Exemple: R22"></v-text-field>
                                  </v-col>
                                  <v-col cols="12" sm="4">
-                                    <v-text-field v-model="aircraft.fuel" label="Fuel (liter/h)" v-mask="'####'" :rules="required" required></v-text-field>
+                                    <v-text-field v-model.number="aircraft.fuel" label="Fuel (liter/h)" v-mask="'####'" :rules="required" required></v-text-field>
                                  </v-col>
                                  <v-col cols="12" sm="4">
-                                    <v-text-field v-model="aircraft.picPrice" label="PIC Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
+                                    <v-text-field v-model.number="aircraft.picPrice" label="PIC Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
                                  </v-col>
                                  <v-col cols="12" sm="4">
-                                    <v-text-field v-model="aircraft.dualPrice" label="DUAL Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
+                                    <v-text-field v-model.number="aircraft.dualPrice" label="DUAL Price (€/h)" v-mask="'####'" :rules="required" required></v-text-field>
                                  </v-col>
                               </v-row>
                            </v-form>
@@ -125,9 +125,13 @@
 </template>
 
 <script>
+    import { mask } from 'vue-the-mask'
     const flatten = require('flat').flatten;
 
     export default {
+        directives: {
+          mask,
+        },
         data() {
             return {
                 valid: true,

@@ -91,7 +91,7 @@
                </v-row>
                <v-row dense>
                   <v-col cols="12" sm="2">
-                     <v-text-field label="Price" v-model="price" v-mask="numberMask"/>
+                     <v-text-field label="Price" v-model.number="price" readonly/>
                   </v-col>
                   <v-col cols="12" sm="4">
                      <v-text-field label="Passenger Names" v-model="activity.passengers" :rules="passengersRequired" hint="Exemple: Alina, Cameron"/>
@@ -100,7 +100,7 @@
                      <v-switch label="Share Price" v-model="activity.shared" inset/>
                   </v-col>
                   <v-col cols="12" sm="2">
-                     <v-text-field label="Passenger Price (round)" v-model="passengerPrice" :disabled="!activity.passengers" v-mask="numberMask"/>
+                     <v-text-field label="Passenger Price (round)" v-model.number="passengerPrice" @keypress="isNumber($event)" :disabled="!activity.passengers"/>
                   </v-col>
                </v-row>
                <v-row dense>
@@ -123,16 +123,18 @@
 </template>
 
 <script>
-    import createNumberMask from 'text-mask-addons/dist/createNumberMask';
+    import { mask } from 'vue-the-mask'
 
     export default {
+        directives: {
+            mask,
+        },
         data() {
             return {
                 valid: true,
                 confirmationSnackbar: false,
                 errorSnackbar: false,
                 timeout: 2000,
-                numberMask: createNumberMask({ prefix: '', allowDecimal: true }),
                 activity: {
                     shared: false,
                     passengerPrice: 0,
@@ -178,21 +180,27 @@
                     this.activity.pic = value;
                 }
             },
-            price: function() {
+            price: function () {
                 if (this.activity.registration && !isNaN(this.activity.duration)) {
-					let aircraft = this.$store.getters.getAircraft(this.activity.registration);
+                    let aircraft = this.$store.getters.getAircraft(this.activity.registration);
                     let unitPrice = this.$store.getters.getPrice(aircraft, this.activity.category);
                     return Math.round(this.activity.duration * unitPrice * 100) / 100;
                 } else {
                     return 0;
-                }     
+                }
             },
-            passengerPrice: function() {
-                if (this.activity.shared && this.activity.passengers) {
-                    let passengerCount = this.activity.passengers.split(",").length;
-                    return Math.round((this.price / (passengerCount + 1)) * 100) / 100;
-                } else {
-                    return 0;
+            passengerPrice: {
+                get: function () {
+                    if (this.activity.shared && this.activity.passengers) {
+                        let passengerCount = this.activity.passengers.split(",").length;
+                        return Math.round((this.price / (passengerCount + 1)) * 100) / 100;
+                    } else {
+                        return 0;
+                    }
+                },
+                set: function(value) {
+                    console.info(value)
+                    this.activity.passengerPrice = value;
                 }
             },
             fuel: function() {

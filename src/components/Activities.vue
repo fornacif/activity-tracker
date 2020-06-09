@@ -79,7 +79,7 @@
                   persistent>
                   {{ item.price }}
                   <template v-slot:input>
-                    <v-text-field v-model="item.price" label="Price" v-mask="numberMask"></v-text-field>
+                    <v-text-field v-model.number="item.price" label="Price" @keypress="isNumber($event)"></v-text-field>
                   </template>
                 </v-edit-dialog>
             </template>
@@ -91,7 +91,7 @@
                   persistent>
                   {{ item.passengerPrice }}
                   <template v-slot:input>
-                    <v-text-field v-model="item.passengerPrice" label="PAX Price" v-mask="numberMask"></v-text-field>
+                    <v-text-field v-model.number="item.passengerPrice" label="PAX Price" @keypress="isNumber($event)"></v-text-field>
                   </template>
                 </v-edit-dialog>
             </template>
@@ -117,14 +117,15 @@
 </template>
 
 <script>
-    import createNumberMask from 'text-mask-addons/dist/createNumberMask';
+    import { mask } from 'vue-the-mask'
     
     export default {
-
+        directives: {
+            mask,
+        },
         data() {
             return {
                 search: '',
-                numberMask: createNumberMask({ prefix: '', allowDecimal: true }),
                 headers: [
                     { text: 'DATE', value: 'date', sortable: true },
                     { text: 'REGISTRATION', value: 'registration', sortable: true },
